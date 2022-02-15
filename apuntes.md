@@ -43,23 +43,7 @@
 
 ## Sección 8: Forumularios (v-model)
 
-### 76. Instalación de un nuevo proyecto
-+ https://bluuweb.github.io/vue-udemy/05-form
-1. Crear proyecto **06formulario**:
-    + $ vue create 06formulario
-    + Seleccionar: Manually select features
-    + Seleccionar unicamente:
-        + (*) Choose Vue version
-        + (*) Babel
-        + (*) Router
-        + (*) Vuex
-    + Seleccionar: 3.x
-    + ? Use history mode for router? (Requires proper server setup for index fallback in production) (Y/n): y
-    + Seleccionar: In dedicated config files
-    + ? Save this as a preset for future projects? (y/N): n
-2. Ejecutar proyecto :
-    + $ cd 06formulario
-    + $ npm run serve
+
 3. Modificar vista **06formulario\src\views\Home.vue**:
     ```vue
     <template>
