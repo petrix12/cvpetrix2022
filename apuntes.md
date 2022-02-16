@@ -6057,22 +6057,41 @@
 
 
 ## Deploy en GitHub Pages
-1. Crear una nueva rama **gh-pages**:
-    + $ git checkout -b gh-pages
-2. Editar archivo **.gitignore** y eliminar línea **/dist**.
-3. Crear archivo **vue.config.js** en el directorio raíz del proyecto.
-    ```js
-    module.exports = {
-        publicPath: '/cvpetrix2022',
-    }
-    ```
-4. Compilar el proyecto:
-    + $ npm run build
-5. Subir directorio **dist** al GitHub:
-    + $ git add dist
-    + $ git commit -m "gh-pages commit"
-    + $ git subtree push --prefix dist origin gh-pages
-    + **Nota**: GitHub publicará la página automáticamente en:
-        + https://petrix12.github.io/cvpetrix2022
-6. Regresar a la rama **main**:
-    + $ git checkout main
+1. Primera vez:
+    1. Crear una nueva rama **gh-pages**:
+       + $ git checkout -b gh-pages
+    2. Editar archivo **.gitignore** y eliminar línea **/dist**.
+    3. Crear archivo **vue.config.js** en el directorio raíz del proyecto.
+        ```js
+        module.exports = {
+            publicPath: '/cvpetrix2022',
+        }
+        ```
+    4. Compilar el proyecto:
+        + $ npm run build
+    5. Subir directorio **dist** al GitHub:
+        + $ git add dist
+        + $ git commit -m "gh-pages commit"
+        + $ git subtree push --prefix dist origin gh-pages
+        + **Nota**: GitHub publicará la página automáticamente en:
+           + https://petrix12.github.io/cvpetrix2022
+    6. Regresar a la rama **main**:
+        + $ git checkout main
+2. Demás veces:
+    1. Fusionar rama **gh-pages** con **main**:
+        + $ git checkout gh-pages
+        + $ git merge main
+    2. Compilar el proyecto:
+        + $ npm run build
+    3. Subir directorio **dist** al GitHub:
+        + $ git add dist
+        + $ git commit -m "gh-pages commit"
+        + $ git subtree push --prefix dist origin gh-pages
+        + **Nota**: GitHub publicará la página automáticamente en:
+           + https://petrix12.github.io/cvpetrix2022
+    4. Regresar a la rama **main**:
+        + $ git checkout main
+3. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Deploy en GitHub Pages"
+    + $ git push -u origin main
