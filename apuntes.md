@@ -863,6 +863,22 @@
     + $ git push -u origin main
 
 
+## Personalización inicial del template
+1. Reemplazar las siguiente imagenes por las alusivas a la aplicación:
+    + public\img\about-bg.jpg
+    + public\img\call-to-action-bg.jpg
+    + public\img\facts-bg.jpg
+    + public\img\intro-carousel\1.jpg
+    + public\img\intro-carousel\2.jpg
+    + public\img\intro-carousel\3.jpg
+    + public\img\intro-carousel\4.jpg
+    + public\img\intro-carousel\5.jpg
+2. Eliminar archivo:
+    + public\img\favicon.png
+3. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Personalización inicial del template"
+    + $ git push -u origin main
 
 
 
