@@ -952,10 +952,160 @@
     + $ git push -u origin main
 
 
-## Diseño del panel administrativo
-
-
 ## Diseño del componente IntroSection
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                titulo1: '¡Hola, soy Pedro Bazó!',
+                descripcion1: 'Desarrollador Web, principalmente en los stacks MERN, MEVN, MEAN y Laravel',
+                titulo2: 'Objetivos y propósitos',
+                descripcion2: 'Me considero una persona que consigue lo que se propone, ya que estoy convencido de que los logros son los resultados de las decisiones que se toman y de las metas que nos establecemos. Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero procuro siempre hallar una solución eficiente a los problemas.',
+                titulo3: 'Tecnologías',
+                descripcion3: 'Procuro mantenerme actualizado con las diferentes tecnologías para el desarrollo web, así como en el uso de los distintos lenguajes de programación.',
+                titulo4: 'Capacitación',
+                descripcion4: 'Aprovecho muchos recursos que me ofrece internet para capacitarme continuamente, con la intención de adquirir nuevas competencias o mejorar las que ya tengo.',
+                titulo5: 'Fortaleza',
+                descripcion5: 'Mi punto fuerte es mi entusiasmo para resolver problemas, y me apropio de aquella frase de Thomas Edison: “Nuestra más grande debilidad yace en rendirnos. El camino más seguro hacia el éxito es siempre intentarlo una vez más”'
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Crear componente **src\components\IntroSection.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="intro">
+                <div class="intro-container">
+                    <div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators"></ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active" style="background-image: url('img/intro-carousel/1.jpg');">
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                        
+                                        <div class="slider-info banner-view text-center">
+                                            <div class="banner-info container">
+                                                <img src="img/autor.jpg" alt="Autor de la página" class="img-fluid rounded-circle border border-white">
+                                            </div>
+                                        </div>
+
+                                        <h2>{{ intro.titulo1 }}</h2>
+                                        <p>{{ intro.descripcion1 }}</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto">Empezar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="background-image: url('img/intro-carousel/2.jpg');">
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                        <h2>{{ intro.titulo2 }}</h2>
+                                        <p>{{ intro.descripcion2 }}</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto">Empezar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="background-image: url('img/intro-carousel/3.jpg');">
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                        <h2>{{ intro.titulo3 }}</h2>
+                                        <p>{{ intro.descripcion3 }}</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto">Empezar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="background-image: url('img/intro-carousel/4.jpg');">
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                        <h2>{{ intro.titulo4 }}</h2>
+                                        <p>{{ intro.descripcion4 }}</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto">Empezar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" style="background-image: url('img/intro-carousel/5.jpg');">
+                                <div class="carousel-container">
+                                    <div class="carousel-content">
+                                        <h2>{{ intro.titulo5 }}</h2>
+                                        <p>{{ intro.descripcion5 }}</p>
+                                        <a href="#featured-services" class="btn-get-started scrollto">Empezar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+
+                        <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'IntroSection',
+        computed: {
+            ...mapState(['intro'])
+        },
+    }
+    </script>
+    ```
+3. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+            <!-- *** Cuerpo Principal *** -->
+            ≡	
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection
+        }
+    }
+    </script>
+    ```
+4. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente IntroSection"
+    + $ git push -u origin main
+
+
+## Diseño del panel administrativo
+1. Reprogramar la tienda **src\store\index.js**:
+    ```vue
+    ```
+2. mmm
+
+
 
     ≡
     ```vue
