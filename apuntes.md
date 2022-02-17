@@ -952,6 +952,10 @@
     + $ git push -u origin main
 
 
+## Diseño del panel administrativo
+
+
+## Diseño del componente IntroSection
 
     ≡
     ```vue
