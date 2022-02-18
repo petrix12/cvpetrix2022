@@ -1099,6 +1099,132 @@
     + $ git push -u origin main
 
 
+## Diseño del componente FeaturedServicesSection
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                // Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
+                {
+                    id: 1,
+                    icon: 'ion-ios-albums',
+                    servicio: 'Sistema de Historia Clínica o similar',
+                    descripcion: 'Desarrollo de una aplicación web que permita administrar el historial de los pacientes de un centro de salud.',
+                    enlace: 'https://github.com/petrix12/Sistema-de-Historia-Cl-nica-en-Laravel'
+                },
+                {
+                    id: 2,
+                    icon: 'ion-ios-cloud-upload',
+                    servicio: 'Publicación de aplicaciones web',
+                    descripcion: 'Alojar webs a Hosting o VPS, creadas con HTML, CSS, JavaScript, PHP, MySQL, Angular, Node, Mongo, Laravel, Symfony, WP, Python y Django.',
+                    enlace: 'https://github.com/petrix12/deploy_2022'
+                },
+                {
+                    id: 3,
+                    icon: 'ion-ios-book',
+                    servicio: 'Plataforma de cursos',
+                    descripcion: 'Desarrollo de una plataforma de cursos, con un sistema completo de roles y servicios.',
+                    enlace: 'https://github.com/petrix12/PlataformaDeCursosLaravel'
+                },
+                {
+                    id: 4,
+                    icon: 'ion-ios-browsers',
+                    servicio: 'Crea una pasarela de pagos',
+                    descripcion: 'Implementación de una pasarela de pagos con Stripe y PayPal completa para un negocio virtual o tienda online.',
+                    enlace: 'https://github.com/petrix12/pasarela_pago'
+                },
+                {
+                    id: 5,
+                    icon: 'ion-ios-cart',
+                    servicio: 'Crea una ecommerce',
+                    descripcion: 'Desarrollo de una aplicación ecommerce completamente funcional.',
+                    enlace: 'https://github.com/petrix12/2021_ecommerce'
+                }
+            ]
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Crear componente **src\components\FeaturedServicesSection.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="featured-services">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 box" v-for="destacado in destacados" :key="destacado.id">
+                            <i :class="destacado.icon"></i>
+                            <h4 class="title"><a :href="destacado.enlace" target="_blank">{{ destacado.servicio }}</a></h4>
+                            <p class="description">{{ destacado.descripcion }}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'FeaturedServicesSection',
+        computed: {
+            ...mapState(['destacados'])
+        },
+    }
+    </script>
+    ```
+3. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />  
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection
+        }
+    }
+    </script>
+    ```
+4. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente FeaturedServicesSection"
+    + $ git push -u origin main
+
+
+
+
+
 ## Diseño del panel administrativo
 1. Reprogramar la tienda **src\store\index.js**:
     ```vue
