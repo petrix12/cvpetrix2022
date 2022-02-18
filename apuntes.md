@@ -1357,7 +1357,176 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Servicios
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
 
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                texto: 'Hagas lo que hagas, hazlo tan bien para que vuelvan y además traigan a sus amigos. "Walt Disney"',
+                items: [
+                    // Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
+                    {
+                        id: 1,
+                        icon: 'ion-ios-albums',
+                        servicio: 'Sistema de Historia Clínica o similar',
+                        descripcion: 'Desarrollo de una aplicación web que permita administrar el historial de los pacientes de un centro de salud.',
+                        enlace: 'https://github.com/petrix12/Sistema-de-Historia-Cl-nica-en-Laravel'
+                    },
+                    {
+                        id: 2,
+                        icon: 'ion-ios-cloud-upload',
+                        servicio: 'Publicación de aplicaciones web',
+                        descripcion: 'Alojar webs a Hosting o VPS, creadas con HTML, CSS, JavaScript, PHP, MySQL, Angular, Node, Mongo, Laravel, Symfony, WP, Python y Django.',
+                        enlace: 'https://github.com/petrix12/deploy_2022'
+                    },
+                    {
+                        id: 3,
+                        icon: 'ion-ios-book',
+                        servicio: 'Plataforma de cursos',
+                        descripcion: 'Desarrollo de una plataforma de cursos, con un sistema completo de roles y servicios.',
+                        enlace: 'https://github.com/petrix12/PlataformaDeCursosLaravel'
+                    },
+                    {
+                        id: 4,
+                        icon: 'ion-ios-browsers',
+                        servicio: 'Pasarela de pagos',
+                        descripcion: 'Implementación de una pasarela de pagos con Stripe y PayPal completa para un negocio virtual o tienda online.',
+                        enlace: 'https://github.com/petrix12/pasarela_pago'
+                    },
+                    {
+                        id: 5,
+                        icon: 'ion-ios-cart',
+                        servicio: 'Ecommerce',
+                        descripcion: 'Desarrollo de una aplicación ecommerce completamente funcional.',
+                        enlace: 'https://github.com/petrix12/2021_ecommerce'
+                    },
+                    {
+                        id: 6,
+                        icon: 'ion-ios-cog',
+                        servicio: 'Front-end',
+                        descripcion: 'Desarrollo de aplicaciones Front-end principalmente mediante el uso de las siguientes tecnologías: HTML5, CSS3 y Javascript.',
+                        enlace: '#'
+                    },
+                    {
+                        id: 7,
+                        icon: 'ion-ios-photos',
+                        servicio: 'Back-end',
+                        descripcion: 'Desarrollo de aplicaciones Back-end principalmente mediante el uso de las siguientes tecnologías: PHP, Node.js, MySQL y MongoDB.',
+                        enlace: '#'
+                    },
+                    {
+                        id: 8,
+                        icon: 'ion-ios-barcode',
+                        servicio: 'Aplicaciones de escritorio',
+                        descripcion: 'Desarrollo de aplicaciones de escritorio principalmente mediante el uso de los siguientes lenguajes de programación: Delphi, C++ Builder, Visual Basic, Microsoft C#.',
+                        enlace: '#'
+                    },
+                    {
+                        id: 9,
+                        icon: 'ion-ios-analytics',
+                        servicio: 'Hojas de cálculo',
+                        descripcion: 'Diseño de Hojas de Cálculo de Microsoft Excel, aplicando funcionalidad mediante el uso de VBA.',
+                        enlace: '#'
+                    }
+                ]
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Crear componente **src\components\Servicios.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="services">
+                <div class="container">
+                    <header class="section-header wow fadeInUp">
+                        <h3>Servicios</h3>
+                        <p>{{ servicios.texto }}</p>
+                    </header>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" v-for="servicio in servicios.items" :key="servicio.id">
+                            <div class="icon"><i :class="servicio.icon"></i></div>
+                            <h4 class="title"><a :href="servicio.enlace" target="_blank">{{ servicio.servicio }}</a></h4>
+                            <p class="description">{{ servicio.descripcion }}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'Servicios',
+        computed: {
+            ...mapState(['servicios'])
+        },
+    }
+    </script>
+    ```
+3. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                
+                <!-- *** Call To Action Section *** -->
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios
+        }
+    }
+    </script>
+    ```
+4. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Servicios"
+    + $ git push -u origin main
 
 
 
