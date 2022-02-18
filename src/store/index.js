@@ -51,7 +51,13 @@ export default createStore({
 				descripcion: 'Desarrollo de una aplicación ecommerce completamente funcional.',
 				enlace: 'https://github.com/petrix12/2021_ecommerce'
 			}
-		]
+		],
+		calidad: {
+			texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',
+			mision: 'Ofrecer herramientas y soluciones de trabajo que disminuyan las horas hombres a partir de la automatización de procesos informáticos, a través de un servicio de alta calidad, tecnologías de vanguardia y gran pasión por el desarrollo web.',
+			valores: 'Espíritu de servicio, pasión por el trabajo, superación constante, honestidad, lealtad, respeto y creatividad.',
+			vision: 'Ser un desarrollador de aplicaciones web, reconocido por la innovación, simpleza y generación de soluciones, con una alta productividad y gran espíritu de servicio.'
+		}
 	},
 	mutations: {
 	},

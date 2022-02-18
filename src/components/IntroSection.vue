@@ -1,5 +1,5 @@
 <template>
-    <div>
+	<div>
 		<section id="intro">
 			<div class="intro-container">
 				<div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
@@ -8,12 +8,12 @@
 						<div class="carousel-item active" style="background-image: url('img/intro-carousel/1.jpg');">
 							<div class="carousel-container">
 								<div class="carousel-content">
-                                    
-                                    <div class="slider-info banner-view text-center">
-                                        <div class="banner-info container">
-                                            <img src="img/autor.jpg" alt="Autor de la página" class="img-fluid rounded-circle border border-white">
-                                        </div>
-                                    </div>
+									
+									<div class="slider-info banner-view text-center">
+										<div class="banner-info container">
+											<img src="img/autor.jpg" alt="Autor de la página" class="img-fluid rounded-circle border border-white">
+										</div>
+									</div>
 
 									<h2>{{ intro.titulo1 }}</h2>
 									<p>{{ intro.descripcion1 }}</p>
@@ -71,7 +71,7 @@
 				</div>
 			</div>
 		</section>
-    </div>
+	</div>
 </template>
 
 <script>

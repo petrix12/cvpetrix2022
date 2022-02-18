@@ -868,6 +868,9 @@
     + public\img\about-bg.jpg
     + public\img\call-to-action-bg.jpg
     + public\img\facts-bg.jpg
+    + public\img\about-mission.jpg
+    + public\img\about-plan.jpg
+    + public\img\about-vision.jpg
     + public\img\intro-carousel\1.jpg
     + public\img\intro-carousel\2.jpg
     + public\img\intro-carousel\3.jpg
@@ -1106,9 +1109,9 @@
 
     export default createStore({
         state: {
-            intro: {
+            intro: [
                 ≡
-            },
+            ],
             destacados: [
                 // Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
                 {
@@ -1222,14 +1225,155 @@
     + $ git push -u origin main
 
 
+## Diseño del componente PoliticasCalidad
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',
+                mision: 'Ofrecer herramientas y soluciones de trabajo que disminuyan las horas hombres a partir de la automatización de procesos informáticos, a través de un servicio de alta calidad, tecnologías de vanguardia y gran pasión por el desarrollo web.',
+                valores: 'Espíritu de servicio, pasión por el trabajo, superación constante, honestidad, lealtad, respeto y creatividad.',
+                vision: 'Ser un desarrollador de aplicaciones web, reconocido por la innovación, simpleza y generación de soluciones, con una alta productividad y gran espíritu de servicio.'
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Crear componente **src\components\PoliticasCalidad.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="about">
+                <div class="container">
+                    <header class="section-header">
+                        <h3>Política de calidad</h3>
+                        <p>{{ calidad.texto }}</p>
+                    </header>
+                    <div class="row about-cols">
+                        <div class="col-md-4 wow fadeInUp">
+                            <div class="about-col">
+                                <div class="img">
+                                    <img src="img/about-mission.jpg" alt="" class="img-fluid">
+                                    <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                                </div>
+                                <h2 class="title"><a href="#">Misión</a></h2>
+                                <p class="alto">{{ calidad.mision }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="about-col">
+                                <div class="img">
+                                    <img src="img/about-plan.jpg" alt="" class="img-fluid">
+                                    <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                                </div>
+                                <h2 class="title"><a href="#">Valores</a></h2>
+                                <p class="alto">{{ calidad.valores }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="about-col">
+                                <div class="img">
+                                    <img src="img/about-vision.jpg" alt="" class="img-fluid">
+                                    <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                                </div>
+                                <h2 class="title"><a href="#">Visión</a></h2>
+                                <p class="alto">{{ calidad.vision }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'PoliticasCalidad',
+        computed: {
+            ...mapState(['calidad'])
+        },
+    }
+    </script>
+
+    <style scoped>
+        .alto {
+            height: 175px;
+        }
+    </style>
+    ```
+3. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad
+        }
+    }
+    </script>
+    ```
+4. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente PoliticasCalidad"
+    + $ git push -u origin main
+
+
+
+
+
+
+
 
 
 
 ## Diseño del panel administrativo
-1. Reprogramar la tienda **src\store\index.js**:
+
+
+
+
+4. Reprogramar la tienda **src\store\index.js**:
     ```vue
     ```
-2. mmm
+5. mmm
 
 
 
@@ -1240,101 +1384,12 @@
 ## Sección 8: Forumularios (v-model)
 
 
-
-
-
 ### 78. Navbar de Bootstrap 4
-1. Modificar **06formulario\public\index.html** para añadir CDN de **Bootstrap 4**:
-    ```html
-    <!DOCTYPE html>
-    <html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-        <title><%= htmlWebpackPlugin.options.title %></title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    </head>
-    <body>
-        <noscript>
-            <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-        </noscript>
-        <div id="app"></div>
-        <!-- built files will be auto injected -->
-    </body>
-    </html>
-    ```
-    + CDN Bootstrap 4: https://getbootstrap.com/docs/4.6/getting-started/introduction
-2. Modificar componente principal **06formulario\src\App.vue**:
-    ```vue
-    <template>
-        <Navbar />
-        <div class="container">
-            <router-view/>
-        </div>
-    </template>
 
-    <script>
-    import Navbar from './components/Navbar'
-    export default {
-        components: {
-            Navbar
-        }
-    }
-    </script>
-    ```
-3. Eliminar archivos:
-    + 06formulario\src\components\HelloWorld.vue
-    + 06formulario\src\assets\logo.png
-4. Crear componente **06formulario\src\components\Navbar.vue**:
-    ```vue
-    <template>
-        <div class="navbar navbar-dark bg-dark">
-            <router-link to="/" class="navbar-brand">
-                Formulario
-            </router-link>
-            <div class="d-flex">
-                <router-link to="/" class="btn btn-dark">
-                    Tareas
-                </router-link>
-            </div>
-        </div>
-    </template>
 
-    <script>
-    export default {
-
-    }
-    </script>
-    ```
 
 ### 79. v-model: text
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form>
-            <input type="text" class="form-control my-2" placeholder="Ingrese nombre" v-model="tarea.nombre">
-        </form>
-        <p>{{ tarea }}</p>
-    </template>
 
-    <script>
-
-    export default {
-        name: 'Home',
-        components: {
-        },
-        data() {
-            return {
-                tarea: {
-                    nombre: ''
-                }
-            }
-        }
-    }
-    </script>
-    ```
 
 ### 80. v-model: checkbox
 1. Modificar vista **06formulario\src\views\Home.vue**:
@@ -2544,7 +2599,7 @@
 
 ### 115. Ingreso de usuario (Login)
 + https://firebase.google.com/docs/reference/rest/auth#section-sign-in-email-password
-1. Agregar ruta ing**reso en **09api_auth_firebase\src\router\index.js**:
+1. Agregar ruta **ingreso en **09api_auth_firebase\src\router\index.js**:
     ```js
     ≡
     const routes = [
