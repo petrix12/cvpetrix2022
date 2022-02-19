@@ -1529,7 +1529,108 @@
     + $ git push -u origin main
 
 
+## Diseño del componente CallToAction
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
 
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                texto: 'Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero estoy convencido de que encontraremos una muy buena solución.'
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Crear componente **src\components\CallToAction.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="call-to-action" class="wow fadeIn">
+                <div class="container text-center">
+                    <h3>Call To Action</h3>
+                    <p>{{ accion.texto }}</p>
+                    <a class="cta-btn" href="#portfolio">Call To Action</a>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'CallToAction',
+        computed: {
+            ...mapState(['accion'])
+        },
+    }
+    </script>
+    ```
+3. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                
+                <!-- *** Skills Section *** -->
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction
+        }
+    }
+    </script>
+    ```
+4. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente CallToAction"
+    + $ git push -u origin main
 
 
 

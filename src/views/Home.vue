@@ -8,16 +8,8 @@
 			<FeaturedServicesSection />
 			<PoliticasCalidad />
 			<Servicios />
+			<CallToAction />
 			
-			
-			<!-- *** Call To Action Section *** -->
-			<section id="call-to-action" class="wow fadeIn">
-				<div class="container text-center">
-					<h3>Call To Action</h3>
-					<p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<a class="cta-btn" href="#">Call To Action</a>
-				</div>
-			</section>
 
 			<!-- *** Skills Section *** -->
 			<section id="skills">
@@ -516,6 +508,7 @@ import IntroSection from '@/components/IntroSection'
 import FeaturedServicesSection from '@/components/FeaturedServicesSection'
 import PoliticasCalidad from '@/components/PoliticasCalidad'
 import Servicios from '@/components/Servicios'
+import CallToAction from '@/components/CallToAction'
 
 export default {
 	name: 'Home',
@@ -524,7 +517,8 @@ export default {
 		IntroSection,
 		FeaturedServicesSection,
 		PoliticasCalidad,
-		Servicios
+		Servicios,
+		CallToAction
 	}
 }
 </script>

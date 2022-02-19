@@ -126,6 +126,9 @@ export default createStore({
 					enlace: '#'
 				}
 			]
+		},
+		accion: {
+			texto: 'Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero estoy convencido de que encontraremos una muy buena solución.'
 		}
 	},
 	mutations: {
