@@ -1792,6 +1792,142 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Facts
+1. Reemplazar la imagen **public\img\facts-img.png** por una acorde con nuestro proyecto.
+2. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                ≡
+            },
+            skills: {
+                ≡
+            },
+            facts: {
+                texto: '“Vive como si fueses a morir mañana. Aprende como si fueses a vivir para siempre”. — Mahatma Gandhi',
+                cursos: 85,
+                horas: 824
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+3. Crear componente **src\components\Facts.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="facts"  class="wow fadeIn">
+                <div class="container">
+                    <header class="section-header">
+                        <h3>Autoaprendizaje</h3>
+                        <p>{{ facts.texto }}</p>
+                    </header>
+                    <div class="row counters">
+                        <div class="col-lg-6 col-6 text-center">
+                            <span data-toggle="counter-up">{{ facts.cursos }}</span>
+                            <p>Cursos realizados</p>
+                        </div>
+                        <div class="col-lg-6 col-6 text-center">
+                            <span data-toggle="counter-up">{{ facts.horas }}</span>
+                            <p>Horas invertidas</p>
+                        </div>
+                    </div>
+                    <div class="facts-img">
+                        <img src="img/facts-img.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'Facts',
+        computed: {
+            ...mapState(['facts'])
+        },
+    }
+    </script>
+    ```
+4. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                <Skills />
+                <Facts />
+                
+                <!-- *** Portfolio Section *** -->
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+    import Skills from '@/components/Skills'
+    import Facts from '@/components/Facts'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction,
+            Skills,
+            Facts
+        }
+    }
+    </script>
+    ```
+5. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Facts"
+    + $ git push -u origin main
+
+
+
+
+
 
 
 ## Diseño del panel administrativo

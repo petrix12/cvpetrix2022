@@ -162,6 +162,11 @@ export default createStore({
 					img: 'mean.png'
 				}
 			]
+		},
+		facts: {
+			texto: '“Vive como si fueses a morir mañana. Aprende como si fueses a vivir para siempre”. — Mahatma Gandhi',
+			cursos: 85,
+			horas: 824
 		}
 	},
 	mutations: {
