@@ -1633,6 +1633,165 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Skills
+1. Guardar imagenes de stacks en la ubicación **public\img\stacks**:
+    + public\img\stacks\laravel-vue.png
+    + public\img\stacks\mevn.png
+    + public\img\stacks\mern.png
+    + public\img\stacks\mean.png
+2. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                ≡
+            },
+            skills: {
+                texto: 'Principales stacks web con los que he tenido el placer de trabajar.',
+                stacks: [
+                    {
+                        id: 1,
+                        stack: 'Laravel - Vue.js',
+                        color_bootstrap: 'bg-dark',
+                        progressbar: 90,
+                        img: 'laravel-vue.png'
+                    },
+                    {
+                        id: 2,
+                        stack: 'MEVN',
+                        color_bootstrap: 'bg-success',
+                        progressbar: 80,
+                        img: 'mevn.png'
+                    },
+                    {
+                        id: 3,
+                        stack: 'MERN',
+                        color_bootstrap: 'bg-info',
+                        progressbar: 75,
+                        img: 'mern.png'
+                    },
+                    {
+                        id: 4,
+                        stack: 'MEAN',
+                        color_bootstrap: 'bg-danger',
+                        progressbar: 55,
+                        img: 'mean.png'
+                    }
+                ]
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+3. Crear componente **src\components\Skills.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="skills">
+                <div class="container">
+                    <header class="section-header">
+                        <h3>Tecnologías trabajadas</h3>
+                        <p>{{ skills.texto }}</p>
+                    </header>
+                    <div class="skills-content">  
+                        <div class="progress" v-for="stack in skills.stacks" :key="stack.id">
+                            <div class="progress-bar" :class="stack.color_bootstrap" role="progressbar" :aria-valuenow="stack.progressbar" aria-valuemin="0" aria-valuemax="100">
+                                <span class="skill">{{ stack.stack }}<i class="val">{{ stack.progressbar }}%</i></span>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-5">
+                            <div class="col-lg-3 col-6 text-center mt-5" v-for="stack in skills.stacks" :key="stack.id">
+                                <img :src="'/img/stacks/' + stack.img" :alt="'Stack ' + stack.stack" height="140">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'Skills',
+        computed: {
+            ...mapState(['skills'])
+        },
+    }
+    </script>
+    ```
+5. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                <Skills />
+                
+                <!-- *** Facts Section *** -->
+                ≡
+            </main>  
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+    import Skills from '@/components/Skills'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction,
+            Skills
+        }
+    }
+    </script>
+    ```
+6. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Skills"
+    + $ git push -u origin main
+
+
 
 
 ## Diseño del panel administrativo

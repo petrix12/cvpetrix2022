@@ -129,6 +129,39 @@ export default createStore({
 		},
 		accion: {
 			texto: 'Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero estoy convencido de que encontraremos una muy buena solución.'
+		},
+		skills: {
+			texto: 'Principales stacks web con los que he tenido el placer de trabajar.',
+			stacks: [
+				{
+					id: 1,
+					stack: 'Laravel - Vue.js',
+					color_bootstrap: 'bg-dark',
+					progressbar: 90,
+					img: 'laravel-vue.png'
+				},
+				{
+					id: 2,
+					stack: 'MEVN',
+					color_bootstrap: 'bg-success',
+					progressbar: 80,
+					img: 'mevn.png'
+				},
+				{
+					id: 3,
+					stack: 'MERN',
+					color_bootstrap: 'bg-info',
+					progressbar: 75,
+					img: 'mern.png'
+				},
+				{
+					id: 4,
+					stack: 'MEAN',
+					color_bootstrap: 'bg-danger',
+					progressbar: 55,
+					img: 'mean.png'
+				}
+			]
 		}
 	},
 	mutations: {
