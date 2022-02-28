@@ -13,7 +13,8 @@
 						<li class="menu-active"><a href="#intro">Inicio</a></li>
 						<li><a href="#portfolio">Portafolio</a></li>
 						<li><a href="#services">Servicios</a></li>
-						<li><a href="#about">Experiencia</a></li>
+						<!-- <li><a href="#about">Experiencia</a></li> -->
+						<li><a href="#clients">Experiencia</a></li>
 						<li><a href="#team">Estudios</a></li>
 						<!--
                         <li class="menu-has-children"><a href="">Drop Down</a>

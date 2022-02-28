@@ -559,7 +559,7 @@
                     </div>
                 </section>
                 
-                <!-- *** Clients Section *** -->
+                <!-- *** Testimonials Section *** -->
                 <section id="testimonials" class="section-bg wow fadeInUp">
                     <div class="container">
                         <header class="section-header">
@@ -903,7 +903,7 @@
                             <li class="menu-active"><a href="#intro">Inicio</a></li>
                             <li><a href="#portfolio">Portafolio</a></li>
                             <li><a href="#services">Servicios</a></li>
-                            <li><a href="#about">Experiencia</a></li>
+                            <li><a href="#clients">Experiencia</a></li>
                             <li><a href="#team">Estudios</a></li>
                             <!--
                             <li class="menu-has-children"><a href="">Drop Down</a>
@@ -2300,8 +2300,8 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <ul id="portfolio-flters">
-                                <li data-filter="*">Todos</li>
-                                <li data-filter=".filter-destacados" class="filter-active">Destacados</li>
+                                <li data-filter="*" class="filter-active">Todos</li>
+                                <li data-filter=".filter-destacados">Destacados</li>
                                 <li data-filter=".filter-web">App Web</li>
                                 <li data-filter=".filter-otros">Otros</li>
                             </ul>
@@ -2328,7 +2328,7 @@
                                 <div class="d-flex justify-content-between align-items-center p-2">
                                     <img v-for="(tecnologia, index) in proyecto.tecnologias" :key="index"
                                         :src="`img/logos/${tecnologia}.png`" width="45" height="45"
-                                        :alt="`Logo ${tecnologia}`" title="Visual Basic 6.0">
+                                        :alt="`Logo ${tecnologia}`" title="tecnologia">
                                     <small class="text-muted"><strong>{{ proyecto.anho }}</strong></small>
                                 </div>
                             </div>
@@ -2450,6 +2450,554 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Clients
+1. Eliminar el contenido de la carpeta **public\img\clients**.
+2. Guardar todos los logos de clientes en formato **png** relacionados con la aplicación en **public\img\clients**.
+3. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                ≡
+            },
+            skills: {
+                ≡
+            },
+            facts: {
+                ≡
+            },
+            portafolio: { 
+                ≡
+            },
+            clients: {
+                entes: [
+                    {
+                        id: 15,
+                        nombre: 'sefar'
+                    },
+                    {
+                        id: 14,
+                        nombre: 'pdvsa'
+                    },
+                    {
+                        id: 13,
+                        nombre: 'ugma'
+                    },
+                    {
+                        id: 12,
+                        nombre: 'digit'
+                    },
+                    {
+                        id: 11,
+                        nombre: 'agrotecnica'
+                    },
+                    {
+                        id: 10,
+                        nombre: 'costa_consultores'
+                    },
+                    {
+                        id: 9,
+                        nombre: 'proynca'
+                    },
+                    {
+                        id: 8,
+                        nombre: 'eni'
+                    },
+                    {
+                        id: 7,
+                        nombre: 'dacion'
+                    },
+                    {
+                        id: 6,
+                        nombre: 'los_arcos'
+                    },
+                    {
+                        id: 5,
+                        nombre: 'verbal'
+                    },
+                    {
+                        id: 4,
+                        nombre: 'ucv'
+                    },
+                    {
+                        id: 3,
+                        nombre: 'ing_ucv'
+                    },
+                    {
+                        id: 2,
+                        nombre: 'dioc'
+                    },
+                    {
+                        id: 1,
+                        nombre: 'ucv_petroleo'
+                    }
+                ],
+                experiencias: [
+                    {
+                        id: 17,
+                        inicio_mes: 'Ago',
+                        inicio_anho: '2019',
+                        fin_mes: 'Actual',
+                        fin_anho: 'Actual',
+                        cargo: 'Líder de Control y Seguimiento y Desarrollador Web',
+                        descripcion: 'Realizar seguimiento a los procesos de captación de clientes y desarrollo de aplicaciones web, usando Laravel y Vue.js como principales Framework de desarrollo.',
+                        empresa: 'Sefar Universal S.L. Modalidad remoto.',
+                        img: '',
+                        logos: ['sefar']
+                    },
+                    {
+                        id: 16,
+                        inicio_mes: 'May',
+                        inicio_anho: '2016',
+                        fin_mes: 'Jul',
+                        fin_anho: '2021',
+                        cargo: 'Analista Mayor de Presupuesto',
+                        descripcion: 'Consolidar ejercicios presupuestarios de operaciones, inversiones y compras. Automatización de reportes con VBA, Delphi, Access y MySQL. Cargar en SAP las cifras de los resultados obtenidos.',
+                        empresa: 'Petróleos de Venezuela C.A. (PDVSA). Gerencia de Administración y Finanzas PDVSA Comercio y Suministro. La Campiña. Caracas.',
+                        img: '',
+                        logos: ['pdvsa']
+                    },
+                    {
+                        id: 15,
+                        inicio_mes: 'Mar',
+                        inicio_anho: '2014',
+                        fin_mes: 'May',
+                        fin_anho: '2016',
+                        cargo: 'Analista de Presupuesto',
+                        descripcion: 'Asignación del presupuesto de operaciones e inversiones, optimizando el uso de los recursos asignados, y automatización de reportes con VBA, VB6, SQL Server y Access.',
+                        empresa: 'Petróleos de Venezuela C.A. (PDVSA). Gerencia de Planificación Presupuesto y Gestión. Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['pdvsa']
+                    },
+                    {
+                        id: 14,
+                        inicio_mes: 'Mar',
+                        inicio_anho: '2008',
+                        fin_mes: 'Feb',
+                        fin_anho: '2015',
+                        cargo: 'Profesor de Programación',
+                        descripcion: 'Impartir clases de programación en Visual Basic 6, Visual Basic para Aplicaciones y su conexión con bases de datos.',
+                        empresa: 'Universidad Gran Mariscal de Ayacucho (UGMA). El Tigre. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['ugma']
+                    },
+                    {
+                        id: 13,
+                        inicio_mes: 'Ene',
+                        inicio_anho: '2010',
+                        fin_mes: 'Mar',
+                        fin_anho: '2014',
+                        cargo: 'Supervisor de Presupuesto',
+                        descripcion: 'Verificar el cumplimiento de la correcta aplicación de los cargos al presupuesto de inversión y de gastos. Evaluar, recomendar, alertar acciones y automatización de reportes con VBA y Access.',
+                        empresa: 'Petróleos de Venezuela C.A. (PDVSA). Gerencia de Procesos de Superficie. Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['pdvsa']
+                    },
+                    {
+                        id: 12,
+                        inicio_mes: 'Ene',
+                        inicio_anho: '2009',
+                        fin_mes: 'Ene',
+                        fin_anho: '2010',
+                        cargo: 'Planificador de proyectos',
+                        descripcion: 'Aplicar procedimientos para planificar proyectos de inversiones y realizar el seguimiento físico y financiero en sus diferentes fases, y automatización de reportes con Delphi y VBA.',
+                        empresa: 'Petróleos de Venezuela C.A. (PDVSA). Superintendencia de Construcción de Obras Electromecánicas. Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['pdvsa']
+                    },
+                    {
+                        id: 11,
+                        inicio_mes: 'Feb',
+                        inicio_anho: '2008',
+                        fin_mes: 'Ene',
+                        fin_anho: '2009',
+                        cargo: 'Planificador de proyectos',
+                        descripcion: 'Aplicar procedimientos para planificar proyectos de inversiones y realizar el seguimiento físico y financiero en sus diferentes fases.',
+                        empresa: 'Digit Automatización. Superintendencia de Construcción de Obras Electromecánicas. Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['digit', 'pdvsa']
+                    },
+                    {
+                        id: 10,
+                        inicio_mes: 'Jul',
+                        inicio_anho: '2007',
+                        fin_mes: 'Feb',
+                        fin_anho: '2008',
+                        cargo: 'Controlador físico de proyectos',
+                        descripcion: 'Control y seguimiento a las actividades de los proyectos. Consolidar y analizar los reportes de avance de obras de proyectos.',
+                        empresa: 'Agrotécnica Aguilera C.A. Superintendencia de Infraestructura Mediano. Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['agrotecnica', 'pdvsa']
+                    },
+                    {
+                        id: 9,
+                        inicio_mes: 'Sep',
+                        inicio_anho: '2006',
+                        fin_mes: 'Jul',
+                        fin_anho: '2007',
+                        cargo: 'Inspector de Construcción',
+                        descripcion: 'Diseñar y supervisar la construcción de líneas de flujo y transferencia. Elaborar Memorias Descriptivas asociadas a los proyectos de líneas de flujo.',
+                        empresa: 'Costa Consultores 2030 C.A. Departamento de Infraestructura Dacion. Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['costa_consultores', 'pdvsa', 'dacion']
+                    },
+                    {
+                        id: 8,
+                        inicio_mes: 'Abr',
+                        inicio_anho: '2006',
+                        fin_mes: 'Sep',
+                        fin_anho: '2006',
+                        cargo: 'Líder de Construcción',
+                        descripcion: 'Diseño y simulación de líneas de flujo (Hysys ‐ Pipephase). Elaboración de Memorias Descriptivas para construcción de líneas y Evaluaciones Económicas para los Proyectos de líneas de flujo.',
+                        empresa: 'PROYNCA. Procesos y Negocios Integrales C.A. Departamento de Infraestructura Dacion Distrito San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['proynca', 'pdvsa', 'dacion']
+                    },
+                    {
+                        id: 7,
+                        inicio_mes: 'Ago',
+                        inicio_anho: '2004',
+                        fin_mes: 'Abr',
+                        fin_anho: '2006',
+                        cargo: 'Ingeniero de Procesos',
+                        descripcion: 'Seguimiento a los proyectos de Ingeniería. Elaboración de Manuales de Operación de estaciones petroleras. Elaboración de planos de procesos (PFD). Sugerencias de mejoras al proceso de tratamiento de crudo.',
+                        empresa: 'PROYNCA. Procesos y Negocios Integrales C.A. Departamento de Ingenieria ENI Dacion. San Tomé. Estado Anzoátegui.',
+                        img: '',
+                        logos: ['proynca', 'eni', 'dacion']
+                    },
+                    {
+                        id: 6,
+                        inicio_mes: 'Ene',
+                        inicio_anho: '2004',
+                        fin_mes: 'Ago',
+                        fin_anho: '2004',
+                        cargo: 'Profesor de Matemáticas',
+                        descripcion: 'Encargado de dictar clases de matemáticas a cuatro secciones de estudiantes de 8vo grado.',
+                        empresa: 'U. E. Colegio Los Arcos. Urb. La Esmeralda. Baruta.',
+                        img: '',
+                        logos: ['los_arcos']
+                    },
+                    {
+                        id: 5,
+                        inicio_mes: 'Ago',
+                        inicio_anho: '2002',
+                        fin_mes: 'Sep',
+                        fin_anho: '2004',
+                        cargo: 'Instructor de cursos preuniversitarios',
+                        descripcion: 'Encargado de dictar clases de habilidad numérica, física, química y razonamiento mecánico en algunas unidades educativas de Venezuela, como el Colegio “Los Arcos” (Edo. Miranda), Colegio “La Concepción” (Edo. Miranda) y Colegio “Guayamurí” (Margarita).',
+                        empresa: 'VERBAL. Corporación Educativa. Chacao.',
+                        img: '',
+                        logos: ['verbal']
+                    },
+                    {
+                        id: 4,
+                        inicio_mes: 'Mar',
+                        inicio_anho: '2003',
+                        fin_mes: 'Sep',
+                        fin_anho: '2003',
+                        cargo: 'Supervisor de obras de mantenimiento',
+                        descripcion: 'Supervisar y velar que las instalaciones de algunas organizaciones y viviendas se encontrasen en perfecto estado de funcionamiento.',
+                        empresa: 'Valle de Aramín S.L.U. Empresa de Construcción y Mantenimiento. Oviedo. España.',
+                        img: '',
+                        logos: ['generico']
+                    },
+                    {
+                        id: 3,
+                        inicio_mes: 'Mar',
+                        inicio_anho: '1996',
+                        fin_mes: 'Dic',
+                        fin_anho: '2002',
+                        cargo: 'Preparador de programación',
+                        descripcion: 'Asistir a los estudiantes en los laboratorios de microcomputadores, en Programación (C/C++, Pascal y Delphi), AutoCAD, Access, Excel y Word.',
+                        empresa: 'Departamento de Investigación de Operaciones y Computación (DIOC). Escuela Básica. Facultad de Ingenieria. Universidad Central de Venezuela. Ciudad Universitaria. Caracas.',
+                        img: '',
+                        logos: ['ucv', 'ing_ucv', 'dioc']
+                    },
+                    {
+                        id: 2,
+                        inicio_mes: 'Mar',
+                        inicio_anho: '1995',
+                        fin_mes: 'Mar',
+                        fin_anho: '1996',
+                        cargo: 'Encargado de sala de computadoras',
+                        descripcion: 'Encargado de asistir técnicamente a los usuarios de la sala de micros, y procurar el correcto funcionamiento de los equipos mediante el mantenimiento de software y hardware.',
+                        empresa: 'Dirección de Petróleo y Sala de Micros. Escuela de Ingeniería de Petróleo. Facultad de Ingenieria. Universidad Central de Venezuela. Ciudad Universitaria. Caracas.',
+                        img: '',
+                        logos: ['ucv', 'ucv_ing_pet']
+                    },
+                    {
+                        id: 1,
+                        inicio_mes: 'Ago',
+                        inicio_anho: '1993',
+                        fin_mes: 'Sep',
+                        fin_anho: '1995',
+                        cargo: 'Preparador de matemáticas y asistente en talleres vacacionales',
+                        descripcion: 'Asistente de los eventos en los talleres vacacionales para niños y niñas entre 7 y 12 años y encargado de dictar clases de reparación de matemáticas a estudiantes de 7mo a 9no grado de algunas unidades educativas del Estado Vargas.',
+                        empresa: 'APROFAM (Asociación Promoción Familia). Institución financiada por PDVSA. Macuto. Estado Vargas.',
+                        img: '',
+                        logos: ['pdvsa']
+                    }
+                ]
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+
+4. Guardar todas las imagenenes relacionada al documento **experiencias** en formato **png** y en **public\img\experiencias** y nombrarla según su número de **id**.
+5. Crear componente **src\components\Clients.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="clients" class="wow fadeInUp">
+                <div class="container">
+                    <header class="section-header">
+                        <h3>Experiencia profesional</h3>
+                    </header>
+                    <div class="owl-carousel clients-carousel">
+                        <img class="p-2" v-for="ente in clients.entes" :key="ente.id" :src="`img/clients/${ente.nombre}.png`" :alt="ente.nombre">
+                    </div>
+                </div>
+            </section>
+
+            <section id="experiencia">
+                <div class="container">
+                    <div class="row about-cols">
+                        <div v-for="(experiencia, item) in clients.experiencias" :key="item" class="col-md-4 col-lg-3 wow fadeInUp" :data-wow-delay="estiloCard(item + 1)">
+                            <div class="about-col">
+                                <div class="img">
+                                    <img :src="`img/experiencias/${experiencia.id}.png`" :alt="`Imagen ${experiencia.cargo}`" class="img-fluid">
+                                </div>
+                                <h2 class="cargo">{{ experiencia.cargo }}</h2>
+                                <p class="descripcion p-2">{{ experiencia.descripcion }}</p>
+                                <p class="empresa p-2">
+                                    {{ experiencia.empresa }}
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center p-2 lapso">
+                                    <small class="text-muted"><strong>{{ `${experiencia.inicio_mes} ${experiencia.inicio_anho}` }}</strong></small>
+                                    <img v-for="(logo, i) in experiencia.logos" :key="i"
+                                        :src="`img/logos/${logo}.png`" width="20" height="20"
+                                        :alt="`Logo ${logo}`" :title="logo">
+                                    <small class="text-muted"><strong>{{ experiencia.fin_anho === 'Actual' ? 'Actual' : `${experiencia.fin_mes} ${experiencia.fin_anho}` }}</strong></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'Clients',
+        computed: {
+            ...mapState(['clients'])
+        },
+        methods: {
+            estiloCard(item){
+                const tiempo = item % 3
+                switch (tiempo) {
+                case 1:
+                    return '0.0s'
+                case 2:
+                    return '0.1s'
+                case 0:
+                    return '0.2s'
+                default:
+                    return '0.0s'
+                }
+            }
+        }
+    }
+    </script>
+
+    <style scoped>
+        #experiencia {
+            background-size: cover;
+            padding: 60px 0 40px 0;
+            position: relative;
+        }
+
+        #experiencia::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 9;
+        }
+
+        #experiencia .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        #experiencia .about-col {
+            background: #fff;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        #experiencia .about-col .img {
+            position: relative;
+        }
+
+        #experiencia .about-col .img img {
+            border-radius: 4px 4px 0 0;
+        }
+
+        #experiencia .about-col .icon {
+            width: 32px;
+            height: 32px;
+            padding-top: 0px;
+            text-align: center;
+            position: absolute;
+            border-radius: 50%;
+            text-align: center;
+            border: 2px solid #fff;
+            left: 40%;
+            bottom: 7px;
+            transition: 0.3s;
+        }
+
+        #experiencia .about-col h2 {
+            color: #000;
+            text-align: center;
+            font-weight: 700;
+            font-size: 20px;
+            padding: 0;
+            margin: 40px 0 12px 0;
+        }
+
+        #experiencia .about-col h2 a {
+            color: #000;
+        }
+
+        #experiencia .about-col h2 a:hover {
+            color: #18d26e;
+        }
+
+        #experiencia .about-col p {
+            font-size: 14px;
+            line-height: 24px;
+            color: #333;
+            margin-bottom: 0;
+            padding: 0 20px 20px 20px;
+        }
+
+        .cargo {
+            height: 20px !important;
+            font-size: 80% !important;
+            margin-top: 0.5rem !important;
+            line-height: 1.5em !important;
+        }
+
+        .descripcion {
+            height: 100px !important;
+            font-size: 70% !important;
+            margin-top: 1.3rem !important;
+            line-height: 1.5em !important;
+            text-align: justify;
+        }
+
+        .empresa {
+            height: 65px !important;
+            font-size: 55% !important;
+            margin-top: 0.5rem !important;
+            line-height: 1.5em !important;
+            font-weight: bold;
+        }
+
+        .lapso {
+            height: 30px !important;
+            font-size: 70% !important;
+        }
+    </style>
+    ```
+6. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                <Skills />
+                <Facts />
+                <Portfolio />
+                <Clients />
+                
+                <!-- *** Testimonials Section *** -->
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+    import Skills from '@/components/Skills'
+    import Facts from '@/components/Facts'
+    import Portfolio from '@/components/Portfolio'
+    import Clients from '@/components/Clients'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction,
+            Skills,
+            Facts,
+		    Portfolio,
+            Clients
+        }
+    }
+    </script>
+    ```
+6. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Clients"
+    + $ git push -u origin main
 
 
 

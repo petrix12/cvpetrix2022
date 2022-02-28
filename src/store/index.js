@@ -481,6 +481,276 @@ export default createStore({
 					tecnologias: ['hp']
 				}
 			]
+		},
+		clients: {
+			entes: [
+				{
+					id: 15,
+					nombre: 'sefar'
+				},
+				{
+					id: 14,
+					nombre: 'pdvsa'
+				},
+				{
+					id: 13,
+					nombre: 'ugma'
+				},
+				{
+					id: 12,
+					nombre: 'digit'
+				},
+				{
+					id: 11,
+					nombre: 'agrotecnica'
+				},
+				{
+					id: 10,
+					nombre: 'costa_consultores'
+				},
+				{
+					id: 9,
+					nombre: 'proynca'
+				},
+				{
+					id: 8,
+					nombre: 'eni'
+				},
+				{
+					id: 7,
+					nombre: 'dacion'
+				},
+				{
+					id: 6,
+					nombre: 'los_arcos'
+				},
+				{
+					id: 5,
+					nombre: 'verbal'
+				},
+				{
+					id: 4,
+					nombre: 'ucv'
+				},
+				{
+					id: 3,
+					nombre: 'ing_ucv'
+				},
+				{
+					id: 2,
+					nombre: 'dioc'
+				},
+				{
+					id: 1,
+					nombre: 'ucv_petroleo'
+				}
+			],
+			experiencias: [
+				{
+					id: 17,
+					inicio_mes: 'Ago',
+					inicio_anho: '2019',
+					fin_mes: 'Actual',
+					fin_anho: 'Actual',
+					cargo: 'Líder de Control y Seguimiento y Desarrollador Web',
+					descripcion: 'Realizar seguimiento a los procesos de captación de clientes y desarrollo de aplicaciones web, usando Laravel y Vue.js como principales Framework de desarrollo.',
+					empresa: 'Sefar Universal S.L. Modalidad remoto.',
+					img: '',
+					logos: ['sefar']
+				},
+				{
+					id: 16,
+					inicio_mes: 'May',
+					inicio_anho: '2016',
+					fin_mes: 'Jul',
+					fin_anho: '2021',
+					cargo: 'Analista Mayor de Presupuesto',
+					descripcion: 'Consolidar ejercicios presupuestarios de operaciones, inversiones y compras. Automatización de reportes con VBA, Delphi, Access y MySQL. Cargar en SAP las cifras de los resultados obtenidos.',
+					empresa: 'Petróleos de Venezuela C.A. (PDVSA). Gerencia de Administración y Finanzas PDVSA Comercio y Suministro. La Campiña. Caracas.',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 15,
+					inicio_mes: 'Mar',
+					inicio_anho: '2014',
+					fin_mes: 'May',
+					fin_anho: '2016',
+					cargo: 'Analista de Presupuesto',
+					descripcion: 'Asignación del presupuesto de operaciones e inversiones, optimizando el uso de los recursos asignados, y automatización de reportes con VBA, VB6, SQL Server y Access.',
+					empresa: 'Petróleos de Venezuela C.A. (PDVSA). Gerencia de Planificación Presupuesto y Gestión. Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 14,
+					inicio_mes: 'Mar',
+					inicio_anho: '2008',
+					fin_mes: 'Feb',
+					fin_anho: '2015',
+					cargo: 'Profesor de Programación',
+					descripcion: 'Impartir clases de programación en Visual Basic 6, Visual Basic para Aplicaciones y su conexión con bases de datos.',
+					empresa: 'Universidad Gran Mariscal de Ayacucho (UGMA). El Tigre. Estado Anzoátegui.',
+					img: '',
+					logos: ['ugma']
+				},
+				{
+					id: 13,
+					inicio_mes: 'Ene',
+					inicio_anho: '2010',
+					fin_mes: 'Mar',
+					fin_anho: '2014',
+					cargo: 'Supervisor de Presupuesto',
+					descripcion: 'Verificar el cumplimiento de la correcta aplicación de los cargos al presupuesto de inversión y de gastos. Evaluar, recomendar, alertar acciones y automatización de reportes con VBA y Access.',
+					empresa: 'Petróleos de Venezuela C.A. (PDVSA). Gerencia de Procesos de Superficie. Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 12,
+					inicio_mes: 'Ene',
+					inicio_anho: '2009',
+					fin_mes: 'Ene',
+					fin_anho: '2010',
+					cargo: 'Planificador de proyectos',
+					descripcion: 'Aplicar procedimientos para planificar proyectos de inversiones y realizar el seguimiento físico y financiero en sus diferentes fases, y automatización de reportes con Delphi y VBA.',
+					empresa: 'Petróleos de Venezuela C.A. (PDVSA). Superintendencia de Construcción de Obras Electromecánicas. Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 11,
+					inicio_mes: 'Feb',
+					inicio_anho: '2008',
+					fin_mes: 'Ene',
+					fin_anho: '2009',
+					cargo: 'Planificador de proyectos',
+					descripcion: 'Aplicar procedimientos para planificar proyectos de inversiones y realizar el seguimiento físico y financiero en sus diferentes fases.',
+					empresa: 'Digit Automatización. Superintendencia de Construcción de Obras Electromecánicas. Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['digit', 'pdvsa']
+				},
+				{
+					id: 10,
+					inicio_mes: 'Jul',
+					inicio_anho: '2007',
+					fin_mes: 'Feb',
+					fin_anho: '2008',
+					cargo: 'Controlador físico de proyectos',
+					descripcion: 'Control y seguimiento a las actividades de los proyectos. Consolidar y analizar los reportes de avance de obras de proyectos.',
+					empresa: 'Agrotécnica Aguilera C.A. Superintendencia de Infraestructura Mediano. Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['agrotecnica', 'pdvsa']
+				},
+				{
+					id: 9,
+					inicio_mes: 'Sep',
+					inicio_anho: '2006',
+					fin_mes: 'Jul',
+					fin_anho: '2007',
+					cargo: 'Inspector de Construcción',
+					descripcion: 'Diseñar y supervisar la construcción de líneas de flujo y transferencia. Elaborar Memorias Descriptivas asociadas a los proyectos de líneas de flujo.',
+					empresa: 'Costa Consultores 2030 C.A. Departamento de Infraestructura Dacion. Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['costa_consultores', 'pdvsa', 'dacion']
+				},
+				{
+					id: 8,
+					inicio_mes: 'Abr',
+					inicio_anho: '2006',
+					fin_mes: 'Sep',
+					fin_anho: '2006',
+					cargo: 'Líder de Construcción',
+					descripcion: 'Diseño y simulación de líneas de flujo (Hysys ‐ Pipephase). Elaboración de Memorias Descriptivas para construcción de líneas y Evaluaciones Económicas para los Proyectos de líneas de flujo.',
+					empresa: 'PROYNCA. Procesos y Negocios Integrales C.A. Departamento de Infraestructura Dacion Distrito San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['proynca', 'pdvsa', 'dacion']
+				},
+				{
+					id: 7,
+					inicio_mes: 'Ago',
+					inicio_anho: '2004',
+					fin_mes: 'Abr',
+					fin_anho: '2006',
+					cargo: 'Ingeniero de Procesos',
+					descripcion: 'Seguimiento a los proyectos de Ingeniería. Elaboración de Manuales de Operación de estaciones petroleras. Elaboración de planos de procesos (PFD). Sugerencias de mejoras al proceso de tratamiento de crudo.',
+					empresa: 'PROYNCA. Procesos y Negocios Integrales C.A. Departamento de Ingenieria ENI Dacion. San Tomé. Estado Anzoátegui.',
+					img: '',
+					logos: ['proynca', 'eni', 'dacion']
+				},
+				{
+					id: 6,
+					inicio_mes: 'Ene',
+					inicio_anho: '2004',
+					fin_mes: 'Ago',
+					fin_anho: '2004',
+					cargo: 'Profesor de Matemáticas',
+					descripcion: 'Encargado de dictar clases de matemáticas a cuatro secciones de estudiantes de 8vo grado.',
+					empresa: 'U. E. Colegio Los Arcos. Urb. La Esmeralda. Baruta.',
+					img: '',
+					logos: ['los_arcos']
+				},
+				{
+					id: 5,
+					inicio_mes: 'Ago',
+					inicio_anho: '2002',
+					fin_mes: 'Sep',
+					fin_anho: '2004',
+					cargo: 'Instructor de cursos preuniversitarios',
+					descripcion: 'Encargado de dictar clases de habilidad numérica, física, química y razonamiento mecánico en algunas unidades educativas de Venezuela, como el Colegio “Los Arcos” (Edo. Miranda), Colegio “La Concepción” (Edo. Miranda) y Colegio “Guayamurí” (Margarita).',
+					empresa: 'VERBAL. Corporación Educativa. Chacao.',
+					img: '',
+					logos: ['verbal']
+				},
+				{
+					id: 4,
+					inicio_mes: 'Mar',
+					inicio_anho: '2003',
+					fin_mes: 'Sep',
+					fin_anho: '2003',
+					cargo: 'Supervisor de obras de mantenimiento',
+					descripcion: 'Supervisar y velar que las instalaciones de algunas organizaciones y viviendas se encontrasen en perfecto estado de funcionamiento.',
+					empresa: 'Valle de Aramín S.L.U. Empresa de Construcción y Mantenimiento. Oviedo. España.',
+					img: '',
+					logos: ['generico']
+				},
+				{
+					id: 3,
+					inicio_mes: 'Mar',
+					inicio_anho: '1996',
+					fin_mes: 'Dic',
+					fin_anho: '2002',
+					cargo: 'Preparador de programación',
+					descripcion: 'Asistir a los estudiantes en los laboratorios de microcomputadores, en Programación (C/C++, Pascal y Delphi), AutoCAD, Access, Excel y Word.',
+					empresa: 'Departamento de Investigación de Operaciones y Computación (DIOC). Escuela Básica. Facultad de Ingenieria. Universidad Central de Venezuela. Ciudad Universitaria. Caracas.',
+					img: '',
+					logos: ['ucv', 'ing_ucv', 'dioc']
+				},
+				{
+					id: 2,
+					inicio_mes: 'Mar',
+					inicio_anho: '1995',
+					fin_mes: 'Mar',
+					fin_anho: '1996',
+					cargo: 'Encargado de sala de computadoras',
+					descripcion: 'Encargado de asistir técnicamente a los usuarios de la sala de micros, y procurar el correcto funcionamiento de los equipos mediante el mantenimiento de software y hardware.',
+					empresa: 'Dirección de Petróleo y Sala de Micros. Escuela de Ingeniería de Petróleo. Facultad de Ingenieria. Universidad Central de Venezuela. Ciudad Universitaria. Caracas.',
+					img: '',
+					logos: ['ucv', 'ucv_ing_pet']
+				},
+				{
+					id: 1,
+					inicio_mes: 'Ago',
+					inicio_anho: '1993',
+					fin_mes: 'Sep',
+					fin_anho: '1995',
+					cargo: 'Preparador de matemáticas y asistente en talleres vacacionales',
+					descripcion: 'Asistente de los eventos en los talleres vacacionales para niños y niñas entre 7 y 12 años y encargado de dictar clases de reparación de matemáticas a estudiantes de 7mo a 9no grado de algunas unidades educativas del Estado Vargas.',
+					empresa: 'APROFAM (Asociación Promoción Familia). Institución financiada por PDVSA. Macuto. Estado Vargas.',
+					img: '',
+					logos: ['pdvsa']
+				}
+			]
 		}
 	},
 	mutations: {

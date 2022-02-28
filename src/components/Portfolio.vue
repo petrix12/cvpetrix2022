@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <ul id="portfolio-flters">
-                            <li data-filter="*">Todos</li>
-                            <li data-filter=".filter-destacados" class="filter-active">Destacados</li>
+                            <li data-filter="*" class="filter-active">Todos</li>
+                            <li data-filter=".filter-destacados">Destacados</li>
                             <li data-filter=".filter-web">App Web</li>
                             <li data-filter=".filter-otros">Otros</li>
                         </ul>
@@ -36,7 +36,7 @@
                             <div class="d-flex justify-content-between align-items-center p-2">
                                 <img v-for="(tecnologia, index) in proyecto.tecnologias" :key="index"
                                     :src="`img/logos/${tecnologia}.png`" width="45" height="45"
-                                    :alt="`Logo ${tecnologia}`" title="Visual Basic 6.0">
+                                    :alt="`Logo ${tecnologia}`" :title="tecnologia">
                                 <small class="text-muted"><strong>{{ proyecto.anho }}</strong></small>
                             </div>
                         </div>
