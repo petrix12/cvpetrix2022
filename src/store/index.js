@@ -751,7 +751,135 @@ export default createStore({
 					logos: ['pdvsa']
 				}
 			]
-		}
+		},
+		testimonials: [
+			{
+				id: 1,
+				testigo: 'Wiston Rodríguez',
+				testimonio: 'Mi experiencia con Pedro ha sido inmejorable. Es muy profesional y absolutamente comprometido con todos los temas que le hemos encargado. De hecho, es la referencia principal para nuestros clientes en materia de desarrollo Web y de aplicaciones.',
+				ocupacion: 'Ingeniero de Procesos',
+				activo: true
+			},
+			{
+				id: 2,
+				testigo: 'Jorge Kaffure',
+				testimonio: 'Personalmente, pienso que gracias a su estrategia para automatizar toda la información presupuestaria, hemos logrado ahorrar una gran cantidad de horas hombres.',
+				ocupacion: 'Analista de Presupuesto',
+				activo: true
+			},
+			{
+				id: 3,
+				testigo: 'Leticia Rodríguez',
+				testimonio: 'Lo considero serio, eficiente, creativo y siempre al servicio del cliente ante cualquier duda o consulta, con un trato y una amabilidad que valoro increiblemente. En definitiva es un muy buen profesional.',
+				ocupacion: 'Analista de Genealogía',
+				activo: true
+			},
+			{
+				id: 4,
+				testigo: 'Jorge Aparicio',
+				testimonio: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat fugit nulla quas nemo ipsa sequi vero beatae sapiente aliquam, officia atque ullam cumque, aperiam in dolorem quidem eos saepe esse.',
+				ocupacion: 'Gerente de Comercio y Suministro',
+				activo: false
+			},
+			{
+				id: 5,
+				testigo: 'Rosa Canelón',
+				testimonio: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum harum accusantium quasi aperiam, qui provident odio fugit commodi, cumque voluptates, ex blanditiis? Ipsum minima neque aliquid illum laboriosam voluptatum vero.',
+				ocupacion: 'Profesora de Matemáticas',
+				activo: false
+			},
+			{
+				id: 6,
+				testigo: 'Carlos Zanella',
+				testimonio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit vero ullam explicabo amet porro earum assumenda voluptatem facilis quis minima unde, eius dolorem voluptatum iure corporis vel maiores accusamus fugiat.',
+				ocupacion: 'Analista de Presupuesto',
+				activo: false
+			},
+			{
+				id: 7,
+				testigo: 'Marielys Sánchez',
+				testimonio: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores aspernatur ducimus qui, pariatur placeat ipsam sunt, aut corrupti rem enim fugit veniam dolorum repudiandae eveniet, error omnis quos quis voluptates!',
+				ocupacion: 'Gerente de Administración y Finanzas',
+				activo: false
+			},
+			{
+				id: 8,
+				testigo: 'Guillermo Bazó',
+				testimonio: 'Todo un ingeniero. Cuenta con muchos recursos adquiridos en la vida (Liceo Militar, Escuela Básica de FFAANN, Escuela de Aviación Militar: Subordinación y disciplina), sobreviviente de la Tragedia de Vargas y un excelente matrimonio. Lo recomiendo con los ojos cerrados. Q.D.L.B.',
+				ocupacion: 'Jubilado de la Electricidad de Caracas',
+				activo: true
+			},
+			{
+				id: 9,
+				testigo: 'Felix Santaella',
+				testimonio: 'Necesitábamos una aplicación que cubriera las necesidades de gestión de mi empresa para llevar un mejor control interno. El trato y la calidad a lo largo de todo el proceso fue perfecto. Cuesta encontrar profesionales que se adapten tan bien a lo que necesitas!',
+				ocupacion: 'Gerente de Planificación, Presupuesto y Gestión',
+				activo: true
+			},
+			{
+				id: 10,
+				testigo: 'Penélope Laucho',
+				testimonio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta tempora, deleniti delectus repellat unde maxime nemo, pariatur hic iste eius placeat corrupti. Fuga sed at esse facere fugit, asperiores pariatur.',
+				ocupacion: 'Superintendente de Presupuesto',
+				activo: false
+			},
+			{
+				id: 11,
+				testigo: 'Isabel Bazó',
+				testimonio: 'Dejé en sus manos la creación de mi página web, sin duda ha sido un acierto. Su asesoramiento y profesionalidad nos han dotado de un gran valor agregado. Una imagen que es la mejor tarjeta de presentación.',
+				ocupacion: 'Community Manager',
+				activo: true
+			},
+			{
+				id: 12,
+				testigo: 'Miguel Herrera',
+				testimonio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, ea ab. Omnis atque vero ea laudantium, nihil dolore inventore reiciendis dignissimos, maiores amet dolor ab repellendus suscipit perferendis nulla nostrum.',
+				ocupacion: 'Gerente IT Sefar Universal',
+				activo: false
+			},
+			{
+				id: 13,
+				testigo: 'David Farias',
+				testimonio: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt excepturi rerum ipsum accusamus et tempore ab magni asperiores libero vero consequuntur dolor nobis facere itaque ea quidem, sed ipsa quasi.',
+				ocupacion: 'Desarrollador Web',
+				activo: false
+			},
+			{
+				id: 14,
+				testigo: 'Dickison Pataquero',
+				testimonio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem doloremque numquam sequi ut. Et minima pariatur laudantium sequi eos iusto ipsum qui harum, quia ullam eligendi ad, distinctio consequuntur quaerat?',
+				ocupacion: 'Desarrollador WordPress',
+				activo: false
+			},
+			{
+				id: 15,
+				testigo: 'Nayibi Primera',
+				testimonio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quo consequatur molestias voluptates officia laborum quis quibusdam aperiam! Quasi excepturi recusandae saepe perferendis eligendi veritatis similique aut praesentium nemo deserunt?',
+				ocupacion: 'Gerente de Operaciones',
+				activo: false
+			},
+			{
+				id: 16,
+				testigo: 'Abelardo Bazó',
+				testimonio: 'De mi experiencia con Pedro destacaría su rigor profesional, eficiencia y extraordinaria capacidad de adaptarse e identificar lo que el cliente necesita y desea, y que a veces ni siquiera sabe cómo plantear.',
+				ocupacion: 'Párroco de Diócesis de La Guaira',
+				activo: true
+			},
+			{
+				id: 17,
+				testigo: 'David Rodríguez',
+				testimonio: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil cumque minima et voluptatibus dolores mollitia provident repellendus, iure tempora tenetur deleniti neque in cum aliquid quas nisi voluptate, iusto necessitatibus?',
+				ocupacion: 'Bibliotecólogo',
+				activo: false
+			},
+			{
+				id: 18,
+				testigo: 'Emily Morón',
+				testimonio: 'La creación de nuestra página web ha sido todo un éxito gracias a Pedro, una persona muy responsable y fiel con sus clientes. Nos ha hecho un gran trabajo sin duda.',
+				ocupacion: 'Comunicadora Social',
+				activo: true
+			}
+		]
 	},
 	mutations: {
 	},
