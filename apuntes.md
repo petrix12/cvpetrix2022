@@ -1721,7 +1721,7 @@
                         
                         <div class="row mt-5">
                             <div class="col-lg-3 col-6 text-center mt-5" v-for="stack in skills.stacks" :key="stack.id">
-                                <img :src="'/img/stacks/' + stack.img" :alt="'Stack ' + stack.stack" height="140">
+                                <img :src="`img/stacks/${stack.img}`" :alt="'Stack ' + stack.stack" height="140">
                             </div>
                         </div>
                     </div>
@@ -2295,7 +2295,7 @@
             <section id="portfolio"  class="section-bg" >
                 <div class="container">
                     <header class="section-header">
-                        <h3 class="section-title">Portfolio</h3>
+                        <h3 class="section-title">Portafolio</h3>
                     </header>
                     <div class="row">
                         <div class="col-lg-12">
@@ -3282,6 +3282,294 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Estudios
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                ≡
+            },
+            skills: {
+                ≡
+            },
+            facts: {
+                ≡
+            },
+            portafolio: { 
+                ≡
+            },
+            clients: {
+                ≡
+            },
+            testimonials: [
+                ≡
+            ],
+            formacion: {
+                texto: '“Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber”. - Albert Einstein.',
+                estudios: [
+                    {
+                        id: 5,
+                        ente: 'Escuela de Ingeniería Química.',
+                        lugar: 'Universidad Central de Venezuela. Ciudad Universitaria.',
+                        logro: 'Título de Ingeniero Químico.',
+                        anho: 2002,
+                        logo: 'ucv'
+                    },
+                    {
+                        id: 4,
+                        ente: 'Escuela de Aviación Militar.',
+                        lugar: 'Maracay. Estado Aragua.',
+                        logro: 'Servicio Militar Obligatorio.',
+                        anho: 1992,
+                        logo: 'eam'
+                    },
+                    {
+                        id: 3,
+                        ente: 'Escuela Básica de las Fuerzas Armadas Nacionales.',
+                        lugar: 'Maracay. Estado Aragua.',
+                        logro: 'Culminación del ciclo básico como cadete de las FF.AA.NN.',
+                        anho: 1991,
+                        logo: 'escubafan'
+                    },
+                    {
+                        id: 2,
+                        ente: 'Colegio San Vicente de Paúl.',
+                        lugar: 'Maiquetía. Estado Vargas.',
+                        logro: 'Titulo de Bachiller en Ciencias.',
+                        anho: 1990,
+                        logo: 'csvp'
+                    },
+                    {
+                        id: 1,
+                        ente: 'Liceo Militar G.N. Cap. (f) Pedro María Ochoa Morales.',
+                        lugar: 'Ramo Verde. Estado Miranda.',
+                        logro: 'Aprobación del 1ro y 2do año del Ciclo Básico.',
+                        anho: 1987,
+                        logo: 'gn'
+                    }
+                ]
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Guardar todas las imagenenes relacionadas con el estudio en formato **png** en **public\img\estudios** y nombrarla según su número de **id**.
+3. Crear componente **src\components\Estudios.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="team">
+                <div class="container">
+                    <div class="section-header wow fadeInUp">
+                        <h3>Estudios</h3>
+                        <p>{{ formacion.texto }}</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="estudios">
+                <div class="container">
+                    <div class="row estudios-cols">
+                        <div class="col-md-6 col-lg-4 wow fadeInUp" v-for="(estudio, item) in formacion.estudios" :key="item" :data-wow-delay="estiloCard(item + 1)">
+                            <div class="estudios-col">
+                                <div class="img">
+                                    <img :src="`img/estudios/${estudio.id}.png`" alt="" class="img-fluid">
+                                </div>
+                                <h2 class="title">{{ estudio.ente }}</h2>
+                                <div class="alto">
+                                    <p><strong>Lugar:</strong> {{ estudio.lugar }}</p>
+                                    <p><strong>Logro:</strong> {{ estudio.logro }}</p>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center p-2">
+                                    <small class="text-muted"><strong>{{ estudio.anho }}</strong></small>
+                                    <img :src="`img/logos/${estudio.logo}.png`" width="30" height="30"
+                                        :alt="`Logo ${estudio.logo}`" :title="estudio.logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'Estudios',
+        computed: {
+            ...mapState(['formacion'])
+        },
+        methods: {
+            estiloCard(item){
+                const tiempo = item % 3
+                switch (tiempo) {
+                case 1:
+                    return '0.0s'
+                case 2:
+                    return '0.1s'
+                case 0:
+                    return '0.2s'
+                default:
+                    return '0.0s'
+                }
+            }
+        }
+    }
+    </script>
+
+    <style scoped>
+        #estudios {
+            background-size: cover;
+            padding: 60px 0 40px 0;
+            position: relative;
+            margin-top: -7rem;
+        }
+
+        #estudios::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: 9;
+        }
+
+        #estudios .container {
+            position: relative;
+            z-index: 10;
+        }
+
+        #estudios .about-col {
+            background: #fff;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+        }
+
+        #estudios .about-col .img {
+            position: relative;
+        }
+
+        #estudios .about-col .img img {
+            border-radius: 4px 4px 0 0;
+        }
+
+        #estudios .estudios-col h2 {
+            color: #000;
+            text-align: center;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 0 5px;
+            margin: 10px 0 12px 0;
+        }
+
+        #estudios .estudios-col p {
+            font-size: 12px;
+            line-height: 24px;
+            color: #333;
+            margin-bottom: 0;
+            padding: 0px 10px;
+        }
+
+        .alto {
+            height: 80px !important;
+        }
+    </style>
+    ```
+4. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                <Skills />
+                <Facts />
+                <Portfolio />
+                <Clients />
+                <Testimonials />
+                <Estudios />
+                
+                <!-- *** Contact Section *** -->
+                ≡
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+    import Skills from '@/components/Skills'
+    import Facts from '@/components/Facts'
+    import Portfolio from '@/components/Portfolio'
+    import Clients from '@/components/Clients'
+    import Testimonials from '@/components/Testimonials'
+    import Estudios from '@/components/Estudios'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction,
+            Skills,
+            Facts,
+		    Portfolio,
+            Clients,
+            Testimonials,
+            Estudios
+        }
+    }
+    </script>
+    ```
+6. Eliminar los siguientes archivos:
+    + public\img\team-1.jpg
+    + public\img\team-2.jpg
+    + public\img\team-3.jpg
+    + public\img\team-4.jpg
+7. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Estudios"
+    + $ git push -u origin main
 
 
 

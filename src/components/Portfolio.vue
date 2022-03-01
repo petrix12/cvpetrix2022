@@ -3,7 +3,7 @@
         <section id="portfolio"  class="section-bg" >
             <div class="container">
                 <header class="section-header">
-                    <h3 class="section-title">Portfolio</h3>
+                    <h3 class="section-title">Portafolio</h3>
                 </header>
                 <div class="row">
                     <div class="col-lg-12">

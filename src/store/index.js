@@ -879,7 +879,52 @@ export default createStore({
 				ocupacion: 'Comunicadora Social',
 				activo: true
 			}
-		]
+		],
+		formacion: {
+			texto: '“Nunca consideres el estudio como una obligación, sino como una oportunidad para penetrar en el bello y maravilloso mundo del saber”. - Albert Einstein.',
+			estudios: [
+				{
+					id: 5,
+					ente: 'Escuela de Ingeniería Química.',
+					lugar: 'Universidad Central de Venezuela. Ciudad Universitaria.',
+					logro: 'Título de Ingeniero Químico.',
+					anho: 2002,
+					logo: 'ucv'
+				},
+				{
+					id: 4,
+					ente: 'Escuela de Aviación Militar.',
+					lugar: 'Maracay. Estado Aragua.',
+					logro: 'Servicio Militar Obligatorio.',
+					anho: 1992,
+					logo: 'eam'
+				},
+				{
+					id: 3,
+					ente: 'Escuela Básica de las Fuerzas Armadas Nacionales.',
+					lugar: 'Maracay. Estado Aragua.',
+					logro: 'Culminación del ciclo básico como cadete de las FF.AA.NN.',
+					anho: 1991,
+					logo: 'escubafan'
+				},
+				{
+					id: 2,
+					ente: 'Colegio San Vicente de Paúl.',
+					lugar: 'Maiquetía. Estado Vargas.',
+					logro: 'Titulo de Bachiller en Ciencias.',
+					anho: 1990,
+					logo: 'csvp'
+				},
+				{
+					id: 1,
+					ente: 'Liceo Militar G.N. Cap. (f) Pedro María Ochoa Morales.',
+					lugar: 'Ramo Verde. Estado Miranda.',
+					logro: 'Aprobación del 1ro y 2do año del Ciclo Básico.',
+					anho: 1987,
+					logo: 'gn'
+				}
+			]
+		}
 	},
 	mutations: {
 	},

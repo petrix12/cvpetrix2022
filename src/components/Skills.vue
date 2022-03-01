@@ -15,7 +15,7 @@
                     
 					<div class="row mt-5">
 						<div class="col-lg-3 col-6 text-center mt-5" v-for="stack in skills.stacks" :key="stack.id">
-                            <img :src="'/img/stacks/' + stack.img" :alt="'Stack ' + stack.stack" height="140">
+                            <img :src="`img/stacks/${stack.img}`" :alt="'Stack ' + stack.stack" height="140">
 						</div>
 					</div>
                 </div>
