@@ -15,6 +15,7 @@
             <Clients />
             <Testimonials />
             <Estudios />
+			<Cursos />
 
 			<!-- *** Contact Section *** -->
 			<section id="contact" class="section-bg wow fadeInUp">
@@ -155,6 +156,7 @@ import Portfolio from '@/components/Portfolio'
 import Clients from '@/components/Clients'
 import Testimonials from '@/components/Testimonials'
 import Estudios from '@/components/Estudios'
+import Cursos from '@/components/Cursos'
 
 export default {
 	name: 'Home',
@@ -170,7 +172,8 @@ export default {
 		Portfolio,
 		Clients,
 		Testimonials,
-		Estudios
+		Estudios,
+		Cursos
 	}
 }
 </script>

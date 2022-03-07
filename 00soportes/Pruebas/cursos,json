@@ -1,0 +1,27 @@
+cursos: {
+    id: 0,
+    name: '',
+    category: '',
+    technology: '',
+    url: '',
+    platform: '',
+    costo: '',
+    money: '',
+    comprado: '',
+    priority: 0,
+    minutos: 0,
+    culminado: '',
+    certificado: '',
+    url_certificado: '',
+    instructor: '',
+    description: '',
+    url_aux: '',
+    calificación: '',
+    actualizado: '',
+    en_ruta: '',
+    logo_platform: '',
+    logo_technologies: '',
+    repositorio: '',
+    nota: ''
+}
+
