@@ -4206,6 +4206,247 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Contact
++ https://www.hoclabs.com/2018/03/17/emailjs-envio-de-correos-desde-javascript
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                ≡
+            },
+            skills: {
+                ≡
+            },
+            facts: {
+                ≡
+            },
+            portafolio: {
+                ≡
+            },
+            clients: {
+                ≡
+            },
+            testimonials: {
+            },
+            formacion: {
+                ≡
+            },
+            cursos: {
+                ≡
+            },
+            contact: {
+                texto: 'Quien no vive para servir, no sirve para vivir. - Frase atribuida al célebre escritor indio Rabindranath Tagore',
+                direccion: 'C4XW+29V, Caracas 1080, Distrito Capital. Res. Vista al Lago',
+                movil: '+58 416 483.20.49',
+                href_movil: '+584164832049',
+                mail: 'bazo.pedro@gmail.com'
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+
+            <!-- *** Cuerpo Principal *** -->
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                <Skills />
+                <Facts />
+                <Contact />
+            </main>
+            ≡		
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+    import Skills from '@/components/Skills'
+    import Facts from '@/components/Facts'
+    import Contact from '@/components/Contact'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction,
+            Skills,
+            Facts,
+            Contact
+        }
+    }
+    </script>
+    ```
+3. Solicitar un servicio en [EmailJS](https://dashboard.emailjs.com/sign-up) y configurar el envío de correos:
+    + Acceder al Dashboard de EmailJS.
+    + Añadir nuevo servicio (**Add New Service**).
+    + Seleccionar **Gmail**.
+    + Presionar en **Connect Account**.
+    + Seleccionar cuenta de correo gmail y otorgarle todos los permisos.
+    + Presionar en **Create Service**.
+4. Crear una plantilla de correo en [EmailJS](https://dashboard.emailjs.com/sign-up):
+    + Seleccionar **Email Templates** y presionar en **Create New Template**.
+    + Configurar plantilla y presionar en **Save**.
+5. Obtener en [EmailJS](https://dashboard.emailjs.com/sign-up):
+    + Service ID
+    + Template ID
+    + User ID
+6. Instalar EmailJS:
+    + $ npm install emailjs-com --save
+    + $ npm install @emailjs/browser --save
+7. Crear componente **src\components\Contact.vue**:
+    ```vue
+    <template>
+        <div>
+            <section id="contact" class="section-bg wow fadeInUp">
+                <div class="container">
+                    <div class="section-header">
+                        <h3>Contáctame</h3>
+                        <p>{{ contact.texto }}</p>
+                    </div>
+                    <div class="row contact-info">
+                        <div class="col-md-4">
+                            <div class="contact-address">
+                                <i class="ion-ios-location-outline"></i>
+                                <h3>Dirección</h3>
+                                <address>{{ contact.direccion }}</address>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-phone">
+                                <i class="ion-ios-telephone-outline"></i>
+                                <h3>Número de teléfono</h3>
+                                <p><a :href="`tel:${href_movil}`">{{ contact.movil }}</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="contact-email">
+                                <i class="ion-ios-email-outline"></i>
+                                <h3>Email</h3>
+                                <p><a href="mailto:bazo.pedro@gmail.com">{{ contact.mail }}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div id="sendmessage">Your message has been sent. Thank you!</div>
+                        <div id="errormessage"></div>
+                        <form class="contactForm" @submit.prevent="sendEmail">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" v-model="from_name" required />
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Escribe tu correo electrónico" v-model="from_email" required />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" v-model="subject" required />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" v-model="message" required></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+    import emailjs from 'emailjs-com'
+
+    export default {
+        name: 'Contact',
+        data(){
+            return {
+                from_name: '',
+                from_email: '',
+                message: '',
+                subject: '',
+                service_id: 'service_w96f7mr',
+                template_id: 'template_o0augpw',
+                user_id: '*************'
+            }
+        },
+        methods: {
+            limpiarFormulario() {
+                this.from_name = '';
+                this.from_email = '';
+                this.message = '';
+                this.subject = '';
+            },
+            async sendEmail(e) {
+                try { 
+                    await emailjs.sendForm(this.service_id, this.template_id, e.target, this.user_id, { 
+                        name: this.from_name, 
+                        email: this.from_email,
+                        message: this.message,
+                        subject: this.subject
+                    })
+                    this.limpiarFormulario()
+                    alert('¡Su mensaje se ha enviado exitosamente!')
+                } catch(e) { 
+                    console.log({error}) 
+                }
+            }
+        },
+        computed: {
+            ...mapState(['contact'])
+        },
+    }
+    </script>
+    ```
+8. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Contact"
+    + $ git push -u origin main
+
+
+
+
+
 
 ## Diseño del panel administrativo
 
