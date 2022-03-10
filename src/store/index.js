@@ -1142,6 +1142,50 @@ export default createStore({
 			movil: '+58 416 483.20.49',
 			href_movil: '+584164832049',
 			mail: 'bazo.pedro@gmail.com'
+		},
+		sociales: [
+			{
+				id: 1,
+				name: 'github',
+				enlace: 'https://github.com/petrix12',
+				icon: 'fa fa-github' /* <i class="fab fa-github"></i> */
+			},
+			{
+				id: 2,
+				name: 'facebook',
+				enlace: 'https://www.facebook.com/solplusplus',
+				icon: 'fa fa-facebook'
+			},
+			{
+				id: 3,
+				name: 'twitter',
+				enlace: 'https://twitter.com/petrix12',
+				icon: 'fa fa-twitter'
+			},
+			{
+				id: 4,
+				name: 'youtube',
+				enlace: 'https://www.youtube.com/channel/UCgI3CMta_Vc4GHZwbzG3e-Q',
+				icon: 'fa fa-youtube'
+			},
+			{
+				id: 5,
+				name: 'linkedin',
+				enlace: 'https://www.linkedin.com/in/pedro-bazo',
+				icon: 'fa fa-linkedin'
+			},
+			{
+				id: 6,
+				name: 'instagram',
+				enlace: 'https://www.instagram.com/bazopedro',
+				icon: 'fa fa-instagram'
+			}
+		],
+		footer: {
+			texto: '¡Hola! Soy el Ing. Pedro Bazó, desarrollador de aplicaciones web, principalmente en los stacks MEVN, MERN, MEAN y Laravel - Vue.js. También soy programador en VBA para automatizar documentos Offices.',
+			empresa: 'Soluciones++',
+			proposito: 'Me considero una persona que consigue lo que se propone, estoy convencido que los logros son los resultados de las decisiones que se toman y de las metas que nos establecemos. Estoy consciente de mis limitaciones, no lo sé todo, ni lo domino todo, pero procuro siempre hallar una solución eficiente a los problemas.',
+			actividad: 'Desarrollo de Aplicaciones Web'
 		}
 	},
 	mutations: {

@@ -4369,7 +4369,7 @@
                         <form class="contactForm" @submit.prevent="sendEmail">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" v-model="from_name" required />
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" v-model.trim="from_name" required />
                                     <div class="validation"></div>
                                 </div>
                                 <div class="form-group col-md-6">
@@ -4378,11 +4378,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" v-model="subject" required />
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" v-model.trim="subject" required />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" v-model="message" required></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" v-model.trim="message" required></textarea>
                                 <div class="validation"></div>
                             </div>
                             <div class="text-center"><button type="submit">Enviar mensaje</button></div>
@@ -4444,6 +4444,253 @@
     + $ git push -u origin main
 
 
+## Diseño del componente Footer
+1. Editar la tienda **src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            intro: {
+                ≡
+            },
+            destacados: [
+                ≡
+            ],
+            calidad: {
+                ≡
+            },
+            servicios: {
+                ≡
+            },
+            accion: {
+                ≡
+            },
+            skills: {
+                ≡
+            },
+            facts: {
+                ≡
+            },
+            portafolio: { 
+                ≡
+            },
+            clients: {
+                ≡
+            },
+            testimonials: [
+                ≡
+            ],
+            formacion: {
+                ≡
+            },
+            cursos: [
+                ≡				
+            ],
+            contact: {
+                ≡
+            },
+            sociales: [
+                {
+                    id: 1,
+                    name: 'github',
+                    enlace: 'https://github.com/petrix12',
+                    icon: 'fa fa-github' /* <i class="fab fa-github"></i> */
+                },
+                {
+                    id: 2,
+                    name: 'facebook',
+                    enlace: 'https://www.facebook.com/solplusplus',
+                    icon: 'fa fa-facebook'
+                },
+                {
+                    id: 3,
+                    name: 'twitter',
+                    enlace: 'https://twitter.com/petrix12',
+                    icon: 'fa fa-twitter'
+                },
+                {
+                    id: 4,
+                    name: 'youtube',
+                    enlace: 'https://www.youtube.com/channel/UCgI3CMta_Vc4GHZwbzG3e-Q',
+                    icon: 'fa fa-youtube'
+                },
+                {
+                    id: 5,
+                    name: 'linkedin',
+                    enlace: 'https://www.linkedin.com/in/pedro-bazo',
+                    icon: 'fa fa-linkedin'
+                },
+                {
+                    id: 6,
+                    name: 'instagram',
+                    enlace: 'https://www.instagram.com/bazopedro',
+                    icon: 'fa fa-instagram'
+                }
+            ],
+            footer: {
+                texto: '¡Hola! Soy el Ing. Pedro Bazó, desarrollador de aplicaciones web, principalmente en los stacks MEVN, MERN, MEAN y Laravel - Vue.js. También soy programador en VBA para automatizar documentos Offices.',
+                empresa: 'Soluciones++',
+                proposito: 'Me considero una persona que consigue lo que se propone, estoy convencido que los logros son los resultados de las decisiones que se toman y de las metas que nos establecemos. Estoy consciente de mis limitaciones, no lo sé todo, ni lo domino todo, pero procuro siempre hallar una solución eficiente a los problemas.',
+                actividad: 'Desarrollo de Aplicaciones Web'
+            }
+        },
+        mutations: {
+        },
+        actions: {
+        },
+        modules: {
+        }
+    })
+    ```
+2. Modificar vista **src\views\Home.vue**:
+    ```vue
+    <template>
+        <div>
+            <Header />
+            <IntroSection />
+            <main id="main">
+                <FeaturedServicesSection />
+                <PoliticasCalidad />
+                <Servicios />
+                <CallToAction />
+                <Skills />
+                <Facts />
+                <Portfolio />
+                <Clients />
+                <Testimonials />
+                <Estudios />
+                <Cursos />
+                <Contact />
+            </main>
+            <Footer />
+        </div>
+    </template>
+
+    <script>
+    import Header from '@/components/Header'
+    import IntroSection from '@/components/IntroSection'
+    import FeaturedServicesSection from '@/components/FeaturedServicesSection'
+    import PoliticasCalidad from '@/components/PoliticasCalidad'
+    import Servicios from '@/components/Servicios'
+    import CallToAction from '@/components/CallToAction'
+    import Skills from '@/components/Skills'
+    import Facts from '@/components/Facts'
+    import Portfolio from '@/components/Portfolio'
+    import Clients from '@/components/Clients'
+    import Testimonials from '@/components/Testimonials'
+    import Estudios from '@/components/Estudios'
+    import Cursos from '@/components/Cursos'
+    import Contact from '@/components/Contact'
+    import Footer from '@/components/Footer'
+
+    export default {
+        name: 'Home',
+        components: {
+            Header,
+            IntroSection,
+            FeaturedServicesSection,
+            PoliticasCalidad,
+            Servicios,
+            CallToAction,
+            Skills,
+            Facts,
+            Portfolio,
+            Clients,
+            Testimonials,
+            Estudios,
+            Cursos,
+            Contact,
+            Footer
+        }
+    }
+    </script>
+    ```
+3. Crear componente **src\components\Footer.vue**:
+    ```vue
+    <template>
+        <div>
+            <footer id="footer">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 footer-info">
+                                <h3><img src="img/logo-completo-sm.png" alt="Logo de la aplicación" title="" height="30" /></h3>
+                                <p>{{ footer.texto }}</p>
+                            </div>
+                            <div class="col-lg-3 col-md-6 footer-links">
+                                <h4>Enlaces de utilidad</h4>
+                                <ul>
+                                    <li><i class="ion-ios-arrow-right"></i> <a href="#intro">Inicio</a></li>
+                                    <li><i class="ion-ios-arrow-right"></i> <a href="#portfolio">Portafolio</a></li>
+                                    <li><i class="ion-ios-arrow-right"></i> <a href="#services">Servicios</a></li>
+                                    <li><i class="ion-ios-arrow-right"></i> <a href="#clients">Experiencia</a></li>
+                                    <li><i class="ion-ios-arrow-right"></i> <a href="#team">Estudios</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-md-6 footer-contact">
+                                <h4>Contáctame</h4>
+                                <p>
+                                    {{ contact.direccion }} <br>
+                                    <strong>Teléfono:</strong> {{ contact.movil }}<br>
+                                    <strong>Email:</strong> {{ contact.mail }}<br>
+                                </p>
+
+                                <div class="social-links">
+                                    <a :href="social.enlace" target="_blank" class="twitter" v-for="social in sociales" :key="social.id">
+                                        <i :class="social.icon"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 footer-newsletter">
+                                <h4>Propósito</h4>
+                                <p>{{ footer.proposito }}</p>
+                                <a href="cvpedrobazo.pdf" target="_blank" class="form-control text-center boton_cv">Ver mi CV</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="copyright">
+                        &copy; Copyright <strong>{{ footer.empresa }}</strong>. All Rights Reserved
+                    </div>
+                    <div class="credits">
+                        Una muy buena opción para el <a href="#portfolio">{{ footer.actividad }}</a>
+                    </div>
+                </div>
+            </footer>
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        </div>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        name: 'Footer',
+        computed: {
+            ...mapState(['contact', 'sociales', 'footer'])
+        },
+    }
+    </script>
+
+    <style scoped>
+        .boton_cv{
+            color: white;
+            background: #18d26e;
+        }
+        .boton_cv:hover{
+            color: #18d26e;
+            background: white;
+        }
+    </style>
+    ```
+4. Subir repositorio:
+    + $ git add .
+    + $ git commit -m "Diseño del componente Footer"
+    + $ git push -u origin main
+
+
 
 
 
@@ -4464,239 +4711,6 @@
     ```vue
     ```
 
-## Sección 8: Forumularios (v-model)
-
-
-### 78. Navbar de Bootstrap 4
-
-
-
-### 79. v-model: text
-
-
-### 80. v-model: checkbox
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form>
-            <input type="text" class="form-control my-2" placeholder="Ingrese nombre" v-model="tarea.nombre">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="check-1" value="JavaScript" v-model="tarea.categorias">
-                <label class="form-check-label" for="check-1">JavaScript</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="check-2" value="Node.js" v-model="tarea.categorias">
-                <label class="form-check-label" for="check-2">Node.js</label>
-            </div>
-        </form>
-        <hr>
-        <p>{{ tarea }}</p>
-    </template>
-
-    <script>
-
-    export default {
-        name: 'Home',
-        components: {
-        },
-        data() {
-            return {
-                tarea: {
-                    nombre: '',
-                    categorias: []
-                }
-            }
-        }
-    }
-    </script>
-    ```
-
-### 81. v-model: radio
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form>
-            ≡
-            <div class="mt-2">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="radio-1" value="Urgente" v-model="tarea.estado">
-                    <label class="form-check-label" for="radio-1">Urgente</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" id="radio-2" value="Rilax" v-model="tarea.estado">
-                    <label class="form-check-label" for="radio-2">Rilax</label>
-                </div>
-            </div>
-        </form>
-        <hr>
-        <p>{{ tarea }}</p>
-    </template>
-
-    <script>
-
-    export default {
-        name: 'Home',
-        components: {
-        },
-        data() {
-            return {
-                tarea: {
-                    nombre: '',
-                    categorias: [],
-                    estado: ''
-                }
-            }
-        }
-    }
-    </script>
-    ```
-
-### 82. v-model: number
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form>
-            ≡
-            <div class="mt-2">
-                <input type="number" v-model.number="tarea.numero" class="form-control">
-            </div>
-        </form>
-        <hr>
-        <p>{{ tarea }}</p>
-    </template>
-
-    <script>
-
-    export default {
-        ≡
-        data() {
-            return {
-                tarea: {
-                    ≡
-                    numero: 0
-                }
-            }
-        }
-    }
-    </script>
-    ```
-
-### 83. trim y submit
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form @submit.prevent="procesarFormulario">
-            <input type="text" class="form-control my-2" placeholder="Ingrese nombre" v-model.trim="tarea.nombre">
-            ≡
-            <button class="btn btn-dark mt-2 btn-block" type="submit">Procesar</button>
-        </form>
-        <hr>
-        <p>{{ tarea }}</p>
-    </template>
-
-    <script>
-
-    export default {
-        ≡
-        methods: {
-            procesarFormulario() {
-                console.log(this.tarea)
-            }
-        }
-    }
-    </script>
-    ```
-
-### 84. Validación
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form @submit.prevent="procesarFormulario">
-            ≡
-            <button class="btn btn-dark mt-2 btn-block" type="submit" :disabled="false">Procesar</button>
-        </form>
-        <hr>
-        <p>{{ tarea }}</p>
-    </template>
-
-    <script>
-
-    export default {
-        ≡
-        methods: {
-            procesarFormulario() {
-                console.log(this.tarea)
-                if(this.tarea.nombre.trim() === ''){
-                    console.log('Campo vacío')
-                    return
-                }
-            }
-        }
-    }
-    </script>
-    ```
-
-### 85. Bloquear botón submit
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    <template>
-        <form @submit.prevent="procesarFormulario">
-            ≡
-            <button class="btn btn-dark mt-2 btn-block" type="submit" :disabled="bloquear">Procesar</button>
-        </form>
-        <hr>
-        <p>{{ tarea }}</p>
-    </template>
-
-    <script>
-
-    export default {
-        ≡
-        computed: {
-            bloquear() {
-                return this.tarea.nombre.trim() === '' ? true : false
-            }
-        }
-    }
-    </script>
-    ```
-
-### 86. Limpiar campos
-1. Modificar vista **06formulario\src\views\Home.vue**:
-    ```vue
-    ≡
-    <script>
-
-    export default {
-        ≡
-        methods: {
-            procesarFormulario() {
-                console.log(this.tarea)
-                if(this.tarea.nombre.trim() === ''){
-                    console.log('Campo vacío')
-                    return
-                }
-                // enviar los datos
-                this.tarea = {
-                    nombre: '',
-                    categorias: [],
-                    estado: '',
-                    numero: 0
-                }
-            }
-        },
-        ≡
-    }
-    </script>
-    ```
-
-### 87. Archivos Terminados de esta sección
-+ Código fuente de la sección: 00recursos\Formularios.zip
-
-### Subiendo cambios GitHub:
-+ $ git add .
-+ $ git commit -m "Forumularios (v-model)"
-+ $ git push -u origin main
 
 
 ## Sección 9: CRUD + LocalStorage

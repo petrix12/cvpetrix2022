@@ -35,7 +35,7 @@
                     <form class="contactForm" @submit.prevent="sendEmail">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" v-model="from_name" required />
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Escribe tu nombre" v-model.trim="from_name" required />
                                 <div class="validation"></div>
                             </div>
                             <div class="form-group col-md-6">
@@ -44,11 +44,11 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" v-model="subject" required />
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" v-model.trim="subject" required />
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" v-model="message" required></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" v-model.trim="message" required></textarea>
                             <div class="validation"></div>
                         </div>
                         <div class="text-center"><button type="submit">Enviar mensaje</button></div>
@@ -78,10 +78,10 @@ export default {
     },
     methods: {
         limpiarFormulario() {
-            this.from_name = '';
-            this.from_email = '';
-            this.message = '';
-            this.subject = '';
+            this.from_name = ''
+            this.from_email = ''
+            this.message = ''
+            this.subject = ''
         },
         async sendEmail(e) {
             try { 
@@ -96,10 +96,22 @@ export default {
             } catch(e) { 
                 console.log({error}) 
             }
+        },
+        validarEmail(email) {
+            let regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+            return regex.test(email) ? true : false
         }
     },
     computed: {
-        ...mapState(['contact'])
-    },
+        ...mapState(['contact']),
+        bloquear() {
+            let bloqueado = false
+            if(this.from_name == '') bloqueado = true
+            if(this.message == '') bloqueado = true
+            if(this.subject == '') bloqueado = true
+            if(!this.validarEmail(this.from_email)) bloqueado = true
+            return bloqueado
+        }
+    }
 }
 </script>
