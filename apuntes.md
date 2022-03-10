@@ -4697,9 +4697,22 @@
     <!DOCTYPE html>
     <html lang="">
     <head>
-        ≡
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+        <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
+        <title>Soluciones++ | CV Ing. Pedro Bazó | Desarrollador Web</title>
+
         <!-- Favicons -->
-        ≡
+        <link href="favicon.png" rel="icon">
+        <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <!-- Required meta tags -->
+        <meta name="description" content="Desarrollador web online. Crea un curriculum vitae (CV) online. Crea una página web para tu negocio"/>
+        <meta name="keywords" content="desarrallo web, curriculum vitae, cv online, página web negocio, aplicaciones web, herramientas y soluciones office"/>
+        <meta name="author" content="Ing. Pedro Jesús Bazó Canelón" />
+        <meta name="robots" content="index"/>
 
         <!-- Icono web -->
         <meta property="fb:app_id" content="APPID">
