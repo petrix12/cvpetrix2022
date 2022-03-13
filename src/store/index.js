@@ -2,6 +2,14 @@ import { createStore } from 'vuex'
 
 export default createStore({
 	state: {
+		datos: {
+			nombre1: 'Pedro',
+			nombre2: 'Jesús',
+			apellido1: 'Bazó',
+			apellido2: 'Canelón',
+			empresa: 'Soluciones++',
+			frase: 'En donde un clic (-) importa!!!'
+		},
 		intro: {
 			titulo1: '¡Hola, soy Pedro Bazó!',
 			descripcion1: 'Desarrollador Web, principalmente en los stacks MERN, MEVN, MEAN y Laravel',
@@ -1189,8 +1197,29 @@ export default createStore({
 		}
 	},
 	mutations: {
+		/* cargarIntro(state, payload){
+			state.intro = payload
+		} */
 	},
 	actions: {
+		cargarLocalStorage({ commit }) {
+		},
+		async setDestacados({ commit }, destacado){
+			try{
+				const res = await fetch('https://cvpetrix2022-default-rtdb.firebaseio.com/destacados.json', {
+					method: 'PUT',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(destacado)
+				})
+				const dataDB = await res.json()
+				console.log(dataDB)
+			}catch(error){
+				console(error)
+			}
+			commit('set', destacados)
+		}
 	},
 	modules: {
 	}

@@ -15,12 +15,16 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
 	name: 'FeaturedServicesSection',
     computed: {
         ...mapState(['destacados'])
     },
+    methods: {
+        ...mapActions(['setDestacados']),
+        
+    }
 }
 </script>
