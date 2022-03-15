@@ -32,7 +32,7 @@
 
                             <div class="descripcion px-2">
                                 <p :title="curso.description">
-                                    <strong>Descripción:</strong> {{ truncate(curso.description, 200) }} <br>
+                                    <strong>Descripción:</strong> {{ truncate(curso.description, 140) }} <br>
                                     <strong>Autor:</strong> {{ curso.instructor }} <br>
                                     <strong>Finalizado:</strong> {{ curso.culminado }} <br>
                                     <strong>Duración:</strong> {{ (curso.minutos / 60).toFixed(2) }} horas
@@ -294,7 +294,10 @@ export default {
 
     .descripcion {
         height: 115px !important;
-        font-size: 85%;
         text-align: justify;
+    }
+
+    .descripcion p {
+        font-size: 95%;
     }
 </style>

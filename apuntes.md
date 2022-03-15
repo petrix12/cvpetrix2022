@@ -3870,7 +3870,7 @@
 
                                 <div class="descripcion px-2">
                                     <p :title="curso.description">
-                                        <strong>Descripción:</strong> {{ truncate(curso.description, 200) }} <br>
+                                        <strong>Descripción:</strong> {{ truncate(curso.description, 140) }} <br>
                                         <strong>Autor:</strong> {{ curso.instructor }} <br>
                                         <strong>Finalizado:</strong> {{ curso.culminado }} <br>
                                         <strong>Duración:</strong> {{ (curso.minutos / 60).toFixed(2) }} horas
@@ -4132,8 +4132,11 @@
 
         .descripcion {
             height: 115px !important;
-            font-size: 85%;
             text-align: justify;
+        }
+
+        .descripcion p {
+            font-size: 95%;
         }
     </style>
     ```
@@ -4745,36 +4748,8 @@
 ## Adaptar template administrativo al proyecto
 + Página de template administrativos: https://themewagon.com/theme-category/admin-dashboard
 1. Descargar el template de la URL: **https://themewagon.com/themes/corona-free-responsive-bootstrap-4-admin-dashboard-template** y ubicarlo en **00soportes\Template original\Template administrativo**.
-2. Copiar la carpeta **00soportes\Template original\Template administrativo\corona-free-dark-bootstrap-admin-template-1.0.0\template\assets** a **public\assets**.
-3. Modificar **public\index.html**:
-    ```html
-    ≡
-    <head>
-        ≡
-        <!-- *** PANEL ADMINISTRATIVO *** -->
-        <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-
-        <!-- *** PANEL USUARIOS *** -->
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
-    
-        <!-- Bootstrap CSS File -->
-        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-        <!-- Libraries CSS Files -->
-        <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    
-        <!-- Main Stylesheet File -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-    ≡
-    ```
-4. Modifcar tienda **src\store\index.js**:
+2. Copiar el contenido de **00soportes\Template original\Template administrativo\corona-free-dark-bootstrap-admin-template-1.0.0\template\assets** en **public\assets** y en **src\assets\admin**.
+3. Modifcar tienda **src\store\index.js**:
     ```js
     ≡
     export default createStore({
@@ -4799,286 +4774,355 @@
     }
     ≡
     ```
-5. Crear vista **src\views\Admin.vue**:
+4. Modificar **package.json** para agregar las dependencias requeridas por el template:
+    ```json
+    {
+        ≡
+        "dependencies": {
+            ≡
+            "@mdi/font": "^3.7.95",
+            "bootstrap": "^4.4.1",
+            "bootstrap-maxlength": "^1.6.0",
+            "chart.js": "^2.8.0",
+            "codemirror": "^5.48.0",
+            "flag-icon-css": "^3.3.0",
+            "jquery": "3.4.1",
+            "jvectormap": "^2.0.4",
+            "moment": "^2.24.0",
+            "owl.carousel": "^2.3.4",
+            "perfect-scrollbar": "^1.5.0",
+            "popper.js": "^1.16.1",
+            "progressbar.js": "^1.0.1",
+            "pwstabs": "^1.4.0",
+            "select2": "^4.0.7",
+            "select2-bootstrap-theme": "0.1.0-beta.10",
+            "twbs-pagination": "^1.4.1",
+            "typeahead.js": "^0.11.1"
+        },
+        ≡
+    }
+    ```
+6. Ejecutar:
+    + $ npm install
+6. Crear vista **src\views\Admin.vue**:
     ```vue
     <template>
-        <div>
-            <div class="container-scroller">
-                <nav class="sidebar sidebar-offcanvas" id="sidebar">
-                    <ul class="nav">
-                        <li class="nav-item profile">
-                            <div class="profile-desc">
-                                <div class="profile-pic">
-                                    <div class="count-indicator">
-                                        <img class="img-xs rounded-circle " src="img/apple-touch-icon.png" alt="Logo">
-                                        <span class="count bg-success"></span>
-                                    </div>
-                                    <div class="profile-name">
-                                        <h5 class="mb-0 font-weight-normal">{{ datos.empresa }}</h5>
-                                    </div>
+        <div class="container-scroller">
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+                    <router-link to="/" class="sidebar-brand brand-logo">
+                        <img src="/img/logo-completo-sm.png" alt="logo" class="logo" />
+                    </router-link>
+                    <router-link to="/" class="sidebar-brand brand-logo-mini">
+                        <img src="/img/apple-touch-icon.png" alt="logo" class="logo" />
+                    </router-link>
+                </div>
+                <ul class="nav">
+                    <li class="nav-item profile">
+                        <div class="profile-desc">
+                            <div class="profile-pic">
+                                <div class="count-indicator">
+                                    <img class="img-xs rounded-circle " src="img/autor.jpg" alt="Autor">
+                                    <span class="count bg-success"></span>
+                                </div>
+                                <div class="profile-name">
+                                    <h5 class="mb-0 font-weight-normal">{{ datos.nombre1 }} {{ datos.apellido1 }}</h5>
+                                    <span>Administrador</span>
                                 </div>
                             </div>
-                        </li>
-                        <li class="nav-item nav-category">
-                            <span class="nav-link">Personalizar</span>
-                        </li>
-                        <!-- datos - contact - footer -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-account-check"></i>
-                                </span>
-                                <span class="menu-title">Datos generales</span>
-                            </a>
-                        </li>
-                        <!-- intro -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-account-card-details"></i>
-                                </span>
-                                <span class="menu-title">Datos introductorios</span>
-                            </a>
-                        </li>
-                        <!-- destacados - servicios -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-playlist-play"></i>
-                                </span>
-                                <span class="menu-title">Servicios</span>
-                            </a>
-                        </li>
-                        <!-- calidad -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-table-large"></i>
-                                </span>
-                                <span class="menu-title">Política de calidad</span>
-                            </a>
-                        </li>
-                        <!-- accion -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-chart-bar"></i>
-                                </span>
-                                <span class="menu-title">Call To Action</span>
-                            </a>
-                        </li>
-                        <!-- skills -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-application"></i>
-                                </span>
-                                <span class="menu-title">Principales Stacks</span>
-                            </a>
-                        </li>
-                        <!-- facts - cursos -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-security"></i>
-                                </span>
-                                <span class="menu-title">Cursos</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                        </li>
-                        <!-- portafolio -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-file-document-box"></i>
-                                </span>
-                                <span class="menu-title">Portafolio</span>
-                            </a>
-                        </li>
-                        <!-- clients -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-altimeter"></i>
-                                </span>
-                                <span class="menu-title">Logo de empresas</span>
-                            </a>
-                        </li>
-                        <!-- testimonials -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-account-multiple-plus"></i>
-                                </span>
-                                <span class="menu-title">Testimoniales</span>
-                            </a>
-                        </li>
-                        <!-- formacion -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-book-open-page-variant"></i>
-                                </span>
-                                <span class="menu-title">Estudios</span>
-                            </a>
-                        </li>
-                        <!-- sociales -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-emoticon-cool"></i>
-                                </span>
-                                <span class="menu-title">Redes sociales</span>
-                            </a>
-                        </li>
-                        <!-- imagenes -->
-                        <li class="nav-item menu-items">
-                            <a class="nav-link" href="#">
-                                <span class="menu-icon">
-                                    <i class="mdi mdi-file-image"></i>
-                                </span>
-                                <span class="menu-title">Imagenes</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- partial -->
-                <div class="container-fluid page-body-wrapper bg-dark">
-                    <nav class="navbar p-0 fixed-top d-flex flex-row">
-                        <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-                            <ul class="navbar-nav navbar-nav-right">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
-                                        <div class="navbar-profile">
-                                            <img class="img-xs rounded-circle" src="img/autor.jpg" alt="">
-                                            <p class="mb-0 d-none d-sm-block navbar-profile-name">{{ datos.nombre1 }} {{ datos.apellido1 }}</p>
-                                            <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                        </div>
+                    </li>
+                    <li class="nav-item nav-category">
+                        <span class="nav-link">Personalizar</span>
+                    </li>
+                    <!-- datos - contact - footer -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-account-check"></i>
+                            </span>
+                            <span class="menu-title">Datos generales</span>
+                        </a>
+                    </li>
+                    <!-- intro -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-account-card-details"></i>
+                            </span>
+                            <span class="menu-title">Datos introductorios</span>
+                        </a>
+                    </li>
+                    <!-- destacados - servicios -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-playlist-play"></i>
+                            </span>
+                            <span class="menu-title">Servicios</span>
+                        </a>
+                    </li>
+                    <!-- calidad -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-table-large"></i>
+                            </span>
+                            <span class="menu-title">Política de calidad</span>
+                        </a>
+                    </li>
+                    <!-- accion -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-chart-bar"></i>
+                            </span>
+                            <span class="menu-title">Call To Action</span>
+                        </a>
+                    </li>
+                    <!-- skills -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-application"></i>
+                            </span>
+                            <span class="menu-title">Principales Stacks</span>
+                        </a>
+                    </li>
+                    <!-- facts - cursos -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-security"></i>
+                            </span>
+                            <span class="menu-title">Cursos</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <!-- portafolio -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-file-document-box"></i>
+                            </span>
+                            <span class="menu-title">Portafolio</span>
+                        </a>
+                    </li>
+                    <!-- clients -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-altimeter"></i>
+                            </span>
+                            <span class="menu-title">Logo de empresas</span>
+                        </a>
+                    </li>
+                    <!-- testimonials -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-account-multiple-plus"></i>
+                            </span>
+                            <span class="menu-title">Testimoniales</span>
+                        </a>
+                    </li>
+                    <!-- formacion -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-book-open-page-variant"></i>
+                            </span>
+                            <span class="menu-title">Estudios</span>
+                        </a>
+                    </li>
+                    <!-- sociales -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-emoticon-cool"></i>
+                            </span>
+                            <span class="menu-title">Redes sociales</span>
+                        </a>
+                    </li>
+                    <!-- imagenes -->
+                    <li class="nav-item menu-items">
+                        <a class="nav-link" href="#">
+                            <span class="menu-icon">
+                                <i class="mdi mdi-file-image"></i>
+                            </span>
+                            <span class="menu-title">Imagenes</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container-fluid page-body-wrapper">
+                <nav class="navbar p-0 fixed-top d-flex flex-row">
+                    <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+                        <router-link to="/" class="navbar-brand brand-logo-mini">
+                            <img src="/img/apple-touch-icon.png" alt="logo" class="logo" />
+                        </router-link>
+                    </div>
+                    <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+                        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                            <span class="mdi mdi-menu"></span>
+                        </button>
+                        <ul class="navbar-nav navbar-nav-right">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                                    <div class="navbar-profile">
+                                        <img class="img-xs rounded-circle" src="img/autor.jpg" alt="autor">
+                                        <p class="mb-0 d-none d-sm-block navbar-profile-name">
+                                            {{ datos.nombre1 }} {{ datos.apellido1 }}
+                                        </p>
+                                        <i class="mdi mdi-menu-down d-none d-sm-block"></i>
+                                    </div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item preview-item">
+                                        <div class="preview-thumbnail">
+                                            <div class="preview-icon bg-dark rounded-circle">
+                                                <i class="mdi mdi-logout text-danger"></i>
+                                            </div>
+                                        </div>
+                                        <div class="preview-item-content">
+                                            <p class="preview-subject mb-1">Salir</p>
                                         </div>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item preview-item">
-                                            <div class="preview-thumbnail">
-                                                <div class="preview-icon bg-dark rounded-circle">
-                                                    <i class="mdi mdi-logout text-danger"></i>
-                                                </div>
-                                            </div>
-                                            <div class="preview-item-content">
-                                                <p class="preview-subject mb-1 text-perfil">Salir</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <!-- partial -->
-                    <div class="main-panel">
-                        <div class="content-wrapper">
-                            <div class="row">
-                                <div class="col-12 grid-margin stretch-card">
-                                    <div class="card corona-gradient-card">
-                                        <div class="card-body py-0 px-0 px-sm-3">
-                                            <div class="row align-items-center">
-                                                <div class="col-4 col-sm-3 col-xl-2">
-                                                    <img src="img/desarrollo-web.png" class="gradient-corona-img img-fluid" alt="Imagen Desarrollo Web">
-                                                </div>
-                                                <div class="col-5 col-sm-7 col-xl-8 p-0">
-                                                    <h4 class="mb-1 mb-sm-0 color-empresa">{{ datos.empresa }}</h4>
-                                                    <p class="mb-0 font-weight-normal d-none d-sm-block color-empresa">{{ datos.frase }}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="row ">
-                                <div class="col-12 grid-margin">
-                                    <div class="card bg-dark">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Order Status</h4>
-                                            <div class="table-responsive">
-                                                <table class="table text-white">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>
-                                                                <div class="form-check form-check-muted m-0">
-                                                                    <label class="form-check-label">
-                                                                        <input type="checkbox" class="form-check-input">
-                                                                    </label>
-                                                                </div>
-                                                            </th>
-                                                            <th class="text-warning"> Client Name </th>
-                                                            <th class="text-warning"> Order No </th>
-                                                            <th class="text-warning"> Product Cost </th>
-                                                            <th class="text-warning"> Project </th>
-                                                            <th class="text-warning"> Payment Mode </th>
-                                                            <th class="text-warning"> Start Date </th>
-                                                            <th class="text-warning"> Payment Status </th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-check form-check-muted m-0">
-                                                                    <label class="form-check-label">
-                                                                    <input type="checkbox" class="form-check-input">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <img src="assets/images/faces/face1.jpg" alt="image" />
-                                                                <span class="pl-2">Henry Klein</span>
-                                                            </td>
-                                                            <td> 02312 </td>
-                                                            <td> $14,500 </td>
-                                                            <td> Dashboard </td>
-                                                            <td> Credit card </td>
-                                                            <td> 04 Dec 2019 </td>
-                                                            <td>
-                                                                <div class="badge badge-outline-success">Approved</div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>
-                                                                <div class="form-check form-check-muted m-0">
-                                                                    <label class="form-check-label">
-                                                                    <input type="checkbox" class="form-check-input">
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <img src="assets/images/faces/face2.jpg" alt="image" />
-                                                                <span class="pl-2">Estella Bryan</span>
-                                                            </td>
-                                                            <td> 02312 </td>
-                                                            <td> $14,500 </td>
-                                                            <td> Website </td>
-                                                            <td> Cash on delivered </td>
-                                                            <td> 04 Dec 2019 </td>
-                                                            <td>
-                                                                <div class="badge badge-outline-warning">Pending</div>
-                                                            </td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <footer class="footer">
-                            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                                <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
-                                    &copy; Copyright <strong>{{ footer.empresa }}</strong>. All Rights Reserved
-                                </span>
-                                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-                                    Una muy buena opción para el <router-link to="/">{{ footer.actividad }}</router-link>
-                                </span>
-                            </div>
-                        </footer>
+                            </li>
+                        </ul>
+                        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                            <span class="mdi mdi-format-line-spacing"></span>
+                        </button>
                     </div>
+                </nav>
+                <div class="main-panel">
+                    <div class="content-wrapper">
+                        <div class="row">
+                            <div class="col-12 grid-margin stretch-card">
+                                <div class="card corona-gradient-card">
+                                    <div class="card-body py-0 px-0 px-sm-3">
+                                        <div class="row align-items-center">
+                                            <div class="col-4 col-sm-3 col-xl-2">
+                                                <img src="img/desarrollo-web.png" class="gradient-corona-img img-fluid" alt="imagen de desarrollo web">
+                                            </div>
+                                            <div class="col-5 col-sm-7 col-xl-8 p-0">
+                                                <h4 class="mb-1 mb-sm-0">{{ datos.empresa }}</h4>
+                                                <p class="mb-0 font-weight-normal d-none d-sm-block">{{ datos.frase }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-12 grid-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Order Status</h4>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>
+                                                            <div class="form-check form-check-muted m-0">
+                                                                <label class="form-check-label">
+                                                                    <input type="checkbox" class="form-check-input">
+                                                                </label>
+                                                            </div>
+                                                        </th>
+                                                        <th> Client Name </th>
+                                                        <th> Order No </th>
+                                                        <th> Product Cost </th>
+                                                        <th> Project </th>
+                                                        <th> Payment Mode </th>
+                                                        <th> Start Date </th>
+                                                        <th> Payment Status </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-check-muted m-0">
+                                                                <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <img src="img/autor.jpg" alt="image" />
+                                                            <span class="pl-2">Henry Klein</span>
+                                                        </td>
+                                                        <td> 02312 </td>
+                                                        <td> $14,500 </td>
+                                                        <td> Dashboard </td>
+                                                        <td> Credit card </td>
+                                                        <td> 04 Dec 2019 </td>
+                                                        <td>
+                                                            <div class="badge badge-outline-success">Approved</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-check-muted m-0">
+                                                                <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <img src="img/autor.jpg" alt="image" />
+                                                            <span class="pl-2">Estella Bryan</span>
+                                                        </td>
+                                                        <td> 02312 </td>
+                                                        <td> $14,500 </td>
+                                                        <td> Website </td>
+                                                        <td> Cash on delivered </td>
+                                                        <td> 04 Dec 2019 </td>
+                                                        <td>
+                                                            <div class="badge badge-outline-warning">Pending</div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check form-check-muted m-0">
+                                                                <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input">
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <img src="img/autor.jpg" alt="image" />
+                                                            <span class="pl-2">Lucy Abbott</span>
+                                                        </td>
+                                                        <td> 02312 </td>
+                                                        <td> $14,500 </td>
+                                                        <td> App design </td>
+                                                        <td> Credit card </td>
+                                                        <td> 04 Dec 2019 </td>
+                                                        <td>
+                                                            <div class="badge badge-outline-danger">Rejected</div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">
+                                &copy; Copyright <strong>{{ footer.empresa }}</strong>. All Rights Reserved
+                            </span>
+                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
+                                Una muy buena opción para el <router-link to="/">{{ footer.actividad }}</router-link>
+                            </span>
+                        </div>
+                    </footer>
                 </div>
             </div>
         </div>
@@ -5086,6 +5130,18 @@
 
     <script>
     import { mapState } from 'vuex'
+    /* import '@/assets/admin/vendors/js/vendor.bundle.base.js' */
+    import '@/assets/admin/vendors/chart.js/Chart.min.js'
+    import '@/assets/admin/vendors/jvectormap/jquery-jvectormap.min.js'
+    import '@/assets/admin/vendors/jvectormap/jquery-jvectormap-world-mill-en.js'
+    import '@/assets/admin/vendors/progressbar.js/progressbar.min.js'
+    import '@/assets/admin/vendors/owl-carousel-2/owl.carousel.min.js'
+    import '@/assets/admin/js/off-canvas.js'
+    import '@/assets/admin/js/hoverable-collapse.js'
+    import '@/assets/admin/js/misc.js'
+    import '@/assets/admin/js/settings.js'
+    import '@/assets/admin/js/todolist.js'
+    /* import '@/assets/admin/js/dashboard.js' */
 
     export default {
         name: 'Admin',
@@ -5096,14 +5152,18 @@
     </script>
 
     <style scoped>
-        .text-perfil{
-            color: rgb(44, 41, 41) !important;
-        }
-        .text-perfil:hover{
-            color: rgb(49, 49, 110) !important;
-        }
-        .color-empresa{
-            color: white;
+        @import '../assets/admin/vendors/mdi/css/materialdesignicons.min.css';
+        @import '../assets/admin/vendors/css/vendor.bundle.base.css';
+        @import '../assets/admin/vendors/jvectormap/jquery-jvectormap.css';
+        @import '../assets/admin/vendors/flag-icon-css/css/flag-icon.min.css';
+        @import '../assets/admin/vendors/owl-carousel-2/owl.carousel.min.css';
+        @import '../assets/admin/vendors/owl-carousel-2/owl.theme.default.min.css';
+        @import '../assets/admin/css/style.css';
+
+        .logo {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
         }
     </style>
     ```
@@ -5121,7 +5181,20 @@
     ≡
     ```
 7. Colocar una imagen alusiva al desarrollo web en **public\img\desarrollo-web.png**.
-8. Subir repositorio:
+8. Eliminar los siguientes archivos:
+    + src\assets\admin\images\favicon.png
+    + src\assets\admin\images\logo-mini.svg
+    + src\assets\admin\images\logo.svg
+9. Eliminar las siguientes carpetas:
+    + public\assets
+    + src\assets\admin\images\carousel
+    + src\assets\admin\images\dashboard
+    + src\assets\admin\images\faces
+    + src\assets\admin\images\faces-clipart
+    + src\assets\admin\images\lightbox
+    + src\assets\admin\images\samples
+    + src\assets\admin\images\screenshots
+10. Subir repositorio:
     + $ git add .
     + $ git commit -m "Adaptar template administrativo al proyecto"
     + $ git push -u origin main
