@@ -4811,10 +4811,10 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
                     <router-link to="/" class="sidebar-brand brand-logo">
-                        <img src="/img/logo-completo-sm.png" alt="logo" class="logo" />
+                        <img src="img/logo-completo-sm.png" alt="logo" class="logo" />
                     </router-link>
                     <router-link to="/" class="sidebar-brand brand-logo-mini">
-                        <img src="/img/apple-touch-icon.png" alt="logo" class="logo" />
+                        <img src="img/apple-touch-icon.png" alt="logo" class="logo" />
                     </router-link>
                 </div>
                 <ul class="nav">
@@ -6732,8 +6732,26 @@
 2. Compilar nuevamente:
     + $ npm run build
 
+## Configurar las rutas con Hash Mode
++ Documentación: https://router.vuejs.org/guide/essentials/history-mode.html#hash-mode
+1. Modificar el archivo de rutas **src\router\index.js**:
+    ```js
+    import { createRouter, createWebHashHistory } from 'vue-router'
+    import Home from '../views/Home.vue'
 
-## Deploy en GitHub Pages
+    const routes = [
+        ≡
+    ]
+
+    const router = createRouter({
+        history: createWebHashHistory(process.env.BASE_URL),
+        routes
+    })
+    ≡
+    ```
+
+
+## Deploy en GitHub Pages (Método 1)
 1. Primera vez:
     1. Crear una nueva rama **gh-pages**:
        + $ git checkout -b gh-pages
@@ -6774,55 +6792,45 @@
     + $ git push -u origin main
 
 
+## Deploy en GitHub Pages (Método 2)
+1. Crear o modificar **vue.config.js**:
+    ```js
+    module.exports = {
+        publicPath: process.env.NODE_ENV === "production" ? "/cvpetrix2022/" : "/",
+    };
+    ``` 
+2. Crear archivo **deploy.sh**:
+    ```sh
+    #!/usr/bin/env sh
+
+    # abort on errors
+    set -e
+
+    # build
+    npm run build
+
+    # navigate into the build output directory
+    cd dist
+
+    git init
+    git add -A
+    git commit -m 'deploy'
+
+    # if you are deploying to https://<USERNAME>.github.io/<REPO>
+    # Vía SSH
+    # git push -f git@github.com:petrix12/cvpetrix2022.git master:gh-pages
+
+    git push -f https://github.com/petrix12/cvpetrix2022.git master:gh-pages
+
+    cd -
+    ```
+3. Ejecutar:
+    + $ git add .
+    + $ git commit -m "Prueba GitHub Pages"
+    + $ git push -u origin main
+    + $ chmod +x deploy.sh
+    + $ ./deploy.sh
+    + **Nota**: GitHub publicará la página automáticamente en:
+        + https://petrix12.github.io/cvpetrix2022
 
 
-
-module.exports = {
-    publicPath: '/cvpetrix2022',
-}
-
-**vue.config.js**
-module.exports = {
-    publicPath: process.env.NODE_ENV === "production" ? "/cvpetrix2022/" : "/",
-};
-
-**deploy.sh**
-#!/usr/bin/env sh
-
-# abort on errors
-set -e
-
-# build
-npm run build
-
-# navigate into the build output directory
-cd dist
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:petrix12/cvpetrix2022.git master:gh-pages
-
-cd -
-
-
-
-******
-
-
-Ejecutar: chmod +x deploy.sh 
-./deploy.sh
-
-
-https://petrix12.github.io/cvpetrix2022/
-
-
-
-***
-+ $ git add .
-+ $ git commit -m "Prueba GitHub Pages"
-+ $ git push -u origin main
-+ $ chmod +x deploy.sh
-+ $ ./deploy.sh

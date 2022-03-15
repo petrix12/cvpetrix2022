@@ -3,10 +3,10 @@
 		<nav class="sidebar sidebar-offcanvas" id="sidebar">
 			<div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
 				<router-link to="/" class="sidebar-brand brand-logo">
-					<img src="/img/logo-completo-sm.png" alt="logo" class="logo" />
+					<img src="img/logo-completo-sm.png" alt="logo" class="logo" />
 				</router-link>
 				<router-link to="/" class="sidebar-brand brand-logo-mini">
-					<img src="/img/apple-touch-icon.png" alt="logo" class="logo" />
+					<img src="img/apple-touch-icon.png" alt="logo" class="logo" />
 				</router-link>
 			</div>
 			<ul class="nav">
