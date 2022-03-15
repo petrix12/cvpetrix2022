@@ -6724,7 +6724,7 @@
 + $ git push -u origin main
 
 
-## Resolver problema con las rutas en producción
+## Resolver problema con las rutas en producción en Netlify
 1. Crear archivo **public\_redirects** en **public**:
     ```
     /* /index.html  200
@@ -6773,6 +6773,47 @@
     + $ git commit -m "Deploy en GitHub Pages"
     + $ git push -u origin main
 
+
+
+
+
 module.exports = {
     publicPath: '/cvpetrix2022',
 }
+
+**vue.config.js**
+module.exports = {
+    publicPath: process.env.NODE_ENV === "production" ? "/cvpetrix2022/" : "/",
+};
+
+**deploy.sh**
+#!/usr/bin/env sh
+
+# abort on errors
+set -e
+
+# build
+npm run build
+
+# navigate into the build output directory
+cd dist
+
+git init
+git add -A
+git commit -m 'deploy'
+
+# if you are deploying to https://<USERNAME>.github.io/<REPO>
+git push -f git@github.com:petrix12/cvpetrix2022.git master:gh-pages
+
+cd -
+
+
+
+******
+
+
+Ejecutar: chmod +x deploy.sh 
+./deploy.sh
+
+
+https://petrix12.github.io/cvpetrix2022/
