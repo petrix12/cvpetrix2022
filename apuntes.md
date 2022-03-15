@@ -6817,3 +6817,12 @@ Ejecutar: chmod +x deploy.sh
 
 
 https://petrix12.github.io/cvpetrix2022/
+
+
+
+***
++ $ git add .
++ $ git commit -m "Prueba GitHub Pages"
++ $ git push -u origin main
++ $ chmod +x deploy.sh
++ $ ./deploy.sh

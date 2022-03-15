@@ -17,6 +17,6 @@ git commit -m 'deploy'
 # Vía SSH
 # git push -f git@github.com:petrix12/cvpetrix2022.git master:gh-pages
 
-git push -f https://github.com/petrix12/cvpetrix2022.git main:gh-pages
+git push -f https://github.com/petrix12/cvpetrix2022.git master:gh-pages
 
 cd -
