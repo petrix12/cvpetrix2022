@@ -50,7 +50,7 @@
 				<div class="credits">
 					Una muy buena opción para el <a href="#portfolio">{{ footer.actividad }}</a>
 				</div>
-				<router-link to="/admin">Prueba - borrar</router-link>
+				<router-link to="/admin">Prueba 1 - borrar</router-link>
 			</div>
 		</footer>
 		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

@@ -6772,3 +6772,7 @@
     + $ git add .
     + $ git commit -m "Deploy en GitHub Pages"
     + $ git push -u origin main
+
+module.exports = {
+    publicPath: '/cvpetrix2022',
+}
