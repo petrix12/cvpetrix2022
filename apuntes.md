@@ -6724,6 +6724,14 @@
 + $ git push -u origin main
 
 
+## Resolver problema con las rutas en producción
+1. Crear archivo **public\_redirects** en **public**:
+    ```
+    /* /index.html  200
+    ```
+2. Compilar nuevamente:
+    + $ npm run build
+
 
 ## Deploy en GitHub Pages
 1. Primera vez:
