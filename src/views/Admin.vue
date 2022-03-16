@@ -2,12 +2,12 @@
     <div class="container-scroller">
 		<nav class="sidebar sidebar-offcanvas" id="sidebar">
 			<div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-				<router-link to="/" class="sidebar-brand brand-logo">
+				<a href="index.html" class="sidebar-brand brand-logo">
 					<img src="img/logo-completo-sm.png" alt="logo" class="logo" />
-				</router-link>
-				<router-link to="/" class="sidebar-brand brand-logo-mini">
+				</a>
+				<a href="index.html" class="sidebar-brand brand-logo-mini">
 					<img src="img/apple-touch-icon.png" alt="logo" class="logo" />
-				</router-link>
+				</a>
 			</div>
 			<ul class="nav">
 				<li class="nav-item profile">
@@ -150,9 +150,9 @@
 		<div class="container-fluid page-body-wrapper">
 			<nav class="navbar p-0 fixed-top d-flex flex-row">
 				<div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-					<router-link to="/" class="navbar-brand brand-logo-mini">
+					<a href="index.html" class="navbar-brand brand-logo-mini">
 						<img src="/img/apple-touch-icon.png" alt="logo" class="logo" />
-					</router-link>
+					</a>
 				</div>
 				<div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
 					<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -208,7 +208,6 @@
 							</div>
 						</div>
 					</div>
-<!-- Por aquí voy -->
 					<div class="row ">
 						<div class="col-12 grid-margin">
 							<div class="card">
@@ -312,7 +311,8 @@
 							&copy; Copyright <strong>{{ footer.empresa }}</strong>. All Rights Reserved
 						</span>
 						<span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">
-							Una muy buena opción para el <router-link to="/">{{ footer.actividad }}</router-link>
+							<!-- Una muy buena opción para el <router-link to="/">{{ footer.actividad }}</router-link> -->
+							Una muy buena opción para el <a href="index.html">{{ footer.actividad }}</a>
 						</span>
 					</div>
 				</footer>
