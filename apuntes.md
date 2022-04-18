@@ -6794,7 +6794,7 @@
 
     cd -
     ```
-3. Ejecutar:
+3. Ejecutar (con Git Bash):
     + $ git add .
     + $ git commit -m "Prueba GitHub Pages"
     + $ git push -u origin main
