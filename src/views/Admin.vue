@@ -29,7 +29,7 @@
 				</li>
 				<!-- datos - contact - footer -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('datos')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-account-check"></i>
 						</span>
@@ -38,7 +38,7 @@
 				</li>
 				<!-- intro -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('intro')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-account-card-details"></i>
 						</span>
@@ -47,7 +47,7 @@
 				</li>
 				<!-- destacados - servicios -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('servicios')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-playlist-play"></i>
 						</span>
@@ -56,7 +56,7 @@
 				</li>
 				<!-- calidad -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('calidad')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-table-large"></i>
 						</span>
@@ -65,7 +65,7 @@
 				</li>
 				<!-- accion -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('accion')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-chart-bar"></i>
 						</span>
@@ -74,7 +74,7 @@
 				</li>
 				<!-- skills -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('skills')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-application"></i>
 						</span>
@@ -83,7 +83,7 @@
 				</li>
 				<!-- facts - cursos -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('cursos')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-security"></i>
 						</span>
@@ -93,7 +93,7 @@
 				</li>
 				<!-- portafolio -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('portafolio')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-file-document-box"></i>
 						</span>
@@ -102,16 +102,16 @@
 				</li>
 				<!-- clients -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('clients')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-altimeter"></i>
 						</span>
-						<span class="menu-title">Logo de empresas</span>
+						<span class="menu-title">Logos de empresas</span>
 					</a>
 				</li>
 				<!-- testimonials -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('testimonials')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-account-multiple-plus"></i>
 						</span>
@@ -120,7 +120,7 @@
 				</li>
 				<!-- formacion -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('formacion')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-book-open-page-variant"></i>
 						</span>
@@ -129,7 +129,7 @@
 				</li>
 				<!-- sociales -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('sociales')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-emoticon-cool"></i>
 						</span>
@@ -138,7 +138,7 @@
 				</li>
 				<!-- imagenes -->
 				<li class="nav-item menu-items">
-					<a class="nav-link" href="#">
+					<a class="nav-link" @click="vista('imagenes')" style="cursor: pointer">
 						<span class="menu-icon">
 							<i class="mdi mdi-file-image"></i>
 						</span>
@@ -208,101 +208,48 @@
 							</div>
 						</div>
 					</div>
-					<div class="row ">
-						<div class="col-12 grid-margin">
-							<div class="card">
-								<div class="card-body">
-									<h4 class="card-title">Order Status</h4>
-									<div class="table-responsive">
-										<table class="table">
-											<thead>
-												<tr>
-													<th>
-														<div class="form-check form-check-muted m-0">
-															<label class="form-check-label">
-																<input type="checkbox" class="form-check-input">
-															</label>
-														</div>
-													</th>
-													<th> Client Name </th>
-													<th> Order No </th>
-													<th> Product Cost </th>
-													<th> Project </th>
-													<th> Payment Mode </th>
-													<th> Start Date </th>
-													<th> Payment Status </th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														<div class="form-check form-check-muted m-0">
-															<label class="form-check-label">
-															<input type="checkbox" class="form-check-input">
-															</label>
-														</div>
-													</td>
-													<td>
-														<img src="img/autor.jpg" alt="image" />
-														<span class="pl-2">Henry Klein</span>
-													</td>
-													<td> 02312 </td>
-													<td> $14,500 </td>
-													<td> Dashboard </td>
-													<td> Credit card </td>
-													<td> 04 Dec 2019 </td>
-													<td>
-														<div class="badge badge-outline-success">Approved</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-check-muted m-0">
-															<label class="form-check-label">
-															<input type="checkbox" class="form-check-input">
-															</label>
-														</div>
-													</td>
-													<td>
-														<img src="img/autor.jpg" alt="image" />
-														<span class="pl-2">Estella Bryan</span>
-													</td>
-													<td> 02312 </td>
-													<td> $14,500 </td>
-													<td> Website </td>
-													<td> Cash on delivered </td>
-													<td> 04 Dec 2019 </td>
-													<td>
-														<div class="badge badge-outline-warning">Pending</div>
-													</td>
-												</tr>
-												<tr>
-													<td>
-														<div class="form-check form-check-muted m-0">
-															<label class="form-check-label">
-															<input type="checkbox" class="form-check-input">
-															</label>
-														</div>
-													</td>
-													<td>
-														<img src="img/autor.jpg" alt="image" />
-														<span class="pl-2">Lucy Abbott</span>
-													</td>
-													<td> 02312 </td>
-													<td> $14,500 </td>
-													<td> App design </td>
-													<td> Credit card </td>
-													<td> 04 Dec 2019 </td>
-													<td>
-														<div class="badge badge-outline-danger">Rejected</div>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
+					<!-- AQUÍ VA LA VISTA -->
+					<div v-if="vista_actual === 'datos'">
+						Datos generales
+					</div>
+					<div v-else-if="vista_actual === 'intro'">
+						Datos introductorios
+					</div>
+					<div v-else-if="vista_actual === 'servicios'">
+						Servicios
+					</div>
+					<div v-else-if="vista_actual === 'calidad'">
+						Política de calidad
+					</div>
+					<div v-else-if="vista_actual === 'accion'">
+						Call To Action
+					</div>
+					<div v-else-if="vista_actual === 'skills'">
+						Principales Stacks
+					</div>
+					<div v-else-if="vista_actual === 'cursos'">
+						<Cursos />
+					</div>
+					<div v-else-if="vista_actual === 'portafolio'">
+						Portafolio
+					</div>
+					<div v-else-if="vista_actual === 'clients'">
+						Logos de empresas
+					</div>
+					<div v-else-if="vista_actual === 'testimonials'">
+						Testimoniales
+					</div>
+					<div v-else-if="vista_actual === 'formacion'">
+						Estudios
+					</div>
+					<div v-else-if="vista_actual === 'sociales'">
+						Redes sociales
+					</div>
+					<div v-else-if="vista_actual === 'imagenes'">
+						Imagenes
+					</div>
+					<div v-else>
+						Vista por defecto
 					</div>
 				</div>
 				<footer class="footer">
@@ -336,11 +283,26 @@ import '@/assets/admin/js/settings.js'
 import '@/assets/admin/js/todolist.js'
 /* import '@/assets/admin/js/dashboard.js' */
 
+import Cursos from '@/components/Admin/Cursos'
+
 export default {
 	name: 'Admin',
+	data() {
+		return {
+			vista_actual: 'vista'
+		}
+	},
+	components: {
+		Cursos
+	},
     computed: {
         ...mapState(['datos', 'footer'])
-    }
+    },
+	methods: {
+		vista(modo){
+			this.vista_actual = modo
+		}
+	}
 }
 </script>
 

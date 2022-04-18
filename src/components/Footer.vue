@@ -50,7 +50,7 @@
 				<div class="credits">
 					Una muy buena opción para el <a href="#portfolio">{{ footer.actividad }}</a>
 				</div>
-				<router-link to="/admin">Prueba GitHub Pages 5</router-link>
+				<!-- <router-link to="/admin">Prueba GitHub Pages 5</router-link> -->
 			</div>
 		</footer>
 		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
