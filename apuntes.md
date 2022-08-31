@@ -6804,3 +6804,7 @@
         + https://petrix12.github.io/cvpetrix2022
 
 
+## Eliminar rama gh-pages local y remota
+1. $ git checkout main
+2. $ git branch -D gh-pages
+3. $ git push origin --delete gh-pages

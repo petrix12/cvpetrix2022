@@ -4,6 +4,7 @@
 		<IntroSection />
 		<main id="main">
 			<FeaturedServicesSection />
+			<AboutAuthor />
 			<PoliticasCalidad />
 			<Servicios />
 			<CallToAction />
@@ -36,6 +37,7 @@ import Estudios from '@/components/Estudios'
 import Cursos from '@/components/Cursos'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import AboutAuthor from '@/components/AboutAuthor'
 
 export default {
 	name: 'Home',
@@ -54,7 +56,8 @@ export default {
 		Estudios,
 		Cursos,
 		Contact,
-		Footer
+		Footer,
+		AboutAuthor
 	}
 }
 </script>
