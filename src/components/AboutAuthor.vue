@@ -4,7 +4,16 @@
             <div class="container text-center">
                 <div class="section-header wow fadeInUp w-auto">
                     <h3>Acerca de mi experiencia</h3>
-                    <iframe width="597" height="336" src="https://www.youtube.com/embed/0aNLLpvYVio" title="Video presentación Ing. Pedro Bazó" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
+                    <!-- width="597" height="336" --> 
+                    <iframe 
+                        width="597" height="336"
+                        src="https://www.youtube.com/embed/0aNLLpvYVio" 
+                        title="Video presentación Ing. Pedro Bazó" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
                     <a href="cppedrobazo.pdf" target="_blank" class="form-control boton_cp mt-5" >Mi carta de presentación</a>
                 </div>
             </div>
