@@ -13,7 +13,6 @@
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0",
-    
     "@mdi/font": "^3.7.95",
     "bootstrap": "^4.4.1",
     "bootstrap-maxlength": "^1.6.0",
