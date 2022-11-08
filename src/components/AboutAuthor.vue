@@ -1,8 +1,8 @@
 <template>
 	<div>
-        <section id="team">
+        <section id="team2">
             <div class="container text-center">
-                <div class="section-header wow fadeInUp w-auto">
+                <div class="section-header wow fadeInUp w-auto m-5">
                     <h3>Acerca de mi experiencia</h3>
                     
                     <!-- width="597" height="336" --> 
@@ -12,7 +12,8 @@
                         title="Video presentación Ing. Pedro Bazó" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
+                        allowfullscreen
+                    >
                     </iframe>
                     <a href="cppedrobazo.pdf" target="_blank" class="form-control boton_cp mt-5" >Mi carta de presentación</a>
                 </div>
