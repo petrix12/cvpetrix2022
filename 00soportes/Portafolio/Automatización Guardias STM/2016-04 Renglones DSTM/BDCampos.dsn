@@ -1,0 +1,13 @@
+[ODBC]
+DRIVER=Controlador para Microsoft Access (*.mdb)
+UID=admin
+UserCommitSync=Yes
+Threads=3
+SafeTransactions=0
+PageTimeout=5
+MaxScanRows=8
+MaxBufferSize=2048
+FIL=MS Access
+DriverId=25
+DefaultDir=F:\PETRIX\PROYECTOS PROPIOS\2016-04 RENGLONES DSTM
+DBQ=F:\PETRIX\PROYECTOS PROPIOS\2016-04 RENGLONES DSTM\bd.mdb
