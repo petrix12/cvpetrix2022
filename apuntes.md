@@ -6808,3 +6808,6 @@
 1. $ git checkout main
 2. $ git branch -D gh-pages
 3. $ git push origin --delete gh-pages
+
+## En caso de problemas al intentar compilar, ejecutar:
++ $ 
