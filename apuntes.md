@@ -6803,6 +6803,65 @@
     + **Nota**: GitHub publicará la página automáticamente en:
         + https://petrix12.github.io/cvpetrix2022
 
+## Deploy en GitHub Pages (Método 3: con GitHub Actions)
+1. Actualizar **vue.config.js**:
+```js
+module.exports = {
+    publicPath: '/cvpetrix2022/',
+}
+```
+2. Crear archivo **.github/workflows/deploy.yml**:
+```yml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
+3. Configurar GitHub Pages:
+    + Ir al repositorio en GitHub
+    + Settings → Pages
+    + En "Source", selecciona GitHub Actions
+
+
+
 
 ## Eliminar rama gh-pages local y remota
 1. $ git checkout main
