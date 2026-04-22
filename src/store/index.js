@@ -94,7 +94,7 @@ export default createStore({
 				},
 				{
 					id: 3,
-					icon: 'ion-ios-git-cog',
+					icon: 'ion-ios-cog',
 					servicio: 'Desarrollo de APIs & Microservicios',
 					descripcion: 'Diseño de arquitecturas backend robustas y escalables con Laravel, enfocadas en la integración de servicios externos y optimización de datos.',
 					enlace: 'https://github.com/petrix12/pasarela_pago'
@@ -115,7 +115,7 @@ export default createStore({
 				},
 				{
 					id: 6,
-					icon: 'ion-ios-list-albums',
+					icon: 'ion-ios-albums',
 					servicio: 'Gestión de Datos & BI',
 					descripcion: 'Consultoría y diseño de bases de datos relacionales (MySQL/SQL Server), optimización de queries complejas y automatización de reportes masivos.',
 					enlace: '#'
