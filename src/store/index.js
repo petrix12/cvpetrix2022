@@ -31,8 +31,7 @@ export default createStore({
 			// Mantenemos tu frase de Edison que es muy personal y potente
 			descripcion5: 'Mi mayor fortaleza es la persistencia y la capacidad analítica frente a problemas críticos. Me apropio de la frase de Thomas Edison: “Nuestra más grande debilidad yace en rendirnos. El camino más seguro hacia el éxito es siempre intentarlo una vez más”.'
 		},
-
-		// Pendiente de revisión
+		/*
 		destacados: [
 			// Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
 			{
@@ -71,6 +70,47 @@ export default createStore({
 				enlace: 'https://github.com/petrix12/2021_ecommerce'
 			}
 		],
+		*/
+		destacados: [
+			{
+				id: 1,
+				icon: 'ion-ios-medkit', // Cambiado a medkit para mayor relevancia visual
+				servicio: 'Arquitectura HealthTech & Clínicas',
+				descripcion: 'Diseño y desarrollo de ecosistemas de Gestión Clínica escalables, enfocados en la seguridad de datos y la interoperabilidad multitenant.',
+				enlace: 'https://github.com/petrix12/Sistema-de-Historia-Cl-nica-en-Laravel'
+			},
+			{
+				id: 2,
+				icon: 'ion-ios-cloud-done', // Un icono más moderno de "nube completada"
+				servicio: 'DevOps & Infraestructura Cloud',
+				descripcion: 'Implementación de ciclos CI/CD, contenedorización con Docker y despliegue en entornos AWS/VPS optimizados para alto rendimiento.',
+				enlace: 'https://github.com/petrix12/deploy_2022'
+			},
+			{
+				id: 3,
+				icon: 'ion-ios-construct', // Icono de construcción/ingeniería
+				servicio: 'Modernización de Sistemas Legacy',
+				descripcion: 'Refactorización estratégica de plataformas complejas, migrando de arquitecturas monolíticas a soluciones modernas y mantenibles.',
+				enlace: 'https://github.com/petrix12/PlataformaDeCursosLaravel' 
+				// Nota: He adaptado el texto para que suene a "Modernización", que es lo que buscan hoy.
+			},
+			{
+				id: 4,
+				icon: 'ion-ios-card', // Más directo para pagos
+				servicio: 'Pasarelas de Pago & Fintech',
+				descripcion: 'Integración avanzada de flujos de pago recurrentes y transacciones seguras utilizando Stripe, PayPal y APIs financieras externas.',
+				enlace: 'https://github.com/petrix12/pasarela_pago'
+			},
+			{
+				id: 5,
+				icon: 'ion-ios-stats', // Icono de analítica/crecimiento
+				servicio: 'Sistemas Escalables & Big Data',
+				descripcion: 'Desarrollo de aplicaciones de alta concurrencia con optimización de consultas SQL complejas para la gestión eficiente de grandes volúmenes de datos.',
+				enlace: 'https://github.com/petrix12/2021_ecommerce'
+			}
+		],		
+
+		// Pendiente de revisión
 		calidad: {
 			texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',
 			mision: 'Ofrecer herramientas y soluciones de trabajo que disminuyan las horas hombres a partir de la automatización de procesos informáticos, a través de un servicio de alta calidad, tecnologías de vanguardia y gran pasión por el desarrollo web.',
