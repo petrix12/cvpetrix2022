@@ -121,82 +121,11 @@ export default createStore({
 					enlace: '#'
 				}
 			]
-		},		
-		// Pendiente de revisión
-		/*		
-		servicios: {
-			texto: 'Hagas lo que hagas, hazlo tan bien para que vuelvan y además traigan a sus amigos. "Walt Disney"',
-			items: [
-				// Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
-				{
-					id: 1,
-					icon: 'ion-ios-albums',
-					servicio: 'Sistema de Historia Clínica o similar',
-					descripcion: 'Desarrollo de una aplicación web que permita administrar el historial de los pacientes de un centro de salud.',
-					enlace: 'https://github.com/petrix12/Sistema-de-Historia-Cl-nica-en-Laravel'
-				},
-				{
-					id: 2,
-					icon: 'ion-ios-cloud-upload',
-					servicio: 'Publicación de aplicaciones web',
-					descripcion: 'Alojar webs a Hosting o VPS, creadas con HTML, CSS, JavaScript, PHP, MySQL, Angular, Node, Mongo, Laravel, Symfony, WP, Python y Django.',
-					enlace: 'https://github.com/petrix12/deploy_2022'
-				},
-				{
-					id: 3,
-					icon: 'ion-ios-book',
-					servicio: 'Plataforma de cursos',
-					descripcion: 'Desarrollo de una plataforma de cursos, con un sistema completo de roles y servicios.',
-					enlace: 'https://github.com/petrix12/PlataformaDeCursosLaravel'
-				},
-				{
-					id: 4,
-					icon: 'ion-ios-browsers',
-					servicio: 'Pasarela de pagos',
-					descripcion: 'Implementación de una pasarela de pagos con Stripe y PayPal completa para un negocio virtual o tienda online.',
-					enlace: 'https://github.com/petrix12/pasarela_pago'
-				},
-				{
-					id: 5,
-					icon: 'ion-ios-cart',
-					servicio: 'Ecommerce',
-					descripcion: 'Desarrollo de una aplicación ecommerce completamente funcional.',
-					enlace: 'https://github.com/petrix12/2021_ecommerce'
-				},
-				{
-					id: 6,
-					icon: 'ion-ios-cog',
-					servicio: 'Front-end',
-					descripcion: 'Desarrollo de aplicaciones Front-end principalmente mediante el uso de las siguientes tecnologías: HTML5, CSS3 y Javascript.',
-					enlace: '#'
-				},
-				{
-					id: 7,
-					icon: 'ion-ios-photos',
-					servicio: 'Back-end',
-					descripcion: 'Desarrollo de aplicaciones Back-end principalmente mediante el uso de las siguientes tecnologías: PHP, Node.js, MySQL y MongoDB.',
-					enlace: '#'
-				},
-				{
-					id: 8,
-					icon: 'ion-ios-barcode',
-					servicio: 'Aplicaciones de escritorio',
-					descripcion: 'Desarrollo de aplicaciones de escritorio principalmente mediante el uso de los siguientes lenguajes de programación: Delphi, C++ Builder, Visual Basic, Microsoft C#.',
-					enlace: '#'
-				},
-				{
-					id: 9,
-					icon: 'ion-ios-analytics',
-					servicio: 'Hojas de cálculo',
-					descripcion: 'Diseño de Hojas de Cálculo de Microsoft Excel, aplicando funcionalidad mediante el uso de VBA.',
-					enlace: '#'
-				}
-			]
 		},
-		*/
 		accion: {
-			texto: 'Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero estoy convencido de que encontraremos una muy buena solución.'
+			texto: 'Más allá de dominar lenguajes, mi mayor competencia es la resolución de problemas. No pretendo saberlo todo, pero estoy convencido de mi capacidad para encontrar y ejecutar la solución técnica que mejor se adapte a las necesidades del proyecto.'
 		},
+		// Pendiente de revisión
 		skills: {
 			texto: 'Principales stacks web con los que he tenido el placer de trabajar.',
 			stacks: [
