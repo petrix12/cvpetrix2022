@@ -548,15 +548,270 @@ export default createStore({
 					nombre: 'ucv_petroleo'
 				}
 			],
-			// Pendiente de revisión
 			experiencias: [
+				{
+					id: 19,
+					inicio_mes: 'Sep',
+					inicio_anho: '2024',
+					fin_mes: 'Abr', // Ajustar según fecha actual
+					fin_anho: '2026',
+					cargo: 'Senior Software Engineer',
+					descripcion: 'Liderazgo técnico en el desarrollo de soluciones HealthTech. Optimización de arquitecturas basadas en Laravel y Vue.js, gestión de bases de datos de alta disponibilidad y mejora de procesos de despliegue y escalabilidad del producto.',
+					empresa: 'Klinikare Digital Health',
+					img: '',
+					logos: ['klinikare']
+				},
+				{
+					id: 18,
+					inicio_mes: 'Mar',
+					inicio_anho: '2023',
+					fin_mes: 'Sep',
+					fin_anho: '2024',
+					cargo: 'Full Stack Web Developer',
+					descripcion: 'Desarrollo integral de aplicaciones web personalizadas utilizando el stack Laravel/Vue. Implementación de APIs RESTful, integraciones de terceros y optimización del rendimiento en el lado del cliente (Frontend).',
+					empresa: 'Commutatio',
+					img: '',
+					logos: ['commutatio']
+				},
 				{
 					id: 17,
 					inicio_mes: 'Ago',
 					inicio_anho: '2019',
-					fin_mes: 'Actual',
-					fin_anho: 'Actual',
-					cargo: 'Líder de Control y Seguimiento y Desarrollador Web',
+					fin_mes: 'Mar',
+					fin_anho: '2023',
+					cargo: 'Senior Full-Stack Developer',
+					descripcion: 'Arquitectura y desarrollo de plataformas de gestión de datos a gran escala. Especialista en ecosistemas Laravel y Vue.js, automatización de flujos de captación de clientes y administración de servicios en la nube.',
+					empresa: 'Sefar Universal S.L.',
+					img: '',
+					logos: ['sefar']
+				},
+				{
+					id: 16,
+					inicio_mes: 'May',
+					inicio_anho: '2016',
+					fin_mes: 'Jul',
+					fin_anho: '2021',
+					cargo: 'Analista Mayor de Inteligencia de Datos (BI)',
+					descripcion: 'Consolidación de presupuestos masivos y auditoría de datos financieros. Desarrollo de herramientas propias de automatización y reporting avanzado utilizando VBA, Delphi, MySQL e integración directa con SAP.',
+					empresa: 'PDVSA - Gerencia de Finanzas',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 15,
+					inicio_mes: 'Mar',
+					inicio_anho: '2014',
+					fin_mes: 'May',
+					fin_anho: '2016',
+					cargo: 'Analista de Sistemas de Planificación',
+					descripcion: 'Optimización de recursos financieros mediante el desarrollo de software de control interno. Creación de dashboards y sistemas de consulta con VBA, VB6, SQL Server y Access.',
+					empresa: 'PDVSA - Planificación y Gestión',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 14,
+					inicio_mes: 'Mar',
+					inicio_anho: '2008',
+					fin_mes: 'Feb',
+					fin_anho: '2015',
+					cargo: 'Docente de Ingeniería de Software',
+					descripcion: 'Formación de futuros ingenieros en lógica de programación, estructuras de datos y desarrollo orientado a objetos (VB6, VBA y bases de datos relacionales).',
+					empresa: 'Universidad Gran Mariscal de Ayacucho (UGMA)',
+					img: '',
+					logos: ['ugma']
+				},
+				{
+					id: 13,
+					inicio_mes: 'Ene',
+					inicio_anho: '2010',
+					fin_mes: 'Mar',
+					fin_anho: '2014',
+					cargo: 'Supervisor de Control Presupuestario',
+					descripcion: 'Supervisión técnica de inversiones y gastos operativos. Desarrollo de aplicaciones de alerta temprana y control de desviaciones mediante tecnologías Microsoft (VBA/Access).',
+					empresa: 'PDVSA - Procesos de Superficie',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 12,
+					inicio_mes: 'Ene',
+					inicio_anho: '2009',
+					fin_mes: 'Ene',
+					fin_anho: '2010',
+					cargo: 'Ingeniero de Planificación y Desarrollo Técnico',
+					descripcion: 'Seguimiento financiero de proyectos electromecánicos. Automatización de flujos de trabajo y generación de reportes técnicos utilizando Delphi y VBA.',
+					empresa: 'PDVSA - Construcción de Obras',
+					img: '',
+					logos: ['pdvsa']
+				},
+				{
+					id: 11,
+					inicio_mes: 'Feb',
+					inicio_anho: '2008',
+					fin_mes: 'Ene',
+					fin_anho: '2009',
+					cargo: 'Ingeniero Planificador de Proyectos',
+					descripcion: 'Control y seguimiento físico-financiero de inversiones en infraestructura industrial en el Distrito San Tomé.',
+					empresa: 'Digit Automatización (Outsourcing PDVSA)',
+					img: '',
+					logos: ['digit', 'pdvsa']
+				},
+				{
+					id: 10,
+					inicio_mes: 'Jul',
+					inicio_anho: '2007',
+					fin_mes: 'Feb',
+					fin_anho: '2008',
+					cargo: 'Controller de Proyectos de Infraestructura',
+					descripcion: 'Análisis de avance de obra y consolidación de reportes de gestión para la Superintendencia de Infraestructura.',
+					empresa: 'Agrotécnica Aguilera (Outsourcing PDVSA)',
+					img: '',
+					logos: ['agrotecnica', 'pdvsa']
+				},
+				{
+					id: 9,
+					inicio_mes: 'Sep',
+					inicio_anho: '2006',
+					fin_mes: 'Jul',
+					fin_anho: '2007',
+					cargo: 'Ingeniero Inspector de Construcción',
+					descripcion: 'Diseño técnico y supervisión de líneas de flujo. Generación de memorias descriptivas y documentación técnica de ingeniería de detalle.',
+					empresa: 'Costa Consultores 2030 (Sector Petrolero)',
+					img: '',
+					logos: ['costa_consultores', 'pdvsa']
+				},
+				{
+					id: 8,
+					inicio_mes: 'Abr',
+					inicio_anho: '2006',
+					fin_mes: 'Sep',
+					fin_anho: '2006',
+					cargo: 'Ingeniero de Diseño y Simulación',
+					descripcion: 'Simulación de procesos y líneas de flujo mediante software especializado (Hysys / Pipephase). Elaboración de evaluaciones económicas de proyectos.',
+					empresa: 'PROYNCA',
+					img: '',
+					logos: ['proynca', 'pdvsa']
+				},
+				{
+					id: 7,
+					inicio_mes: 'Ago',
+					inicio_anho: '2004',
+					fin_mes: 'Abr',
+					fin_anho: '2006',
+					cargo: 'Ingeniero de Procesos Industriales',
+					descripcion: 'Diseño de diagramas de flujo (PFD), manuales de operación para estaciones petroleras y optimización de procesos de tratamiento de crudo.',
+					empresa: 'PROYNCA (ENI Dacion)',
+					img: '',
+					logos: ['proynca', 'eni']
+				},
+				{
+					id: 6,
+					inicio_mes: 'Ene',
+					inicio_anho: '2004',
+					fin_mes: 'Ago',
+					fin_anho: '2004',
+					cargo: 'Instructor de Matemáticas',
+					descripcion: 'Docencia en ciencias exactas, fomentando la capacidad analítica en niveles de educación básica.',
+					empresa: 'U. E. Colegio Los Arcos',
+					img: '',
+					logos: ['los_arcos']
+				},
+				{
+					id: 5,
+					inicio_mes: 'Ago',
+					inicio_anho: '2002',
+					fin_mes: 'Sep',
+					fin_anho: '2004',
+					cargo: 'Especialista en Ciencias y Razonamiento',
+					descripcion: 'Capacitación técnica en áreas de física, química y razonamiento mecánico para perfiles preuniversitarios.',
+					empresa: 'VERBAL Corporación Educativa',
+					img: '',
+					logos: ['verbal']
+				},
+				{
+					id: 4,
+					inicio_mes: 'Mar',
+					inicio_anho: '2003',
+					fin_mes: 'Sep',
+					fin_anho: '2003',
+					cargo: 'Supervisor de Infraestructura',
+					descripcion: 'Gestión de mantenimiento y operatividad de instalaciones civiles y corporativas.',
+					empresa: 'Valle de Aramín S.L.U. (Oviedo, España)',
+					img: '',
+					logos: ['generico']
+				},
+				{
+					id: 3,
+					inicio_mes: 'Mar',
+					inicio_anho: '1996',
+					fin_mes: 'Dic',
+					fin_anho: '2002',
+					cargo: 'Instructor Técnico de Laboratorio (IT)',
+					descripcion: 'Soporte y formación en lenguajes de bajo y alto nivel (C/C++, Pascal, Delphi) y herramientas de ingeniería (AutoCAD, SQL) en el Departamento de Investigación de Operaciones.',
+					empresa: 'Facultad de Ingeniería - UCV',
+					img: '',
+					logos: ['ucv', 'ing_ucv']
+				},
+				{
+					id: 2,
+					inicio_mes: 'Mar',
+					inicio_anho: '1995',
+					fin_mes: 'Mar',
+					fin_anho: '1996',
+					cargo: 'Administrador de Sistemas Informáticos',
+					descripcion: 'Gestión técnica de infraestructura de computación, mantenimiento preventivo de hardware y soporte especializado a usuarios.',
+					empresa: 'Escuela de Ingeniería de Petróleo - UCV',
+					img: '',
+					logos: ['ucv']
+				},
+				{
+					id: 1,
+					inicio_mes: 'Ago',
+					inicio_anho: '1993',
+					fin_mes: 'Sep',
+					fin_anho: '1995',
+					cargo: 'Asistente Técnico de Formación',
+					descripcion: 'Apoyo en la capacitación de ciencias básicas para jóvenes, en programas financiados por el sector industrial.',
+					empresa: 'APROFAM (Asociación Promoción Familia)',
+					img: '',
+					logos: ['pdvsa']
+				}
+			]			
+			// Pendiente de revisión
+			/*
+			experiencias: [
+				{
+					id: 19,
+					inicio_mes: 'Sep',
+					inicio_anho: '2024',
+					fin_mes: 'Abr',
+					fin_anho: '2026',
+					cargo: 'Senior Software Engineer',
+					descripcion: '',
+					empresa: 'Klinikare Digital Health',
+					img: '',
+					logos: ['klinikare']
+				},
+				{
+					id: 18,
+					inicio_mes: 'Mar',
+					inicio_anho: '2023',
+					fin_mes: 'Sep',
+					fin_anho: '2024',
+					cargo: 'Desarrollador de Aplicaciones Web / Full Stack Developer',
+					descripcion: '',
+					empresa: 'Commutatio',
+					img: '',
+					logos: ['commutatio']
+				},
+				{
+					id: 17,
+					inicio_mes: 'Ago',
+					inicio_anho: '2019',
+					fin_mes: 'Mar',
+					fin_anho: '2023',
+					cargo: 'Desarrollador Web Full-Stack',
 					descripcion: 'Realizar seguimiento a los procesos de captación de clientes y desarrollo de aplicaciones web, usando Laravel y Vue.js como principales Framework de desarrollo.',
 					empresa: 'Sefar Universal S.L. Modalidad remoto.',
 					img: '',
@@ -755,6 +1010,7 @@ export default createStore({
 					logos: ['pdvsa']
 				}
 			]
+			*/
 		},
 		testimonials: [
 			{
