@@ -125,7 +125,41 @@ export default createStore({
 		accion: {
 			texto: 'Más allá de dominar lenguajes, mi mayor competencia es la resolución de problemas. No pretendo saberlo todo, pero estoy convencido de mi capacidad para encontrar y ejecutar la solución técnica que mejor se adapte a las necesidades del proyecto.'
 		},
+		skills: {
+			texto: 'Dominio de ecosistemas tecnológicos y capacidad de adaptación a arquitecturas modernas.',
+			stacks: [
+				{
+					id: 1,
+					stack: 'PHP & Laravel Expert',
+					color_bootstrap: 'bg-dark',
+					progressbar: 95, // Tu casa, tu fuerte principal
+					img: 'laravel-vue.png'
+				},
+				{
+					id: 2,
+					stack: 'Modern JavaScript (Vue / React / Node)',
+					color_bootstrap: 'bg-success',
+					progressbar: 85, // Refleja que dominas JS y que saltar entre Vue o React no es problema
+					img: 'mevn.png' 
+				},
+				{
+					id: 3,
+					stack: 'Database Architecture (SQL / NoSQL)',
+					color_bootstrap: 'bg-info',
+					progressbar: 90, // Un Senior se distingue por sus bases de datos
+					img: 'mern.png'
+				},
+				{
+					id: 4,
+					stack: 'DevOps & Cloud (AWS / Docker)',
+					color_bootstrap: 'bg-danger',
+					progressbar: 75, // Tu nueva ventaja competitiva
+					img: 'mean.png'
+				}
+			]
+		},		
 		// Pendiente de revisión
+		/*
 		skills: {
 			texto: 'Principales stacks web con los que he tenido el placer de trabajar.',
 			stacks: [
@@ -159,6 +193,7 @@ export default createStore({
 				}
 			]
 		},
+		*/
 		facts: {
 			texto: '“Vive como si fueses a morir mañana. Aprende como si fueses a vivir para siempre”. — Mahatma Gandhi',
 			cursos: 85,
