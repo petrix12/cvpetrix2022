@@ -64,15 +64,7 @@ export default createStore({
 				descripcion: 'Desarrollo de aplicaciones de alta concurrencia con optimización de consultas SQL complejas para la gestión eficiente de grandes volúmenes de datos.',
 				enlace: 'https://github.com/petrix12/2021_ecommerce'
 			}
-		],		
-		/*
-		calidad: {
-			texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',
-			mision: 'Ofrecer herramientas y soluciones de trabajo que disminuyan las horas hombres a partir de la automatización de procesos informáticos, a través de un servicio de alta calidad, tecnologías de vanguardia y gran pasión por el desarrollo web.',
-			valores: 'Espíritu de servicio, pasión por el trabajo, superación constante, honestidad, lealtad, respeto y creatividad.',
-			vision: 'Ser un desarrollador de aplicaciones web, reconocido por la innovación, simpleza y generación de soluciones, con una alta productividad y gran espíritu de servicio.'
-		},
-		*/
+		],
 		calidad: {
 			// La cita de Kawasaki es excelente, la mantenemos porque habla de propósito.
 			texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',			
@@ -83,7 +75,55 @@ export default createStore({
 			// Visión: De "ser un desarrollador" a "ser un referente técnico"
 			vision: 'Consolidarme como un referente técnico en el desarrollo de ecosistemas web complejos, reconocido por liderar procesos de modernización tecnológica que aporten simplicidad, robustez y valor estratégico a largo plazo.'
 		},
-		// Pendiente de revisión		
+		servicios: {
+			texto: 'Hagas lo que hagas, hazlo tan bien para que vuelvan y además traigan a sus amigos. "Walt Disney"',
+			items: [
+				{
+					id: 1,
+					icon: 'ion-ios-medkit',
+					servicio: 'Ecosistemas HealthTech',
+					descripcion: 'Especialista en el desarrollo de sistemas de gestión clínica, historias médicas digitales y soluciones interoperables bajo normativas de salud.',
+					enlace: 'https://github.com/petrix12/Sistema-de-Historia-Cl-nica-en-Laravel'
+				},
+				{
+					id: 2,
+					icon: 'ion-ios-cloud-outline',
+					servicio: 'Arquitectura Cloud & DevOps',
+					descripcion: 'Despliegue y administración de infraestructuras en AWS y VPS, utilizando Docker para la estandarización de entornos y alta disponibilidad.',
+					enlace: 'https://github.com/petrix12/deploy_2022'
+				},
+				{
+					id: 3,
+					icon: 'ion-ios-git-network',
+					servicio: 'Desarrollo de APIs & Microservicios',
+					descripcion: 'Diseño de arquitecturas backend robustas y escalables con Laravel, enfocadas en la integración de servicios externos y optimización de datos.',
+					enlace: 'https://github.com/petrix12/pasarela_pago'
+				},
+				{
+					id: 4,
+					icon: 'ion-ios-desktop',
+					servicio: 'Software de Escritorio & Legacy',
+					descripcion: 'Desarrollo y mantenimiento de aplicaciones críticas en Delphi, C# y C++, garantizando estabilidad en sistemas de largo ciclo de vida.',
+					enlace: '#'
+				},
+				{
+					id: 5,
+					icon: 'ion-ios-monitor',
+					servicio: 'Modernización Front-end (SPA)',
+					descripcion: 'Creación de interfaces reactivas y dinámicas utilizando Vue.js y JavaScript moderno (ES6+), priorizando la experiencia de usuario (UX).',
+					enlace: '#'
+				},
+				{
+					id: 6,
+					icon: 'ion-ios-list-box',
+					servicio: 'Gestión de Datos & BI',
+					descripcion: 'Consultoría y diseño de bases de datos relacionales (MySQL/SQL Server), optimización de queries complejas y automatización de reportes masivos.',
+					enlace: '#'
+				}
+			]
+		},		
+		// Pendiente de revisión
+		/*		
 		servicios: {
 			texto: 'Hagas lo que hagas, hazlo tan bien para que vuelvan y además traigan a sus amigos. "Walt Disney"',
 			items: [
@@ -153,6 +193,7 @@ export default createStore({
 				}
 			]
 		},
+		*/
 		accion: {
 			texto: 'Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero estoy convencido de que encontraremos una muy buena solución.'
 		},
