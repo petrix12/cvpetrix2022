@@ -133,7 +133,7 @@ export default createStore({
 					stack: 'PHP & Laravel Expert',
 					color_bootstrap: 'bg-dark',
 					progressbar: 95, // Tu casa, tu fuerte principal
-					img: 'laravel-vue.png'
+					img: 'laravel-php.png'
 				},
 				{
 					id: 2,
