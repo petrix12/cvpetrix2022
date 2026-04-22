@@ -13,64 +13,20 @@ export default createStore({
 		intro: {
 			titulo1: '¡Hola, soy Pedro Bazó!',
 			// Actualizamos para destacar Seniority y Laravel/Vue sobre los acrónimos antiguos
-			descripcion1: 'Ingeniero de Software Senior especializado en el ecosistema Laravel & Vue.js, con más de 20 años transformando retos técnicos en soluciones escalables.',
-			
+			descripcion1: 'Ingeniero de Software Senior especializado en el ecosistema Laravel & Vue.js, con más de 20 años transformando retos técnicos en soluciones escalables.',			
 			titulo2: 'Visión Profesional',
 			// Un toque más Senior: hablamos de decisiones y eficiencia
-			descripcion2: 'Me apasiona resolver problemas complejos mediante arquitecturas limpias y eficientes. Estoy convencido de que la ingeniería de calidad no solo escribe código, sino que toma decisiones estratégicas para alcanzar los objetivos de negocio.',
-			
+			descripcion2: 'Me apasiona resolver problemas complejos mediante arquitecturas limpias y eficientes. Estoy convencido de que la ingeniería de calidad no solo escribe código, sino que toma decisiones estratégicas para alcanzar los objetivos de negocio.',			
 			titulo3: 'Stack Tecnológico',
 			// Enfocado a lo que definimos para ticjob
-			descripcion3: 'Experto en PHP (Laravel) y arquitecturas de datos SQL, combinando potencia en el backend con interfaces modernas en Vue.js e infraestructura robusta en AWS y Docker.',
-			
+			descripcion3: 'Experto en PHP (Laravel) y arquitecturas de datos SQL, combinando potencia en el backend con interfaces modernas en Vue.js e infraestructura robusta en AWS y Docker.',			
 			titulo4: 'Aprendizaje Continuo',
 			// Mantenemos la esencia pero con un toque más profesional
-			descripcion4: 'En un sector en constante evolución, mantengo un enfoque de capacitación continua para dominar las últimas tendencias en Cloud, DevOps y patrones de diseño de software.',
-			
+			descripcion4: 'En un sector en constante evolución, mantengo un enfoque de capacitación continua para dominar las últimas tendencias en Cloud, DevOps y patrones de diseño de software.',			
 			titulo5: 'Filosofía de Trabajo',
 			// Mantenemos tu frase de Edison que es muy personal y potente
 			descripcion5: 'Mi mayor fortaleza es la persistencia y la capacidad analítica frente a problemas críticos. Me apropio de la frase de Thomas Edison: “Nuestra más grande debilidad yace en rendirnos. El camino más seguro hacia el éxito es siempre intentarlo una vez más”.'
 		},
-		/*
-		destacados: [
-			// Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
-			{
-				id: 1,
-				icon: 'ion-ios-albums',
-				servicio: 'Sistema de Historia Clínica o similar',
-				descripcion: 'Desarrollo de una aplicación web que permita administrar el historial de los pacientes de un centro de salud.',
-				enlace: 'https://github.com/petrix12/Sistema-de-Historia-Cl-nica-en-Laravel'
-			},
-			{
-				id: 2,
-				icon: 'ion-ios-cloud-upload',
-				servicio: 'Publicación de aplicaciones web',
-				descripcion: 'Alojar webs a Hosting o VPS, creadas con HTML, CSS, JavaScript, PHP, MySQL, Angular, Node, Mongo, Laravel, Symfony, WP, Python y Django.',
-				enlace: 'https://github.com/petrix12/deploy_2022'
-			},
-			{
-				id: 3,
-				icon: 'ion-ios-book',
-				servicio: 'Plataforma de cursos',
-				descripcion: 'Desarrollo de una plataforma de cursos, con un sistema completo de roles y servicios.',
-				enlace: 'https://github.com/petrix12/PlataformaDeCursosLaravel'
-			},
-			{
-				id: 4,
-				icon: 'ion-ios-browsers',
-				servicio: 'Crea una pasarela de pagos',
-				descripcion: 'Implementación de una pasarela de pagos con Stripe y PayPal completa para un negocio virtual o tienda online.',
-				enlace: 'https://github.com/petrix12/pasarela_pago'
-			},
-			{
-				id: 5,
-				icon: 'ion-ios-cart',
-				servicio: 'Crea una ecommerce',
-				descripcion: 'Desarrollo de una aplicación ecommerce completamente funcional.',
-				enlace: 'https://github.com/petrix12/2021_ecommerce'
-			}
-		],
-		*/
 		destacados: [
 			{
 				id: 1,
@@ -109,14 +65,25 @@ export default createStore({
 				enlace: 'https://github.com/petrix12/2021_ecommerce'
 			}
 		],		
-
-		// Pendiente de revisión
+		/*
 		calidad: {
 			texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',
 			mision: 'Ofrecer herramientas y soluciones de trabajo que disminuyan las horas hombres a partir de la automatización de procesos informáticos, a través de un servicio de alta calidad, tecnologías de vanguardia y gran pasión por el desarrollo web.',
 			valores: 'Espíritu de servicio, pasión por el trabajo, superación constante, honestidad, lealtad, respeto y creatividad.',
 			vision: 'Ser un desarrollador de aplicaciones web, reconocido por la innovación, simpleza y generación de soluciones, con una alta productividad y gran espíritu de servicio.'
 		},
+		*/
+		calidad: {
+			// La cita de Kawasaki es excelente, la mantenemos porque habla de propósito.
+			texto: 'La mejor razón para iniciar una empresa es que esta tenga sentido, sentido para crear un producto o servicio que la sociedad necesite, y de esta forma hacer un mundo mejor. "Guy Kawasaki"',			
+			// Misión: De "automatización" a "ingeniería de valor"
+			mision: 'Proveer soluciones tecnológicas de alto impacto que optimicen procesos críticos mediante arquitecturas escalables, el uso de tecnologías de vanguardia y un compromiso innegociable con la calidad del código y la eficiencia operativa.',			
+			// Valores: Añadimos términos de seniority como "Mentorship" o "Excelencia"
+			valores: 'Excelencia técnica, integridad, adaptabilidad, compromiso con el aprendizaje continuo, mentalidad de equipo y pasión por la innovación resolutiva.',			
+			// Visión: De "ser un desarrollador" a "ser un referente técnico"
+			vision: 'Consolidarme como un referente técnico en el desarrollo de ecosistemas web complejos, reconocido por liderar procesos de modernización tecnológica que aporten simplicidad, robustez y valor estratégico a largo plazo.'
+		},
+		// Pendiente de revisión		
 		servicios: {
 			texto: 'Hagas lo que hagas, hazlo tan bien para que vuelvan y además traigan a sus amigos. "Walt Disney"',
 			items: [
