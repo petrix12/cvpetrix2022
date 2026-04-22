@@ -12,16 +12,27 @@ export default createStore({
 		},
 		intro: {
 			titulo1: '¡Hola, soy Pedro Bazó!',
-			descripcion1: 'Desarrollador Web, principalmente en los stacks MERN, MEVN, MEAN y Laravel',
-			titulo2: 'Objetivos y propósitos',
-			descripcion2: 'Me considero una persona que consigue lo que se propone, ya que estoy convencido de que los logros son los resultados de las decisiones que se toman y de las metas que nos establecemos. Estoy consciente de mis limitaciones, no lo sé todo ni lo domino todo, pero procuro siempre hallar una solución eficiente a los problemas.',
-			titulo3: 'Tecnologías',
-			descripcion3: 'Procuro mantenerme actualizado con las diferentes tecnologías para el desarrollo web, así como en el uso de los distintos lenguajes de programación.',
-			titulo4: 'Capacitación',
-			descripcion4: 'Aprovecho muchos recursos que me ofrece internet para capacitarme continuamente, con la intención de adquirir nuevas competencias o mejorar las que ya tengo.',
-			titulo5: 'Fortaleza',
-			descripcion5: 'Mi punto fuerte es mi entusiasmo para resolver problemas, y me apropio de aquella frase de Thomas Edison: “Nuestra más grande debilidad yace en rendirnos. El camino más seguro hacia el éxito es siempre intentarlo una vez más”'
+			// Actualizamos para destacar Seniority y Laravel/Vue sobre los acrónimos antiguos
+			descripcion1: 'Ingeniero de Software Senior especializado en el ecosistema Laravel & Vue.js, con más de 20 años transformando retos técnicos en soluciones escalables.',
+			
+			titulo2: 'Visión Profesional',
+			// Un toque más Senior: hablamos de decisiones y eficiencia
+			descripcion2: 'Me apasiona resolver problemas complejos mediante arquitecturas limpias y eficientes. Estoy convencido de que la ingeniería de calidad no solo escribe código, sino que toma decisiones estratégicas para alcanzar los objetivos de negocio.',
+			
+			titulo3: 'Stack Tecnológico',
+			// Enfocado a lo que definimos para ticjob
+			descripcion3: 'Experto en PHP (Laravel) y arquitecturas de datos SQL, combinando potencia en el backend con interfaces modernas en Vue.js e infraestructura robusta en AWS y Docker.',
+			
+			titulo4: 'Aprendizaje Continuo',
+			// Mantenemos la esencia pero con un toque más profesional
+			descripcion4: 'En un sector en constante evolución, mantengo un enfoque de capacitación continua para dominar las últimas tendencias en Cloud, DevOps y patrones de diseño de software.',
+			
+			titulo5: 'Filosofía de Trabajo',
+			// Mantenemos tu frase de Edison que es muy personal y potente
+			descripcion5: 'Mi mayor fortaleza es la persistencia y la capacidad analítica frente a problemas críticos. Me apropio de la frase de Thomas Edison: “Nuestra más grande debilidad yace en rendirnos. El camino más seguro hacia el éxito es siempre intentarlo una vez más”.'
 		},
+
+		// Pendiente de revisión
 		destacados: [
 			// Los iconos se pueden obtener de: https://infinitered.github.io/ionicons-version-3-search
 			{
