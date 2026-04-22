@@ -140,21 +140,21 @@ export default createStore({
 					stack: 'Modern JavaScript (Vue / React / Node)',
 					color_bootstrap: 'bg-success',
 					progressbar: 85, // Refleja que dominas JS y que saltar entre Vue o React no es problema
-					img: 'mevn.png' 
+					img: 'vue-react-node.png' 
 				},
 				{
 					id: 3,
 					stack: 'Database Architecture (SQL / NoSQL)',
 					color_bootstrap: 'bg-info',
 					progressbar: 90, // Un Senior se distingue por sus bases de datos
-					img: 'mern.png'
+					img: 'sql-nosql.png'
 				},
 				{
 					id: 4,
 					stack: 'DevOps & Cloud (AWS / Docker)',
 					color_bootstrap: 'bg-danger',
 					progressbar: 75, // Tu nueva ventaja competitiva
-					img: 'mean.png'
+					img: 'aws-docker.png'
 				}
 			]
 		},		
