@@ -87,21 +87,21 @@ export default createStore({
 				},
 				{
 					id: 2,
-					icon: 'ion-ios-cloud-outline',
+					icon: 'ion-ios-cloud-upload',
 					servicio: 'Arquitectura Cloud & DevOps',
 					descripcion: 'Despliegue y administración de infraestructuras en AWS y VPS, utilizando Docker para la estandarización de entornos y alta disponibilidad.',
 					enlace: 'https://github.com/petrix12/deploy_2022'
 				},
 				{
 					id: 3,
-					icon: 'ion-ios-git-network',
+					icon: 'ion-ios-git-cog',
 					servicio: 'Desarrollo de APIs & Microservicios',
 					descripcion: 'Diseño de arquitecturas backend robustas y escalables con Laravel, enfocadas en la integración de servicios externos y optimización de datos.',
 					enlace: 'https://github.com/petrix12/pasarela_pago'
 				},
 				{
 					id: 4,
-					icon: 'ion-ios-desktop',
+					icon: 'ion-ios-barcode',
 					servicio: 'Software de Escritorio & Legacy',
 					descripcion: 'Desarrollo y mantenimiento de aplicaciones críticas en Delphi, C# y C++, garantizando estabilidad en sistemas de largo ciclo de vida.',
 					enlace: '#'
@@ -115,7 +115,7 @@ export default createStore({
 				},
 				{
 					id: 6,
-					icon: 'ion-ios-list-box',
+					icon: 'ion-ios-list-albums',
 					servicio: 'Gestión de Datos & BI',
 					descripcion: 'Consultoría y diseño de bases de datos relacionales (MySQL/SQL Server), optimización de queries complejas y automatización de reportes masivos.',
 					enlace: '#'
