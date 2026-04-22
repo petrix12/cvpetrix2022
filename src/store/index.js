@@ -157,43 +157,7 @@ export default createStore({
 					img: 'aws-docker.png'
 				}
 			]
-		},		
-		// Pendiente de revisión
-		/*
-		skills: {
-			texto: 'Principales stacks web con los que he tenido el placer de trabajar.',
-			stacks: [
-				{
-					id: 1,
-					stack: 'Laravel - Vue.js',
-					color_bootstrap: 'bg-dark',
-					progressbar: 90,
-					img: 'laravel-vue.png'
-				},
-				{
-					id: 2,
-					stack: 'MEVN',
-					color_bootstrap: 'bg-success',
-					progressbar: 80,
-					img: 'mevn.png'
-				},
-				{
-					id: 3,
-					stack: 'MERN',
-					color_bootstrap: 'bg-info',
-					progressbar: 75,
-					img: 'mern.png'
-				},
-				{
-					id: 4,
-					stack: 'MEAN',
-					color_bootstrap: 'bg-danger',
-					progressbar: 55,
-					img: 'mean.png'
-				}
-			]
 		},
-		*/
 		facts: {
 			texto: '“Vive como si fueses a morir mañana. Aprende como si fueses a vivir para siempre”. — Mahatma Gandhi',
 			cursos: 85,
@@ -516,6 +480,14 @@ export default createStore({
 		clients: {
 			entes: [
 				{
+					id: 17,
+					nombre: 'klinikare'
+				},
+				{
+					id: 16,
+					nombre: 'commutatio'
+				},
+				{
 					id: 15,
 					nombre: 'sefar'
 				},
@@ -576,6 +548,7 @@ export default createStore({
 					nombre: 'ucv_petroleo'
 				}
 			],
+			// Pendiente de revisión
 			experiencias: [
 				{
 					id: 17,
