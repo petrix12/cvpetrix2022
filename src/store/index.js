@@ -81,14 +81,14 @@ export default createStore({
 			},
 			{
 				id: 2,
-				icon: 'ion-ios-cloud-done', // Un icono más moderno de "nube completada"
+				icon: 'ion-ios-cloud-upload',
 				servicio: 'DevOps & Infraestructura Cloud',
 				descripcion: 'Implementación de ciclos CI/CD, contenedorización con Docker y despliegue en entornos AWS/VPS optimizados para alto rendimiento.',
 				enlace: 'https://github.com/petrix12/deploy_2022'
 			},
 			{
 				id: 3,
-				icon: 'ion-ios-construct', // Icono de construcción/ingeniería
+				icon: 'ion-ios-book',
 				servicio: 'Modernización de Sistemas Legacy',
 				descripcion: 'Refactorización estratégica de plataformas complejas, migrando de arquitecturas monolíticas a soluciones modernas y mantenibles.',
 				enlace: 'https://github.com/petrix12/PlataformaDeCursosLaravel' 
@@ -96,14 +96,14 @@ export default createStore({
 			},
 			{
 				id: 4,
-				icon: 'ion-ios-card', // Más directo para pagos
+				icon: 'ion-ios-browsers',
 				servicio: 'Pasarelas de Pago & Fintech',
 				descripcion: 'Integración avanzada de flujos de pago recurrentes y transacciones seguras utilizando Stripe, PayPal y APIs financieras externas.',
 				enlace: 'https://github.com/petrix12/pasarela_pago'
 			},
 			{
 				id: 5,
-				icon: 'ion-ios-stats', // Icono de analítica/crecimiento
+				icon: 'ion-ios-cart',
 				servicio: 'Sistemas Escalables & Big Data',
 				descripcion: 'Desarrollo de aplicaciones de alta concurrencia con optimización de consultas SQL complejas para la gestión eficiente de grandes volúmenes de datos.',
 				enlace: 'https://github.com/petrix12/2021_ecommerce'
