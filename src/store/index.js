@@ -1233,8 +1233,8 @@ export default createStore({
 		contact: {
 			texto: 'Quien no vive para servir, no sirve para vivir.',
 			direccion: 'FFRG+4F, C. Decano Prendes Pando, 6, Centro, 33207 Gijón, Asturias', /*'C4XW+29V, Caracas 1080, Distrito Capital. Res. Vista al Lago', */
-			movil: 'tel:+34 613.98.00.99',
-			href_movil: '+34613980099',
+			movil: '+34 613.98.00.99',
+			href_movil: 'tel:+34613980099',
 			mail: 'pedro.j.bazo.c@gmail.com'
 		},
 		sociales: [
