@@ -1232,7 +1232,7 @@ export default createStore({
 		],
 		contact: {
 			texto: 'Quien no vive para servir, no sirve para vivir.',
-			direccion: 'FFRG+4F, C. Decano Prendes Pando, 6, Centro, 33207 Gijón, Asturias', /*'C4XW+29V, Caracas 1080, Distrito Capital. Res. Vista al Lago', */
+			direccion: 'C. Decano Prendes Pando 6, 33207 Gijón, Asturias', /*'C4XW+29V, Caracas 1080, Distrito Capital. Res. Vista al Lago', */
 			movil: '+34 613.98.00.99',
 			href_movil: 'tel:+34613980099',
 			mail: 'pedro.j.bazo.c@gmail.com'
@@ -1280,15 +1280,7 @@ export default createStore({
 			empresa: 'Soluciones++',
 			proposito: 'Mi enfoque se basa en la ingeniería aplicada: transformar problemas de negocio en soluciones técnicas eficientes y escalables. Entiendo el software como una herramienta para optimizar procesos, aportando criterio analítico, adaptabilidad técnica y un compromiso absoluto con la calidad del dato.',
 			actividad: 'Ingeniería de Software & Optimización de Procesos'
-		}		
-		/*
-		footer: {
-			texto: '¡Hola! Soy el Ing. Pedro Bazó, desarrollador de aplicaciones web, principalmente en los stacks MEVN, MERN, MEAN y Laravel - Vue.js. También soy programador en VBA para automatizar documentos Offices.',
-			empresa: 'Soluciones++',
-			proposito: 'Me considero una persona que consigue lo que se propone, estoy convencido que los logros son los resultados de las decisiones que se toman y de las metas que nos establecemos. Estoy consciente de mis limitaciones, no lo sé todo, ni lo domino todo, pero procuro siempre hallar una solución eficiente a los problemas.',
-			actividad: 'Desarrollo de Aplicaciones Web'
 		}
-		*/
 	},
 	mutations: {
 		/* cargarIntro(state, payload){
