@@ -1276,7 +1276,7 @@ export default createStore({
 			}
 		],
 		footer: {
-			texto: 'Ingeniero Senior especializado en el desarrollo de aplicaciones robustas con Laravel y ecosistemas Modern JavaScript (Vue/React/Angular). Experto en automatización de procesos industriales y arquitecturas de datos complejas.',
+			texto: 'Ingeniero Senior especializado en el desarrollo de aplicaciones robustas con Laravel y ecosistemas Modern JavaScript (Vue/React). Experto en automatización de procesos industriales y arquitecturas de datos complejas.',
 			empresa: 'Soluciones++',
 			proposito: 'Mi enfoque se basa en la ingeniería aplicada: transformar problemas de negocio en soluciones técnicas eficientes y escalables. Entiendo el software como una herramienta para optimizar procesos, aportando criterio analítico, adaptabilidad técnica y un compromiso absoluto con la calidad del dato.',
 			actividad: 'Ingeniería de Software & Optimización de Procesos'
