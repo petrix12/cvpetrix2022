@@ -779,7 +779,6 @@ export default createStore({
 				}
 			]
 		},
-		// Pendiente de revisión
 		testimonials: [
 			{
 				id: 1,
@@ -1232,11 +1231,11 @@ export default createStore({
 			{ id: 276, name: 'Symfony 7', category: 'Frameworks de back-end', technology: 'Symfony ', url: 'https://www.youtube.com/playlist?list=PL3h4DpIhmh8en8UG08ONGRlNhdBLZsh38', platform: 'YouTube', costo: 0, money: 'USD', comprado: false, priority: 0, minutos: 410, culminado: '2025-12-24', certificado: 'S/C', url_certificado: '', instructor: 'Patricio Mendez', description: 'Curso de Symfony 7. Completamente en español y gratis.', url_aux: '', calificacion: 'Bueno', actualizado: true, en_ruta: false, logo_platform: 'youtube', logo_technologies: [ 'symfony' ], mostrar: false, repositorio: '', nota: '' }
 		],
 		contact: {
-			texto: 'Quien no vive para servir, no sirve para vivir. - Frase atribuida al célebre escritor indio Rabindranath Tagore',
+			texto: 'Quien no vive para servir, no sirve para vivir.',
 			direccion: 'FFRG+4F, C. Decano Prendes Pando, 6, Centro, 33207 Gijón, Asturias', /*'C4XW+29V, Caracas 1080, Distrito Capital. Res. Vista al Lago', */
-			movil: '+34 613.98.00.99',
+			movil: 'tel:+34 613.98.00.99',
 			href_movil: '+34613980099',
-			mail: 'bazo.pedro@gmail.com'
+			mail: 'pedro.j.bazo.c@gmail.com'
 		},
 		sociales: [
 			{
@@ -1277,11 +1276,19 @@ export default createStore({
 			}
 		],
 		footer: {
+			texto: 'Ingeniero Senior especializado en el desarrollo de aplicaciones robustas con Laravel y ecosistemas Modern JavaScript (Vue/React/Angular). Experto en automatización de procesos industriales y arquitecturas de datos complejas.',
+			empresa: 'Soluciones++',
+			proposito: 'Mi enfoque se basa en la ingeniería aplicada: transformar problemas de negocio en soluciones técnicas eficientes y escalables. Entiendo el software como una herramienta para optimizar procesos, aportando criterio analítico, adaptabilidad técnica y un compromiso absoluto con la calidad del dato.',
+			actividad: 'Ingeniería de Software & Optimización de Procesos'
+		}		
+		/*
+		footer: {
 			texto: '¡Hola! Soy el Ing. Pedro Bazó, desarrollador de aplicaciones web, principalmente en los stacks MEVN, MERN, MEAN y Laravel - Vue.js. También soy programador en VBA para automatizar documentos Offices.',
 			empresa: 'Soluciones++',
 			proposito: 'Me considero una persona que consigue lo que se propone, estoy convencido que los logros son los resultados de las decisiones que se toman y de las metas que nos establecemos. Estoy consciente de mis limitaciones, no lo sé todo, ni lo domino todo, pero procuro siempre hallar una solución eficiente a los problemas.',
 			actividad: 'Desarrollo de Aplicaciones Web'
 		}
+		*/
 	},
 	mutations: {
 		/* cargarIntro(state, payload){
