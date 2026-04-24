@@ -48,7 +48,7 @@
 					&copy; Copyright <strong>{{ footer.empresa }}</strong>. All Rights Reserved
 				</div>
 				<div class="credits">
-					Una muy buena opción para el <a href="#portfolio">{{ footer.actividad }}</a>
+					Una muy buena opción para la <a href="#portfolio">{{ footer.actividad }}</a>
 				</div>
 				<!-- <router-link to="/admin">Prueba GitHub Pages 5</router-link> -->
 			</div>
