@@ -3,10 +3,10 @@ BUSCADORES DE EMPLEO
 [X] LinkedIn (https://www.linkedin.com/in/pedro-bazo)	| (bazo.pedro@gmail.com)
 [X] Manfred (https://www.getmanfred.com) 		| (pedro.j.bazo.c@gmail.com | ingresar con Google)
 [X] InfoJobs (https://www.infojobs.net) 		| (pedro.j.bazo.c@gmail.com | -Xiphos*333)
-[X] TicJob (https://ticjob.es)				| (pedro.j.bazo.c@gmail.com | -Xiphos*333)
-[ ] Tecnoempleo (https://www.tecnoempleo.com)		| (bazo.pedro@gmail.com | ingresar con Google)
-[X] Indeed (https://es.indeed.com)			| (pedro.j.bazo.c@gmail.com | ingresar con Google)
-[-] Joppy (https://www.joppy.me/es)			| (bazo.pedro@gmail.com | ingresar con Google?)
+[X] TicJob (https://ticjob.es)				    | (pedro.j.bazo.c@gmail.com | -Xiphos*333)
+[X] Tecnoempleo (https://www.tecnoempleo.com)	| (pedro.j.bazo.c@gmail.com | -Xiphos*333)
+[X] Indeed (https://es.indeed.com)			    | (pedro.j.bazo.c@gmail.com | ingresar con Google)
+[-] Joppy (https://www.joppy.me/es)			    | (bazo.pedro@gmail.com | ingresar con Google?)
 [X] https://petrix12.github.io/cvpetrix2022
 [ ] cv en pdf
 
