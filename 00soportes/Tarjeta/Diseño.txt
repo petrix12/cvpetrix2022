@@ -1,0 +1,32 @@
+Anverso:
+Pedro Jesús Bazó Canelón
+Senior Full Stack Engineer | AI & Cloud Solutions
++34 613 98 00 99 | pedro.j.bazo.c@gmail.com
+Gijón, Asturias
+
+Reverso:
+"Construyo sistemas que no se caen. 20 años de ingeniería aplicados a PHP, Laravel e IA."
+[Un único código QR grande en el centro]
+Escanea para ver mi stack técnico y proyectos.
+
+¿A dónde debe llevar el QR?
+No lo mandes a LinkedIn (es muy genérico). Mándalo a una Landing Page propia (tu web personal) que sea minimalista. Que lo primero que vean sea: "Hola, soy Pedro. Resuelvo problemas complejos con código sólido". Y de ahí, botones a GitHub y LinkedIn.
+
+2. Estrategia de "Infiltración" en Asturias
+Ya que estás en Gijón, no patees las calles al azar. Haz "Sniper Hunting" (Caza de francotirador):
+
+El Parque Científico y Tecnológico de Gijón (Milla del Conocimiento): Ahí están el 80% de las empresas que te interesan. No vayas a dejar la tarjeta en recepción. Ve a la cafetería a la hora del café o pide hablar con el Responsable de Talento o el CTO.
+
+El Mensaje: "Hola, soy Pedro Bazó. No vengo a una entrevista, vengo a dejarle esto al responsable de ingeniería/IT. Soy desarrollador senior y me gustaría que me tuvieran en el radar para sus proyectos de alta disponibilidad". Es breve, profesional y no quita tiempo.
+
+
+Locales especializados para tarjetas
+- (*) Asturcopia (Avilés)
+- (*) Gráficas Martín (cerca de los Fresnos)
+- Victorero Reprografía (cerca el paseo de Begoña)
+- Imprenta Costa Verde (Calle Ramiro I, 25 · 33209)
+
+Especificaciones técnicas que debes pedir
++ Papel: Cartulina de 350 gramos (es el grosor que da sensación de "calidad" y no de papel de fumar).
++ Acabado: Laminado mate (o "soft touch"). Esto quita los brillos baratos y hace que la tarjeta sea suave al tacto. Además, evita que se marquen las huellas dactilares en el fondo oscuro que elegiste.
++ PVC (Si te lo puedes permitir): Pídeles "acabado tarjeta de crédito" con esquinas redondeadas.
