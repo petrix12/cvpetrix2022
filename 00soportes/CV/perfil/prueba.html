@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento Dinámico - Pedro Bazó</title>
+    <script src="https://unpkg.com/petite-vue"></script>
+    <style>
+        /* Estilos generales */
+        body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+        .controls { margin-bottom: 20px; background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        
+        /* Ocultar los botones de control cuando vayamos a imprimir el PDF */
+        @media print {
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" v-scope v-effect="document.title = (modo === 'cv' ? 'CV - ' : 'Carta - ') + mi_nombre">
+
+        <!-- Panel de control (botones flotantes o superiores, no salen en el PDF) -->
+        <div class="controls no-print">
+            <button @click="modo = 'cv'">Ver CV</button>
+            <button @click="modo = 'carta'">Ver Carta de Presentación</button>
+            <button @click="descargarPDF">📥 Descargar PDF</button>
+        </div>
+
+        <!-- VISTA 1: CURRICULUM -->
+        <div v-if="modo === 'cv'">
+            <header>
+                <h1>{{ mi_nombre }}</h1>
+                <h2>{{ titulo_profesional }}</h2>
+                <p>{{ ciudad }} | {{ email }}</p>
+            </header>
+            <section>
+                <h3>Mi Experiencia (Resumen CV)</h3>
+                <p>Aquí va todo el contenido de tu currículum...</p>
+            </section>
+        </div>
+
+        <!-- VISTA 2: CARTA DE PRESENTACIÓN -->
+        <div v-if="modo === 'carta'">
+            <header>
+                <h1>{{ mi_nombre }}</h1>
+                <p>Estimado equipo de selección,</p>
+            </header>
+            <section>
+                <p>Me pongo en contacto con ustedes para manifestar mi interés en la posición de desarrollo en su empresa...</p>
+                <p>Aporto una sólida experiencia como desarrollador Full-Stack especializado en el ecosistema de backend y arquitectura...</p>
+                <p>Atentamente,<br>{{ mi_nombre }}</p>
+            </section>
+        </div>
+
+    </div>
+
+    <script>
+        PetiteVue.createApp({
+            modo: 'cv', // Empieza mostrando el CV por defecto
+            mi_nombre: 'Pedro Jesús Bazó Canelón',
+            titulo_profesional: 'Ingeniero de Software | Especialista en Arquitectura Full-Stack',
+            ciudad: 'Gijón, Asturias',
+            email: 'pedro.j.bazo.c@gmail.com',
+            url_linkedin: 'https://www.linkedin.com/in/pedrobazo',
+            url_github: 'https://github.com/petrix12'
+            
+            descargarPDF() {
+                // Truco pro: Llama al diálogo de impresión nativo del navegador.
+                // Al configurar CSS con @media print, el resultado es un PDF perfecto,
+                // de texto real (seleccionable), sin pérdida de calidad y sin librerías pesadas.
+                window.print();
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

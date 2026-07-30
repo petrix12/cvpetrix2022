@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Pedro Jesús Bazó</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #2563eb;
+      --accent-light: #eff6ff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --bg-sidebar: #1e293b;
+      --text-sidebar: #f8fafc;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      background-color: #f1f5f9;
+      line-height: 1.4;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .cv-container {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      background-color: var(--bg-sidebar) !important;
+      color: var(--text-sidebar);
+      padding: 25px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .profile-box {
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .sidebar h3 {
+      color: #ffffff;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 4px;
+      margin-bottom: 10px;
+    }
+
+    .contact-list, .skills-list, .lang-list {
+      list-style: none;
+      font-size: 0.8rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: #cbd5e1;
+      word-break: break-all;
+    }
+
+    .contact-list i {
+      color: var(--accent);
+      width: 14px;
+      text-align: center;
+    }
+
+    .contact-list a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    .skills-tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .skill-tag {
+      background: #334155 !important;
+      color: #f1f5f9 !important;
+      font-size: 0.72rem;
+      padding: 3px 6px;
+      border-radius: 4px;
+      border-left: 2px solid var(--accent);
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+
+    .lang-badge {
+      background-color: rgba(37, 99, 235, 0.3) !important;
+      color: #93c5fd !important;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      padding: 28px 24px;
+      background: #ffffff;
+    }
+
+    .header-main {
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+
+    .header-main h1 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .header-main h2 {
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .section-title i {
+      color: var(--accent);
+    }
+
+    .summary-text {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      text-align: justify;
+    }
+
+    /* EXPERIENCE & PROJECTS */
+    .experience-item {
+      margin-bottom: 15px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .exp-role {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .exp-date {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .exp-company {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .exp-bullets {
+      list-style-type: square;
+      padding-left: 15px;
+      font-size: 0.82rem;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 5px;
+    }
+
+    .tech-stack-used {
+      margin-top: 8px;
+      padding: 6px 10px;
+      background: var(--accent-light) !important;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--primary);
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .tech-stack-used strong {
+      color: var(--accent);
+    }
+
+    /* REGLAS ESPECÍFICAS DE IMPRESIÓN (PDF) */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      html, body {
+        width: 210mm;
+        height: 297mm;
+        background: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .cv-container {
+        width: 210mm;
+        height: 297mm;
+        margin: 0 !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        display: grid !important;
+        grid-template-columns: 68mm 1fr !important;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+
+      .sidebar {
+        background-color: #1e293b !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .section, .experience-item {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cv-container">
+    
+    <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
+    <aside class="sidebar">
+      <div class="profile-box">
+        <img src="https://avatars.githubusercontent.com/u/32933199" alt="Pedro Jesús Bazó" class="profile-img">
+      </div>
+
+      <div>
+        <h3>Contacto</h3>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i> Gijón, Asturias</li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:tu-email@correo.com">tu-email@correo.com</a></li>
+          <li><i class="fa-solid fa-phone"></i> +34 000 000 000</li>
+          <li><i class="fa-brands fa-linkedin"></i> <a href="#" target="_blank">LinkedIn</a></li>
+          <li><i class="fa-brands fa-github"></i> <a href="#" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Tech Skills</h3>
+        <div class="skills-tag-container">
+          <span class="skill-tag">PHP 8.x</span>
+          <span class="skill-tag">Laravel</span>
+          <span class="skill-tag">APIs RESTful</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">AWS (S3, EC2)</span>
+          <span class="skill-tag">Git / GitHub</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">WSL2 / Ubuntu</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Vue.js</span>
+        </div>
+      </div>
+
+      <div>
+        <h3>Idiomas</h3>
+        <div class="lang-item">
+          <span>Español</span>
+          <span class="lang-badge">Nativo</span>
+        </div>
+        <div class="lang-item">
+          <span>Inglés</span>
+          <span class="lang-badge">B2</span>
+        </div>
+      </div>
+
+      <div>
+        <h3>Aptitudes</h3>
+        <div class="skills-tag-container">
+          <span class="skill-tag">Scrum</span>
+          <span class="skill-tag">SOLID</span>
+          <span class="skill-tag">Clean Code</span>
+          <span class="skill-tag">Refactorización</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLUMNA DERECHA (CONTENIDO PRINCIPAL) -->
+    <main class="main-content">
+      
+      <header class="header-main">
+        <h1>Pedro Jesús Bazó</h1>
+        <h2>Desarrollador Backend / Full-Stack</h2>
+      </header>
+
+      <!-- SOBRE MÍ -->
+      <section class="section">
+        <h3 class="section-title"><i class="fa-solid fa-user"></i> Perfil Profesional</h3>
+        <p class="summary-text">
+          Desarrollador Web enfocado principalmente en el backend con sólida experiencia en el ecosistema PHP y Laravel. Especializado en el diseño y construcción de APIs RESTful escalables, modelado de bases de datos relacionales y optimización de servicios. Enfocado en la aplicación de buenas prácticas (Clean Code, principios SOLID y arquitectura MVC), así como en la integración de entornos de desarrollo modernos contenerizados con Docker y desplegados en AWS.
+        </p>
+      </section>
+
+      <!-- EXPERIENCIA PRINCIPAL -->
+      <section class="section">
+        <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiencia Destacada</h3>
+
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-role">Desarrollador Backend / Full-Stack</span>
+            <span class="exp-date">Reciente</span>
+          </div>
+          <div class="exp-company">Desarrollo y Arquitectura de Servicios Web</div>
+          
+          <ul class="exp-bullets">
+            <li><strong>Diseño y desarrollo de APIs RESTful:</strong> Arquitectura, construcción y documentación de endpoints seguros y optimizados para plataformas web.</li>
+            <li><strong>Gestión de Bases de Datos:</strong> Modelado, optimización e indexación de datos relacionales utilizando MySQL y PostgreSQL junto con ORM (Eloquent).</li>
+            <li><strong>Mantenimiento y Refactorización:</strong> Diagnóstico, análisis y refinamiento de código legado para incrementar la eficiencia y estabilidad del sistema.</li>
+            <li><strong>Pruebas y Validación:</strong> Testing manual y verificación de flujos y respuestas de APIs utilizando Postman e Insomnia.</li>
+            <li><strong>Entornos Contenerizados y Nube:</strong> Configuración e integración de entornos locales aislados con Docker Compose y almacenamiento en AWS (S3).</li>
+            <li><strong>Metodologías Ágiles:</strong> Trabajo colaborativo bajo marco Scrum (dailies, sprints) aplicando Gitflow y GitHub Actions.</li>
+          </ul>
+
+          <div class="tech-stack-used">
+            <strong>Stack Tecnológico:</strong> PHP 8, Laravel, MySQL, PostgreSQL, Docker, AWS, Git, Postman, Linux (WSL2 Ubuntu).
+          </div>
+        </div>
+      </section>
+
+      <!-- METODOLOGÍA Y BUENAS PRÁCTICAS -->
+      <section class="section">
+        <h3 class="section-title"><i class="fa-solid fa-code"></i> Metodología y Principios</h3>
+        <ul class="exp-bullets">
+          <li><strong>Patrones y Arquitectura:</strong> Desarrollo modular basado en MVC, separación de responsabilidades y aplicación de principios SOLID.</li>
+          <li><strong>Clean Code:</strong> Enfoque continuo en escribir código mantenible, legible y escalable para facilitar el trabajo colaborativo.</li>
+          <li><strong>Entorno de Desarrollo:</strong> Setup optimizado en Windows 11 con WSL2 (Ubuntu), VS Code y Docker Compose.</li>
+        </ul>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
