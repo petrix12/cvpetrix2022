@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --bg-sidebar: #1e293b;
+            --text-sidebar: #f8fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: #f1f5f9;
+            line-height: 1.38;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: 66mm 1fr;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background-color: var(--bg-sidebar) !important;
+            color: var(--text-sidebar);
+            padding: 22px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .profile-box {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 105px;
+            height: 105px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .sidebar h3 {
+            color: #ffffff;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        .contact-list {
+            list-style: none;
+            font-size: 0.75rem;
+        }
+
+        .contact-list li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+            word-break: break-all;
+        }
+
+        .contact-list i {
+            color: var(--accent);
+            width: 12px;
+            text-align: center;
+        }
+
+        .contact-list a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+
+        .skills-tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .skill-tag {
+            background: #334155 !important;
+            color: #f1f5f9 !important;
+            font-size: 0.68rem;
+            padding: 2px 5px;
+            border-radius: 3px;
+            border-left: 2px solid var(--accent);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.75rem;
+            color: #cbd5e1;
+        }
+
+        .lang-badge {
+            background-color: rgba(37, 99, 235, 0.3) !important;
+            color: #93c5fd !important;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            padding: 22px 20px;
+            background: #ffffff;
+        }
+
+        .header-main {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 14px;
+        }
+
+        .header-main h1 {
+            font-size: 1.65rem;
+            color: var(--primary);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .header-main h2 {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 3px;
+        }
+
+        .section {
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 0.88rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+        }
+
+        .section-title i {
+            color: var(--accent);
+        }
+
+        .summary-text {
+            font-size: 0.78rem;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        /* EXPERIENCE */
+        .experience-item {
+            margin-bottom: 11px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .exp-role {
+            font-weight: 700;
+            font-size: 0.84rem;
+            color: var(--primary);
+        }
+
+        .exp-date {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .exp-company {
+            font-size: 0.76rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .exp-bullets {
+            list-style-type: square;
+            padding-left: 14px;
+            font-size: 0.76rem;
+        }
+
+        .exp-bullets li {
+            margin-bottom: 3px;
+        }
+
+        .tech-stack-used {
+            margin-top: 4px;
+            padding: 4px 8px;
+            background: var(--accent-light) !important;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            color: var(--primary);
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        .tech-stack-used strong {
+            color: var(--accent);
+        }
+
+        /* REGLAS ESPECÍFICAS DE IMPRESIÓN (PDF A4) */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+                background: #ffffff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .cv-container {
+                width: 210mm;
+                height: 297mm;
+                margin: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                display: grid !important;
+                grid-template-columns: 66mm 1fr !important;
+                page-break-after: avoid;
+                page-break-inside: avoid;
+            }
+
+            .sidebar {
+                background-color: #1e293b !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .section,
+            .experience-item {
+                break-inside: avoid;
+            }
+        }
+    </style>
+
+    <!-- CDN de Petite-Vue (ocupa solo ~6 KB) -->
+    <script src="https://unpkg.com/petite-vue"></script>
+</head>
+
+<body>
+    <div 
+        class="cv-container" 
+        id="app" 
+        v-scope 
+        v-effect="document.title = 'CV | ' + nombre"
+    >
+        <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
+        <aside class="sidebar">
+            <div class="profile-box">
+                <a :href="url_img_perfil" target="_blank" rel="noopener noreferrer">
+                    <img 
+                        :src="optImagen(url_img_perfil)"
+                        :alt="nombre" 
+                        class="profile-img"
+                    >
+                </a>
+            </div>
+
+            <div>
+                <h3>Contacto</h3>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> {{ ubicacion}}</li>
+                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ email }}">{{ email }}</a></li>
+                    <li><i class="fa-solid fa-globe"></i> <a :href="url_site" target="_blank">Sitio Web</a></li>
+                    <li><i class="fa-brands fa-linkedin"></i> <a :href="url_linkedin" target="_blank">LinkedIn Profile</a></li>
+                    <li><i class="fa-brands fa-github"></i> <a :href="url_github" target="_blank">GitHub Profile</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Tech Skills</h3>
+                <div class="skills-tag-container">
+                    <span v-for="skill in tech_skills" :key="skill" class="skill-tag">{{ skill }}</span>
+                </div>
+            </div>
+
+            <div>
+                <h3>Formación</h3>
+                <div v-for="edu in formacion" :key="edu.titulo" style="font-size:0.73rem; color:#cbd5e1; margin-bottom: 6px;">
+                    <h4 style="color:#fff;">{{ edu.titulo }}</h4>
+                    <p style="font-size:0.7rem;">{{ edu.institucion }}</p>
+                    <ul>
+                        <li v-for="(item, idx) in edu.detalles" :key="idx" style="color:#94a3b8; font-size: 0.6rem; margin-left: 12px;">{{ item }}.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3>Idiomas</h3>
+                <div v-for="lang in idiomas" :key="lang.nombre" class="lang-item">
+                    <span>{{ lang.nombre }}</span>
+                    <span class="lang-badge">{{ lang.nivel }}</span>
+                </div>
+            </div>
+
+            <div>
+                <h3>Aptitudes</h3>
+                <div class="skills-tag-container">
+                    <span v-for="(aptitud, idx) in aptitudes" :key="idx" class="skill-tag">{{ aptitud }}</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- COLUMNA DERECHA (CONTENIDO PRINCIPAL) -->
+        <main class="main-content">
+            <header class="header-main">
+                <h1>{{ nombre }}</h1>
+                <h2>{{ titulo_profesional }}</h2>
+            </header>
+
+            <!-- SOBRE MÍ -->
+            <section class="section">
+                <h3 class="section-title"><i class="fa-solid fa-user"></i> Perfil Profesional</h3>
+                <p class="summary-text">{{ perfil_profesional }}</p>
+            </section>
+
+            <!-- EXPERIENCIA PROFESIONAL CRONOLÓGICA -->
+            <section class="section">
+                <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h3>
+                <div v-for="exp in experiencia_profesional" :key="exp.titulo" class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-role">{{ exp.rol}}</span>
+                        <span class="exp-date">{{ exp.periodo }}</span>
+                    </div>
+                    <div class="exp-company">{{ exp.empresa }}</div>
+                    <ul class="exp-bullets">
+                        <li v-for="(funcion, idx) in exp.funciones" :key="idx" style="color:#64748b; font-size: 0.67rem;">{{ funcion }}.</li>
+                    </ul>
+                    <div v-if="exp.stack" class="tech-stack-used">
+                        <strong>Stack:</strong> {{ exp.stack }}
+                    </div>
+                </div>
+            </section>
+
+            <!-- METODOLOGÍA Y ENTORNOS -->
+            <section class="section">
+                <h3 class="section-title"><i class="fa-solid fa-code"></i> Principios y Entorno</h3>
+                <ul class="exp-bullets">
+                    <li v-for="principio in principios" :key="principio.titulo"><strong>{{ principio.titulo }}:</strong> {{ principio.descripcion }}</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script>
+        PetiteVue.createApp({
+            nombre: 'Pedro Jesús Bazó Canelón',
+            titulo_profesional: 'Desarrollador Backend | Full-Stack Senior',
+            perfil_profesional: 'Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).',
+            ubicacion: 'Gijón, Asturias, España',
+            email: 'pedro.j.bazo.c@gmail.com',
+            url_site: 'https://petrix12.github.io/cvpetrix2022',
+            url_img_perfil: 'https://raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png',
+            //url_img_perfil: 'https://wsrv.nl/?url=raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png&w=300&h=300&fit=cover&output=jpg&q=80',
+            url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',
+            url_github: 'https://github.com/petrix12',
+            tech_skills: [
+                'PHP 8.x', 
+                'Laravel', 
+                'Vue.js (Opt/Comp)', 
+                'APIs RESTful', 
+                'MySQL | MS SQL', 
+                'Docker | Compose', 
+                'AWS (S3, EC2, RDS, SES)', 
+                'Git | GitHub', 
+                'Postman', 
+                'Linux (WSL2 Ubuntu)', 
+                'Clean Code | SOLID', 
+                'JavaScript | jQuery'
+            ],
+            formacion: [
+                {
+                    titulo: 'Ingeniería Química',
+                    institucion: 'Univ. Central de Venezuela (UCV)',
+                    detalles: [
+                        'Preparador Docente de Programación (Pascal, C/C++)',
+                        'Tesis: Desarrollo de software de simulación computacional en Visual C++ y Fortran'
+                    ]
+                }
+            ],
+            aptitudes: [
+                'Metodología Scrum',
+                'Análisis Lógico',
+                'Código Legado',
+                'Resolución de Problemas',
+                'Trabajo en Equipo',
+            ],
+            idiomas: [
+                { nombre: 'Español', nivel: 'Nativo' },
+                { nombre: 'Inglés', nivel: 'B1' }
+            ],
+            experiencia_profesional: [
+                {
+                    empresa: 'Klinikare (Remoto)',
+                    rol: 'Desarrollador Full-Stack',
+                    periodo: 'Sep 2024 – Abr 2026',
+                    funciones: [
+                        'Mantenimiento avanzado, diagnóstico de incidencias complejas y refactorización de código en plataformas en producción',
+                        'Optimización de consultas relacionales y depuración de lógica de negocio en MySQL y MS SQL Server mediante Eloquent ORM',
+                        'Contenerización de entornos locales con Docker / Compose e integración de servicios AWS (EC2, S3, RDS, SES, ECR, ECS)',
+                        'Mantenimiento de interfaces con JavaScript/jQuery y análisis puntual de arquitectura sobre Symfony'
+                    ],
+                    stack: 'PHP, Laravel, Symfony, MySQL, MS SQL, Docker, AWS, jQuery, Git, Jira.'
+                },
+                {
+                    empresa: 'Commutatio (Presencial)',
+                    rol: 'Desarrollador Full-Stack',
+                    periodo: 'Mar 2023 – Sep 2024',
+                    funciones: [
+                        'Desarrollo backend en Laravel participando en proyectos bajo arquitecturas monolíticas y microservicios',
+                        'Implementación de interfaces frontend modernas utilizando Vue.js (Options API & Composition API)',
+                        'Construcción de consultas SQL complejas, optimización de base de datos y gestión de almacenamiento en AWS S3'
+                    ],
+                    stack: 'Laravel, Vue.js, MySQL, Docker, AWS (S3|EC2), Git, Trello.'
+                },
+                {
+                    empresa: 'Sefar Universal (Remoto)',
+                    rol: 'Lead Backend Developer | Full-Stack',
+                    periodo: 'Ago 2019 – Mar 2023',
+                    funciones: [
+                        'Diseño y desarrollo desde cero de la plataforma core del negocio sobre Laravel y Vue.js, liderando un equipo de 2 devs junior',
+                        'Construcción y consumo de APIs RESTful, integración con bases de datos MySQL y despliegue en nube (AWS, GCP, DigitalOcean)',
+                        'Modernización de procesos operativos sustituyendo herramientas heredadas por arquitecturas web escalables'
+                    ],
+                    stack: 'Laravel, Vue.js, PHP, MySQL, JavaScript, AWS (S3, SES), GCP, Git, Trello.'
+                },
+                {
+                    empresa: 'PDVSA & Universidad Gran Mariscal de Ayacucho (UGMA)',
+                    rol: 'Analista de Sistemas & Automatización / Docente',
+                    periodo: '2006 – 2021',
+                    funciones: [
+                        'Desarrollo de herramientas de software interno para gestión presupuestaria utilizando VB6, VBA, Delphi, MySQL y SQL Server',
+                        'Profesor universitario de Lógica de Programación, Estructuras de Datos y Programación Orientada a Objetos'
+                    ]
+                }                
+            ],
+            principios: [
+                {
+                    titulo: 'Buenas Prácticas',
+                    descripcion: 'Aplicación de principios SOLID, patrón MVC, código limpio y validación de APIs con Postman.'
+                },
+                {
+                    titulo: 'Entorno Local',
+                    descripcion: 'Configuración ágil de entornos de desarrollo basados en Windows 11 con WSL2 (Ubuntu), VS Code y Docker.'
+                }
+            ],
+
+            // Función que envuelve y optimiza cualquier imagen:
+            optImagen(url, w = 300, h = 300) {
+                if (!url) return '';
+                return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&h=${h}&fit=cover&output=jpg&q=80`;
+            }            
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
