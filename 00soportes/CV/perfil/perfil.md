@@ -72,4 +72,4 @@
 
 ### 7. Idiomas
 + **Español**: Nativo.
-+ **Inglés**: Nivel B2 (Técnico). Lectura y comprensión fluida de documentación técnica, especificaciones y redacción de código/commits. Conversación oral en proceso de agilización.
++ **Inglés**: Nivel B1 (Técnico). Lectura y comprensión fluida de documentación técnica, especificaciones y redacción de código/commits.

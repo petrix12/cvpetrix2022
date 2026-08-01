@@ -313,6 +313,138 @@
                 break-inside: avoid;
             }
         }
+
+        /* ==========================================
+        PANEL SUPERIOR ELEGANTE (Vista en pantalla)
+        ========================================== */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px); /* Efecto cristalino/borroso traslúcido */
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0.75rem 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .top-bar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        .top-bar-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        /* Estilo del botón */
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: #2563eb; /* Azul elegante */
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-action:active {
+            transform: scale(0.97);
+        }
+
+        .btn-action.btn-secondary {
+            background-color: #f3f4f6;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .btn-action.btn-secondary:hover {
+            background-color: #e5e7eb;
+        }
+
+        /* ==========================================
+        REGLA DE IMPRESIÓN (Oculta el panel)
+        ========================================== */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* GRUPO DE NAVEGACIÓN SEGMENTADO */
+        .nav-segmented {
+            display: inline-flex;
+            background-color: #e2e8f0;
+            padding: 3px;
+            border-radius: 8px;
+            gap: 2px;
+        }
+
+        .btn-segment {
+            border: none;
+            background: transparent;
+            color: #475569;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-segment:hover {
+            color: var(--primary);
+        }
+
+        .btn-segment.active {
+            background-color: #ffffff;
+            color: var(--accent);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ESTILOS ESPECÍFICOS PARA LA VISTA PERFIL TÉCNICO */
+        .tech-matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .badge-level {
+            font-size: 0.65rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .badge-core { background: #dbeafe; color: #1e40af; }
+        .badge-secondary { background: #fef3c7; color: #92400e; }
+        .badge-limit { background: #fee2e2; color: #991b1b; }        
     </style>
 
     <!-- CDN de Petite-Vue (ocupa solo ~6 KB) -->
@@ -321,110 +453,254 @@
 
 <body>
     <div 
-        class="cv-container" 
         id="app" 
         v-scope 
-        v-effect="document.title = 'CV | ' + nombre"
+        v-effect="document.title = (vista === 'cv' ? 'CV | ' : (vista === 'carta' ? 'Carta | ' : 'Perfil Técnico | ')) + nombre"
     >
-        <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
-        <aside class="sidebar">
-            <div class="profile-box">
-                <a :href="url_img_perfil" target="_blank" rel="noopener noreferrer">
-                    <img 
-                        :src="optImagen(url_img_perfil)"
-                        :alt="nombre" 
-                        class="profile-img"
-                    >
-                </a>
-            </div>
+        <!-- Panel superior de acciones (Se oculta automáticamente al imprimir) -->
+        <header class="top-bar no-print">
+            <div class="top-bar-container">
+                <div class="top-bar-info">
+                    <i class="fa-solid fa-layer-group" style="color: var(--accent);"></i>
+                    <span>
+                        {{ vista === 'cv' ? 'Curriculum Vitae' : (vista === 'carta' ? 'Carta de Presentación' : 'Matriz de Perfil Técnico') }}
+                    </span>
+                </div>
 
-            <div>
-                <h3>Contacto</h3>
-                <ul class="contact-list">
-                    <li><i class="fa-solid fa-location-dot"></i> {{ ubicacion}}</li>
-                    <li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ email }}">{{ email }}</a></li>
-                    <li><i class="fa-solid fa-globe"></i> <a :href="url_site" target="_blank">Sitio Web</a></li>
-                    <li><i class="fa-brands fa-linkedin"></i> <a :href="url_linkedin" target="_blank">LinkedIn Profile</a></li>
-                    <li><i class="fa-brands fa-github"></i> <a :href="url_github" target="_blank">GitHub Profile</a></li>
-                </ul>
-            </div>
+                <div class="top-bar-actions">
+                    <!-- Selector de vistas segmentado -->
+                    <nav class="nav-segmented">
+                        <button 
+                            @click="vista = 'cv'" 
+                            :class="['btn-segment', vista === 'cv' ? 'active' : '']"
+                        >
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span>CV</span>
+                        </button>
 
-            <div>
-                <h3>Tech Skills</h3>
-                <div class="skills-tag-container">
-                    <span v-for="skill in tech_skills" :key="skill" class="skill-tag">{{ skill }}</span>
+                        <button 
+                            @click="vista = 'carta'" 
+                            :class="['btn-segment', vista === 'carta' ? 'active' : '']"
+                        >
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <span>Carta</span>
+                        </button>
+
+                        <button 
+                            @click="vista = 'perfil'" 
+                            :class="['btn-segment', vista === 'perfil' ? 'active' : '']"
+                        >
+                            <i class="fa-solid fa-microchip"></i>
+                            <span>Perfil</span>
+                        </button>
+                    </nav>
+
+                    <!-- Acción independiente de impresión -->
+                    <button onclick="window.print()" class="btn-action">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Imprimir / PDF</span>
+                    </button>
                 </div>
             </div>
+        </header>
 
-            <div>
-                <h3>Formación</h3>
-                <div v-for="edu in formacion" :key="edu.titulo" style="font-size:0.73rem; color:#cbd5e1; margin-bottom: 6px;">
-                    <h4 style="color:#fff;">{{ edu.titulo }}</h4>
-                    <p style="font-size:0.7rem;">{{ edu.institucion }}</p>
-                    <ul>
-                        <li v-for="(item, idx) in edu.detalles" :key="idx" style="color:#94a3b8; font-size: 0.6rem; margin-left: 12px;">{{ item }}.</li>
+        <div class="cv-container">
+            <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
+            <aside class="sidebar">
+                <div class="profile-box">
+                    <a :href="url_img_perfil" target="_blank" rel="noopener noreferrer">
+                        <img 
+                            :src="optImagen(url_img_perfil)"
+                            :alt="nombre" 
+                            class="profile-img"
+                        >
+                    </a>
+                </div>
+
+                <div>
+                    <h3>Contacto</h3>
+                    <ul class="contact-list">
+                        <li><i class="fa-solid fa-location-dot"></i> {{ ubicacion}}</li>
+                        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ email }}">{{ email }}</a></li>
+                        <li><i class="fa-solid fa-globe"></i> <a :href="url_site" target="_blank">Sitio Web</a></li>
+                        <li><i class="fa-brands fa-linkedin"></i> <a :href="url_linkedin" target="_blank">LinkedIn Profile</a></li>
+                        <li><i class="fa-brands fa-github"></i> <a :href="url_github" target="_blank">GitHub Profile</a></li>
                     </ul>
                 </div>
-            </div>
 
-            <div>
-                <h3>Idiomas</h3>
-                <div v-for="lang in idiomas" :key="lang.nombre" class="lang-item">
-                    <span>{{ lang.nombre }}</span>
-                    <span class="lang-badge">{{ lang.nivel }}</span>
-                </div>
-            </div>
-
-            <div>
-                <h3>Aptitudes</h3>
-                <div class="skills-tag-container">
-                    <span v-for="(aptitud, idx) in aptitudes" :key="idx" class="skill-tag">{{ aptitud }}</span>
-                </div>
-            </div>
-        </aside>
-
-        <!-- COLUMNA DERECHA (CONTENIDO PRINCIPAL) -->
-        <main class="main-content">
-            <header class="header-main">
-                <h1>{{ nombre }}</h1>
-                <h2>{{ titulo_profesional }}</h2>
-            </header>
-
-            <!-- SOBRE MÍ -->
-            <section class="section">
-                <h3 class="section-title"><i class="fa-solid fa-user"></i> Perfil Profesional</h3>
-                <p class="summary-text">{{ perfil_profesional }}</p>
-            </section>
-
-            <!-- EXPERIENCIA PROFESIONAL CRONOLÓGICA -->
-            <section class="section">
-                <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h3>
-                <div v-for="exp in experiencia_profesional" :key="exp.titulo" class="experience-item">
-                    <div class="exp-header">
-                        <span class="exp-role">{{ exp.rol}}</span>
-                        <span class="exp-date">{{ exp.periodo }}</span>
-                    </div>
-                    <div class="exp-company">{{ exp.empresa }}</div>
-                    <ul class="exp-bullets">
-                        <li v-for="(funcion, idx) in exp.funciones" :key="idx" style="color:#64748b; font-size: 0.67rem;">{{ funcion }}.</li>
-                    </ul>
-                    <div v-if="exp.stack" class="tech-stack-used">
-                        <strong>Stack:</strong> {{ exp.stack }}
+                <div>
+                    <h3>Tech Skills</h3>
+                    <div class="skills-tag-container">
+                        <span v-for="skill in tech_skills" :key="skill" class="skill-tag">{{ skill }}</span>
                     </div>
                 </div>
-            </section>
 
-            <!-- METODOLOGÍA Y ENTORNOS -->
-            <section class="section">
-                <h3 class="section-title"><i class="fa-solid fa-code"></i> Principios y Entorno</h3>
-                <ul class="exp-bullets">
-                    <li v-for="principio in principios" :key="principio.titulo"><strong>{{ principio.titulo }}:</strong> {{ principio.descripcion }}</li>
-                </ul>
-            </section>
-        </main>
+                <div>
+                    <h3>Formación</h3>
+                    <div v-for="edu in formacion" :key="edu.titulo" style="font-size:0.73rem; color:#cbd5e1; margin-bottom: 6px;">
+                        <h4 style="color:#fff;">{{ edu.titulo }}</h4>
+                        <p style="font-size:0.7rem;">{{ edu.institucion }}</p>
+                        <ul>
+                            <li v-for="(item, idx) in edu.detalles" :key="idx" style="color:#94a3b8; font-size: 0.6rem; margin-left: 12px;">{{ item }}.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Idiomas</h3>
+                    <div v-for="lang in idiomas" :key="lang.nombre" class="lang-item">
+                        <span>{{ lang.nombre }}</span>
+                        <span class="lang-badge">{{ lang.nivel }}</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Aptitudes</h3>
+                    <div class="skills-tag-container">
+                        <span v-for="(aptitud, idx) in aptitudes" :key="idx" class="skill-tag">{{ aptitud }}</span>
+                    </div>
+                </div>
+            </aside>            
+                      
+            
+            <!-- COLUMNA DERECHA (CONTENIDO PRINCIPAL) -->
+            <main class="main-content">
+                <!-- ==================== VISTA 1: CURRICULUM VITAE ==================== -->
+                <div v-if="vista === 'cv'">
+                    <header class="header-main">
+                        <h1>{{ nombre }}</h1>
+                        <h2>{{ titulo_profesional }}</h2>
+                    </header>
+
+                    <!-- SOBRE MÍ -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-user"></i> Perfil Profesional</h3>
+                        <p class="summary-text">{{ perfil_profesional }}</p>
+                    </section>
+
+                    <!-- EXPERIENCIA PROFESIONAL CRONOLÓGICA -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h3>
+                        <div v-for="exp in experiencia_profesional" :key="exp.titulo" class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-role">{{ exp.rol}}</span>
+                                <span class="exp-date">{{ exp.periodo }}</span>
+                            </div>
+                            <div class="exp-company">{{ exp.empresa }}</div>
+                            <ul class="exp-bullets">
+                                <li v-for="(funcion, idx) in exp.funciones" :key="idx" style="color:#64748b; font-size: 0.67rem;">{{ funcion }}.</li>
+                            </ul>
+                            <div v-if="exp.stack" class="tech-stack-used">
+                                <strong>Stack:</strong> {{ exp.stack }}
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- METODOLOGÍA Y ENTORNOS -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-code"></i> Principios y Entorno</h3>
+                        <ul class="exp-bullets">
+                            <li v-for="principio in principios" :key="principio.titulo"><strong>{{ principio.titulo }}:</strong> {{ principio.descripcion }}</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- ==================== VISTA 2: CARTA DE PRESENTACIÓN ==================== -->
+                <div v-if="vista === 'carta'">
+                    <header class="header-main">
+                        <h1>Carta de Presentación</h1>
+                        <h2>{{ titulo_profesional }}</h2>
+                    </header>
+
+                    <section class="section" style="font-size: 0.8rem; color: var(--text-main); line-height: 1.6;">
+                        <p style="margin-bottom: 12px; color: var(--text-muted); font-size: 0.75rem;">
+                            <strong>Fecha:</strong> {{ new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}<br>
+                            <strong>Atención:</strong> {{ atencion_carte_presentacion }}
+                        </p>
+
+                        <p style="margin-bottom: 12px;">{{ saludo_carte_presentacion }}</p>
+
+                        <p v-for="paragraph in cuerpo_carte_presentacion" :key="paragraph" v-html="paragraph" style="margin-bottom: 12px; text-align: justify;">{{ paragraph }}</p>
+
+                        <div style="margin-top: 24px;">
+                            <p style="margin-bottom: 4px;">Atentamente,</p>
+                            <p style="font-weight: 700; color: var(--primary);">{{ nombre }}</p>
+                            <p style="font-size: 0.75rem; color: var(--accent);">{{ titulo_profesional }}</p>
+                        </div>
+                    </section>
+                </div>
+                
+                <!-- ==================== VISTA 3: PERFIL TÉCNICO Y CAPACIDADES ==================== -->
+                <div v-if="vista === 'perfil'">
+                    <header class="header-main">
+                        <h1>Matriz de Perfil Técnico</h1>
+                        <h2>Capacidades, Stack Real y Límites de Ingeniería</h2>
+                    </header>
+
+                    <!-- RESUMEN EJECUTIVO -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Resumen Ejecutivo</h3>
+                        <div style="background: #f8fafc; border-left: 3px solid var(--accent); padding: 10px 12px; font-size: 0.76rem; border-radius: 0 4px 4px 0;">                            
+                            <p v-for="resumen in resumen_ejecutivo" :key="resumen.nombre">
+                                <strong>• {{ resumen.nombre }}:</strong> {{ resumen.descripcion }}.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- CORE STACK -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-circle-check"></i> Core Stack (Fortalezas Principales)</h3>
+                        <ul class="exp-bullets" style="font-size: 0.75rem;">                            
+                            <li v-for="stack in core_stack" :key="stack.nombre" style="margin-bottom: 6px;">
+                                <strong>{{ stack.nombre }}:</strong> <span class="badge-level badge-core">Nivel {{ stack.nivel }}</span><br>
+                                {{ stack.descripcion }}.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- TECNOLOGÍAS SECUNDARIAS / ADAPTABLES -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-arrows-rotate"></i> Tecnologías Secundarias y Adaptables</h3>
+                        <div style="font-size: 0.74rem; background: #fffbe0; border: 1px solid #fef08a; padding: 8px 10px; border-radius: 4px; margin-bottom: 8px;">
+                            <em>{{ stack_secundario_comentario }}.</em>
+                        </div>
+                        <ul class="exp-bullets" style="font-size: 0.75rem;">
+                            <li v-for="stack2 in stack_secundario" :key="stack2.nombre">
+                                <strong>{{ stack2.nombre }}:</strong> 
+                                {{ stack2.descripcion }}. Nivel {{ stack2.nivel }}.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <!-- LÍMITES TÉCNICOS Y FUERA DE STACK -->
+                    <section class="section">
+                        <h3 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Límites Técnicos (Honestidad Profesional)</h3>
+                        <div style="font-size: 0.74rem; background: #fef2f2; border: 1px solid #fecaca; padding: 8px 10px; border-radius: 4px;">
+                            <p style="margin-bottom: 4px; color: #991b1b;"><strong>Tecnologías fuera de mi foco habitual (requieren curva de aprendizaje):</strong></p>
+                            <p v-for="limite in limites_tecnicos" :key="limite.nombre">
+                                <strong>{{ limite.nombre }}:</strong> {{ limite.descripcion }}.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- ARQUITECTURA E IDIOMAS -->
+                    <section class="section">
+                        <h3 class="section-title">
+                            <i class="fa-solid fa-compass-drafting"></i> Arquitectura e Idiomas
+                        </h3>
+                        <ul class="exp-bullets" style="font-size: 0.75rem;">                            
+                            <li v-for="item in arquitectura_idiomas" :key="item.nombre">
+                                <strong>{{ item.nombre }}:</strong> {{ item.descripcion }}.
+                            </li>
+                        </ul>
+                    </section>
+                </div>                
+            </main>
+        </div>
     </div>
     <script>
         PetiteVue.createApp({
+            vista: 'cv', // Admite: 'cv', 'carta', 'perfil'
             nombre: 'Pedro Jesús Bazó Canelón',
             titulo_profesional: 'Desarrollador Backend | Full-Stack Senior',
             perfil_profesional: 'Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).',
@@ -432,7 +708,6 @@
             email: 'pedro.j.bazo.c@gmail.com',
             url_site: 'https://petrix12.github.io/cvpetrix2022',
             url_img_perfil: 'https://raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png',
-            //url_img_perfil: 'https://wsrv.nl/?url=raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png&w=300&h=300&fit=cover&output=jpg&q=80',
             url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',
             url_github: 'https://github.com/petrix12',
             tech_skills: [
@@ -525,12 +800,108 @@
                     descripcion: 'Configuración ágil de entornos de desarrollo basados en Windows 11 con WSL2 (Ubuntu), VS Code y Docker.'
                 }
             ],
+            atencion_carte_presentacion: 'Equipo de Selección / Dirección Técnica',
+            saludo_carte_presentacion: 'Estimado/a responsable de selección y equipo técnico,',
+            cuerpo_carte_presentacion: [
+                'Me pongo en contacto con ustedes para presentar mi candidatura con una propuesta clara: aportar solidez inmediata en las tecnologías que domino y una capacidad de adaptación acelerada ante cualquier reto técnico que el equipo requiera.',
+                'Como desarrollador Senior con un perfil fuertemente orientado al backend y la arquitectura web, mi núcleo de mayor soltura se encuentra en el ecosistema <strong>PHP / Laravel</strong> (con más de 7 proyectos comerciales, varios desarrollados desde cero), <strong>Vue.js</strong> (Options y Composition API) y la gestión de bases de datos relacionales complejas (<strong>MySQL y SQL Server</strong>). Adicionalmente, cuento con experiencia práctica en la contenerización de entornos locales con <strong>Docker (WSL2)</strong> y la integración de servicios cloud en <strong>AWS</strong> (EC2, S3, RDS, SES).',
+                'Más allá de mi stack principal, mi verdadera fortaleza radica en una <strong>sólida base lógica y analítica</strong> acumulada a lo largo de mi trayectoria. Entiendo el desarrollo no como el dominio rígido de una herramienta concreta, sino como la resolución eficiente de problemas mediante patrones limpios (SOLID, MVC), refactorización de código legado y buenas prácticas de ingeniería.',
+                'En mi día a día, integro modelos de <strong>Inteligencia Artificial (Claude, ChatGPT, Gemini, DeepSeek)</strong> mediante <em>prompt engineering</em> estructurado. Esto me permite utilizar la IA como un multiplicador de productividad: acelerando el diagnóstico de bugs, la optimización de consultas complejas y, sobre todo, permitiéndome <strong>reducir a días la curva de aprendizaje</strong> de tecnologías adyacentes como Node.js, React o bases de datos NoSQL, por las cuales siento un genuino interés técnico.',
+                'Busco incorporarme a un equipo donde la calidad del software, el trabajo colaborativo (Scrum) y la mentalidad resolutiva sean la prioridad. Agradezco sinceramente el tiempo dedicado a evaluar mi candidatura y quedo a su entera disposición para mantener una conversación técnica.'
+            ],
+            resumen_ejecutivo: [
+                {
+                    nombre: 'Rol Principal',
+                    descripcion: 'Desarrollador Web Full-Stack (Especializado en Backend)'
+                },
+                {
+                    nombre: 'Core Stack',
+                    descripcion: 'PHP 8.x (Laravel) + JavaScript (Vue.js) + MySQL/MariaDB + AWS + Docker'
+                },
+                {
+                    nombre: 'Entorno de Trabajo',
+                    descripcion: 'Windows 11 WSL2 (Ubuntu 24.04), VS Code, Git/GitHub, Docker Desktop'
+                },
+                {
+                    nombre: 'Flujo con IA',
+                    descripcion: 'Prompt Engineering avanzado, uso diario de LLMs (Claude, ChatGPT, Gemini, DeepSeek) para refactorización, scripts DevOps y optimización de consultas SQL'
+                },
+            ],
+            core_stack: [
+                {
+                    nombre: 'Laravel (PHP)',
+                    nivel: 'Alto',
+                    descripcion: '5+ años de experiencia (2020-actualidad). +7 proyectos profesionales (+2 desde cero). Dominio de arquitecturas MVC monolíticas y APIs RESTful'
+                },
+                {
+                    nombre: 'Vue.js (JavaScript)',
+                    nivel: 'Alto',
+                    descripcion: 'Options API & Composition API. Framework preferido para SPAs dinámicas e integración backend'
+                },
+                {
+                    nombre: 'Bases de Datos Relacionales',
+                    nivel: 'Alto',
+                    descripcion: 'MySQL / MariaDB (diseño relacional, consultas complejas, índices). MS SQL Server (optimización de queries)'
+                },
+                {
+                    nombre: 'DevOps & Cloud',
+                    nivel: 'Intermedio-Alto',
+                    descripcion: 'AWS (EC2, S3, RDS, SES, ECR, ECS, IAM). Docker / Docker Compose local diario sobre WSL2. Git & GitHub'
+                }
+            ],
+            stack_secundario_comentario: 'Tecnologías conocidas o trabajadas previamente. Capacidad de despliegue productivo en pocos días gracias a bases lógicas e IA.',
+            stack_secundario: [
+                {
+                    nombre: 'Symfony',
+                    nivel: 'Básico-Intermedio',
+                    descripcion: 'Mantenimiento de proyectos existentes, diagnóstico de incidencias y refactorización puntual'
+                },
+                {
+                    nombre: 'Node.js / Express.js',
+                    nivel: 'Básico-Intermedio',
+                    descripcion: 'Proyectos personales y cursos. Sin despliegue productivo a gran escala'
+                },
+                {
+                    nombre: 'Frontend Adicional',
+                    nivel: 'Básico-Intermedio',
+                    descripcion: 'TypeScript (nivel intermedio sintáctico), React.js (proyectos sencillos y revisión de código), Tailwind CSS, Bootstrap'
+                },
+                {
+                    nombre: 'NoSQL & Cache',
+                    nivel: 'Básico',
+                    descripcion: 'MongoDB (conceptos base/documentos), Redis (comandos de consola para caché en RAM)'
+                }
+            ],
+            limites_tecnicos: [
+                {
+                    nombre: 'Backend',
+                    descripcion: 'Nest.js, FastAPI, Spring Boot (test puntual 2022), .NET/C# (sin dev directo), Go, Ruby'
+                },
+                {
+                    nombre: 'Frontend / Frameworks',
+                    descripcion: 'Angular (principiante), Svelte/SvelteKit, Next.js / Nuxt.js (estudio previo sin práctica reciente)'
+                },
+                {
+                    nombre: 'Bases de Datos & Móvil',
+                    descripcion: 'PostgreSQL (domino SQL estándar, sin administración directa DB), Mobile Nativo (React Native, Swift, Kotlin)'
+                }
+            ],
+            arquitectura_idiomas: [
+                {
+                    nombre: 'Arquitecturas',
+                    descripcion: 'Dominio completo de MVC y APIs RESTful. Comprensión teórica sólida de DDD y Arquitectura Hexagonal'
+                },
+                {
+                    nombre: 'Idiomas',
+                    descripcion: 'Español (Nativo) | Inglés (B1 Técnico: lectura fluida de documentación técnica, código y commits)'
+                },
+            ],
 
             // Función que envuelve y optimiza cualquier imagen:
             optImagen(url, w = 300, h = 300) {
                 if (!url) return '';
                 return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&h=${h}&fit=cover&output=jpg&q=80`;
-            }            
+            }
         }).mount('#app');
     </script>
 </body>
