@@ -471,7 +471,7 @@
                     <!-- Selector de vistas segmentado -->
                     <nav class="nav-segmented">
                         <button 
-                            @click="vista = 'cv'" 
+                            @click="cambiarVista('cv')" 
                             :class="['btn-segment', vista === 'cv' ? 'active' : '']"
                         >
                             <i class="fa-solid fa-file-lines"></i>
@@ -479,7 +479,7 @@
                         </button>
 
                         <button 
-                            @click="vista = 'carta'" 
+                            @click="cambiarVista('carta')" 
                             :class="['btn-segment', vista === 'carta' ? 'active' : '']"
                         >
                             <i class="fa-solid fa-envelope-open-text"></i>
@@ -487,7 +487,7 @@
                         </button>
 
                         <button 
-                            @click="vista = 'perfil'" 
+                            @click="cambiarVista('perfil')" 
                             :class="['btn-segment', vista === 'perfil' ? 'active' : '']"
                         >
                             <i class="fa-solid fa-microchip"></i>
@@ -699,8 +699,21 @@
         </div>
     </div>
     <script>
+        // Función auxiliar para validar y obtener la vista desde la URL (#)
+        function obtenerVistaDeUrl() {
+            const hash = window.location.hash.replace('#', '');
+            const vistasValidas = ['cv', 'carta', 'perfil'];
+            return vistasValidas.includes(hash) ? hash : 'cv';
+        }        
         PetiteVue.createApp({
-            vista: 'cv', // Admite: 'cv', 'carta', 'perfil'
+            // Inicializa la vista según la URL actual al cargar o refrescar
+            vista: obtenerVistaDeUrl(),
+            // Método para cambiar la vista y actualizar el Hash en la barra de direcciones
+            cambiarVista(nuevaVista) {
+                this.vista = nuevaVista;
+                window.location.hash = nuevaVista;
+            },
+
             nombre: 'Pedro Jesús Bazó Canelón',
             titulo_profesional: 'Desarrollador Backend | Full-Stack Senior',
             perfil_profesional: 'Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).',
@@ -903,6 +916,11 @@
                 return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&h=${h}&fit=cover&output=jpg&q=80`;
             }
         }).mount('#app');
+
+        // Escuchar eventos de cambio en la URL (flechas Atrás/Adelante del navegador)
+        window.addEventListener('hashchange', () => {
+            estadoApp.vista = obtenerVistaDeUrl();
+        });        
     </script>
 </body>
 
