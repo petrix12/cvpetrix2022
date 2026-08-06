@@ -1,0 +1,698 @@
+:root {
+  --primary: #0f172a;
+  --accent: #2563eb;
+  --accent-light: #eff6ff;
+  --text-main: #334155;
+  --text-muted: #64748b;
+  --bg-sidebar: #1e293b;
+  --text-sidebar: #f8fafc;
+  --border-color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-main);
+  background-color: #f1f5f9;
+  line-height: 1.38;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.cv-container {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 20px auto;
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 66mm 1fr;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background-color: var(--bg-sidebar) !important;
+  color: var(--text-sidebar);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.profile-box {
+  text-align: center;
+}
+
+.profile-img {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+  margin-bottom: 8px;
+}
+
+.sidebar h3 {
+  color: #ffffff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 3px;
+  margin-bottom: 8px;
+}
+
+.contact-list {
+  list-style: none;
+  font-size: 0.75rem;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  word-break: break-all;
+}
+
+.contact-list i {
+  color: var(--accent);
+  width: 12px;
+  text-align: center;
+}
+
+.contact-list a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.skills-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.skill-tag {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
+  font-size: 0.68rem;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border-left: 2px solid var(--accent);
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.lang-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+.lang-badge {
+  background-color: rgba(37, 99, 235, 0.3) !important;
+  color: #93c5fd !important;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  padding: 22px 20px;
+  background: #ffffff;
+}
+
+.header-main {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.header-main h1 {
+  font-size: 1.65rem;
+  color: var(--primary);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.header-main h2 {
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: 0.88rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.section-title i {
+  color: var(--accent);
+}
+
+.summary-text {
+  font-size: 0.78rem;
+  color: var(--text-main);
+  text-align: justify;
+}
+
+/* EXPERIENCE */
+.experience-item {
+  margin-bottom: 11px;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 2px;
+}
+
+.exp-role {
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: var(--primary);
+}
+
+.exp-date {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.exp-company {
+  font-size: 0.76rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.exp-bullets {
+  list-style-type: square;
+  padding-left: 14px;
+  font-size: 0.76rem;
+}
+
+.exp-bullets li {
+  margin-bottom: 3px;
+}
+
+.tech-stack-used {
+  margin-top: 4px;
+  padding: 4px 8px;
+  background: var(--accent-light) !important;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: var(--primary);
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.tech-stack-used strong {
+  color: var(--accent);
+}
+
+/* REGLAS ESPECÍFICAS DE IMPRESIÓN (PDF A4) */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .cv-container {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    display: grid !important;
+    grid-template-columns: 66mm 1fr !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  .sidebar {
+    background-color: #1e293b !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .section,
+  .experience-item {
+    break-inside: avoid;
+  }
+}
+
+/* ==========================================
+        PANEL SUPERIOR ELEGANTE (Vista en pantalla)
+        ========================================== */
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px); /* Efecto cristalino/borroso traslúcido */
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.top-bar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.top-bar-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Estilo del botón */
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb; /* Azul elegante */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn-action:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-action:active {
+  transform: scale(0.97);
+}
+
+.btn-action.btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-action.btn-secondary:hover {
+  background-color: #e5e7eb;
+}
+
+/* ==========================================
+        REGLA DE IMPRESIÓN (Oculta el panel)
+        ========================================== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* GRUPO DE NAVEGACIÓN SEGMENTADO */
+.nav-segmented {
+  display: inline-flex;
+  background-color: #e2e8f0;
+  padding: 3px;
+  border-radius: 8px;
+  gap: 2px;
+}
+
+.btn-segment {
+  border: none;
+  background: transparent;
+  color: #475569;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-segment:hover {
+  color: var(--primary);
+}
+
+.btn-segment.active {
+  background-color: #ffffff;
+  color: var(--accent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ESTILOS ESPECÍFICOS PARA LA VISTA PERFIL TÉCNICO */
+.tech-matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.badge-level {
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-core {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.badge-secondary {
+  background: #fef3c7;
+  color: #92400e;
+}
+.badge-limit {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* CUADRÍCULA COMPACTA DE PROYECTOS (Ajustado para A4) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas paralelas */
+  gap: 8px; /* Espaciado reducido entre tarjetas */
+}
+
+.project-card {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 7px 9px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3px;
+}
+
+.project-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-tag-category {
+  font-size: 0.45rem;
+  padding: 1px 4px;
+  border-radius: 2px;
+  background: #f1f5f9;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.project-desc {
+  font-size: 0.6rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.project-links {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.link-pill {
+  font-size: 0.6rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* ==========================================
+   ESTILOS PARA EL MINI CV MÓVIL (VISTA CARD)
+   ========================================== */
+body.mini-cv-page {
+  background-color: #090d16;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 12px;
+}
+
+.cv-card {
+  width: 100%;
+  max-width: 390px;
+  background: var(--primary);
+  border: 1px solid #1e293b;
+  border-radius: 24px;
+  padding: 24px 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-sidebar);
+}
+
+.cv-card .card-header {
+  text-align: center;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 16px;
+}
+
+.cv-card .profile-img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+}
+
+.cv-card .avatar-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 8px auto;
+  background: #1e293b;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 0.85rem;
+  color: #60a5fa;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.card-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.skill-tag.highlight {
+  border-left-color: #60a5fa !important;
+  color: #60a5fa !important;
+  font-weight: 600;
+}
+
+.highlights-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.highlights-list li {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.highlights-list li::before {
+  content: "⚡";
+  font-size: 0.8rem;
+}
+
+.highlights-list strong {
+  color: #ffffff;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.btn-action.btn-full {
+  width: 100%;
+  justify-content: center;
+  border-radius: 12px;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.social-btn {
+  color: #94a3b8;
+  font-size: 1.2rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  color: var(--accent);
+}
+
+/* ==========================================
+   MICRO-TARJETAS DE IMPACTO (DASHBOARD LOOK)
+   ========================================== */
+.impact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.impact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(30, 41, 59, 0.6); /* Fondo azul oscuro translúcido */
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  border-left: 3px solid #38bdf8; /* Límite azul neón de acento */
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.impact-card:hover {
+  transform: translateX(3px);
+  border-color: #38bdf8;
+  background: rgba(30, 41, 59, 0.9);
+}
+
+.impact-icon {
+  color: #38bdf8;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(56, 189, 248, 0.12);
+  border-radius: 8px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.impact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.impact-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.impact-value {
+  font-size: 0.78rem;
+  color: #e2e8f0;
+  line-height: 1.35;
+}
+
+.impact-value strong {
+  color: #ffffff;
+}

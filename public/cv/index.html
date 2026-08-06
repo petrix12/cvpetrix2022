@@ -1,1187 +1,132 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Opción con emoji (código/terminal) -->
-    <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>"> -->
-    <!-- <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"> -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%2338bdf8' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>">
-    <!-- <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"> -->
-    <!-- <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"> -->
-
-    <!-- Título de la pestaña en el navegador -->
-    <title>Pedro Bazó | Senior Backend & Full-Stack Developer</title>
-    <meta name="description" content="Perfil profesional de Pedro Jesús Bazó Canelón, Senior Backend & Full-Stack Developer. Especializado en PHP, Laravel, Vue.js, APIs RESTful y Arquitectura de Software.">
-
-    <!-- Open Graph / WhatsApp / Facebook / LinkedIn -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://petrix12.github.io/cvpetrix2022/cv/">
-    <meta property="og:title" content="Pedro Bazó | Senior Backend & Full-Stack Developer">
-    <meta property="og:description" content="Senior Backend & Full-Stack Developer. Especializado en PHP, Laravel, Vue.js, arquitectura limpia (SOLID), Docker y AWS. Revisa mi trayectoria y proyectos.">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/32933199">
-
-    <!-- Twitter / X Cards -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Pedro Bazó | Senior Backend & Full-Stack Developer">
-    <meta name="twitter:description" content="Senior Backend & Full-Stack Developer. Especializado en Laravel, Vue.js, arquitectura limpia y Cloud.">
-    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/32933199">
-
-    <!-- Fuentes e Iconos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --accent-light: #eff6ff;
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --bg-sidebar: #1e293b;
-            --text-sidebar: #f8fafc;
-            --border-color: #e2e8f0;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: #f1f5f9;
-            line-height: 1.38;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-
-        .cv-container {
-            width: 210mm;
-            min-height: 297mm;
-            margin: 20px auto;
-            background: #ffffff;
-            display: grid;
-            grid-template-columns: 66mm 1fr;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        /* SIDEBAR */
-        .sidebar {
-            background-color: var(--bg-sidebar) !important;
-            color: var(--text-sidebar);
-            padding: 22px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-
-        .profile-box {
-            text-align: center;
-        }
-
-        .profile-img {
-            width: 105px;
-            height: 105px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent);
-            margin-bottom: 8px;
-        }
-
-        .sidebar h3 {
-            color: #ffffff;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 3px;
-            margin-bottom: 8px;
-        }
-
-        .contact-list {
-            list-style: none;
-            font-size: 0.75rem;
-        }
-
-        .contact-list li {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 6px;
-            color: #cbd5e1;
-            word-break: break-all;
-        }
-
-        .contact-list i {
-            color: var(--accent);
-            width: 12px;
-            text-align: center;
-        }
-
-        .contact-list a {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
-
-        .skills-tag-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 4px;
-        }
-
-        .skill-tag {
-            background: #334155 !important;
-            color: #f1f5f9 !important;
-            font-size: 0.68rem;
-            padding: 2px 5px;
-            border-radius: 3px;
-            border-left: 2px solid var(--accent);
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-
-        .lang-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
-            font-size: 0.75rem;
-            color: #cbd5e1;
-        }
-
-        .lang-badge {
-            background-color: rgba(37, 99, 235, 0.3) !important;
-            color: #93c5fd !important;
-            padding: 1px 4px;
-            border-radius: 3px;
-            font-size: 0.68rem;
-            font-weight: 600;
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-
-        /* MAIN CONTENT */
-        .main-content {
-            padding: 22px 20px;
-            background: #ffffff;
-        }
-
-        .header-main {
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-bottom: 14px;
-        }
-
-        .header-main h1 {
-            font-size: 1.65rem;
-            color: var(--primary);
-            font-weight: 700;
-            line-height: 1.1;
-        }
-
-        .header-main h2 {
-            font-size: 0.95rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-top: 3px;
-        }
-
-        .section {
-            margin-bottom: 14px;
-        }
-
-        .section-title {
-            font-size: 0.88rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-
-        .section-title i {
-            color: var(--accent);
-        }
-
-        .summary-text {
-            font-size: 0.78rem;
-            color: var(--text-main);
-            text-align: justify;
-        }
-
-        /* EXPERIENCE */
-        .experience-item {
-            margin-bottom: 11px;
-        }
-
-        .exp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 2px;
-        }
-
-        .exp-role {
-            font-weight: 700;
-            font-size: 0.84rem;
-            color: var(--primary);
-        }
-
-        .exp-date {
-            font-size: 0.72rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .exp-company {
-            font-size: 0.76rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .exp-bullets {
-            list-style-type: square;
-            padding-left: 14px;
-            font-size: 0.76rem;
-        }
-
-        .exp-bullets li {
-            margin-bottom: 3px;
-        }
-
-        .tech-stack-used {
-            margin-top: 4px;
-            padding: 4px 8px;
-            background: var(--accent-light) !important;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            color: var(--primary);
-            -webkit-print-color-adjust: exact !important;
-            print-color-adjust: exact !important;
-        }
-
-        .tech-stack-used strong {
-            color: var(--accent);
-        }
-
-        /* REGLAS ESPECÍFICAS DE IMPRESIÓN (PDF A4) */
-        @page {
-            size: A4 portrait;
-            margin: 0;
-        }
-
-        @media print {
-
-            html,
-            body {
-                width: 210mm;
-                height: 297mm;
-                background: #ffffff !important;
-                margin: 0 !important;
-                padding: 0 !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .cv-container {
-                width: 210mm;
-                height: 297mm;
-                margin: 0 !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                display: grid !important;
-                grid-template-columns: 66mm 1fr !important;
-                page-break-after: avoid;
-                page-break-inside: avoid;
-            }
-
-            .sidebar {
-                background-color: #1e293b !important;
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
-
-            .section,
-            .experience-item {
-                break-inside: avoid;
-            }
-        }
-
-        /* ==========================================
-        PANEL SUPERIOR ELEGANTE (Vista en pantalla)
-        ========================================== */
-        .top-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px); /* Efecto cristalino/borroso traslúcido */
-            border-bottom: 1px solid #e5e7eb;
-            padding: 0.75rem 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .top-bar-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .top-bar-info {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: #4b5563;
-        }
-
-        .top-bar-actions {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        /* Estilo del botón */
-        .btn-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background-color: #2563eb; /* Azul elegante */
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-
-        .btn-action:hover {
-            background-color: #1d4ed8;
-        }
-
-        .btn-action:active {
-            transform: scale(0.97);
-        }
-
-        .btn-action.btn-secondary {
-            background-color: #f3f4f6;
-            color: #374151;
-            border: 1px solid #d1d5db;
-        }
-
-        .btn-action.btn-secondary:hover {
-            background-color: #e5e7eb;
-        }
-
-        /* ==========================================
-        REGLA DE IMPRESIÓN (Oculta el panel)
-        ========================================== */
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-        }
-
-        /* GRUPO DE NAVEGACIÓN SEGMENTADO */
-        .nav-segmented {
-            display: inline-flex;
-            background-color: #e2e8f0;
-            padding: 3px;
-            border-radius: 8px;
-            gap: 2px;
-        }
-
-        .btn-segment {
-            border: none;
-            background: transparent;
-            color: #475569;
-            padding: 6px 14px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .btn-segment:hover {
-            color: var(--primary);
-        }
-
-        .btn-segment.active {
-            background-color: #ffffff;
-            color: var(--accent);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ESTILOS ESPECÍFICOS PARA LA VISTA PERFIL TÉCNICO */
-        .tech-matrix-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
-
-        .badge-level {
-            font-size: 0.65rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .badge-core { background: #dbeafe; color: #1e40af; }
-        .badge-secondary { background: #fef3c7; color: #92400e; }
-        .badge-limit { background: #fee2e2; color: #991b1b; }  
-
-        /* CUADRÍCULA COMPACTA DE PROYECTOS (Ajustado para A4) */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 columnas paralelas */
-            gap: 8px; /* Espaciado reducido entre tarjetas */
-        }
-
-        .project-card {
-            border: 1px solid var(--border-color);
-            border-radius: 5px;
-            padding: 7px 9px;
-            background: #ffffff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 3px;
-        }
-
-        .project-title {
-            font-size: 0.72rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .project-tag-category {
-            font-size: 0.45rem;
-            padding: 1px 4px;
-            border-radius: 2px;
-            background: #f1f5f9;
-            color: var(--text-muted);
-            font-weight: 600;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-
-        .project-desc {
-            font-size: 0.6rem;
-            color: var(--text-main);
-            margin-bottom: 4px;
-            line-height: 1.25;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 6px;
-            margin-top: 4px;
-            padding-top: 4px;
-            border-top: 1px dashed var(--border-color);
-        }
-
-        .link-pill {
-            font-size: 0.6rem;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-        }              
-    </style>
-
-    <!-- CDN de Petite-Vue (ocupa solo ~6 KB) -->
-    <script src="https://unpkg.com/petite-vue"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Bazó | Backend Engineer</title>
+  
+  <!-- Favicon / Consola -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%232563eb' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pedro Bazó | Senior Backend Developer">
+  <meta property="og:description" content="PHP • Laravel • DDD & Arquitectura Hexagonal • AWS • Vue.js. Revisa mi resumen técnico en 30 segundos.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+
+  <!-- Fuentes e Iconos de FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Estilos Unificados de la Aplicación -->
+  <link rel="stylesheet" href="./assets/css/cv.css">
+
+  <!-- Scripts -->
+  <script src="./assets/js/cv-data.js" defer></script>
+  <script src="https://unpkg.com/petite-vue" defer></script>
 </head>
+<body class="mini-cv-page">
 
-<body>
-    <div 
-        id="app" 
-        v-scope 
-        v-effect="document.title = (vista === 'cv' ? 'CV | ' : (vista === 'carta' ? 'Carta | ' : (vista === 'perfil' ? 'Perfil | ' : 'Portafolio | '))) + nombre"
-    >
-        <!-- Panel superior de acciones (Se oculta automáticamente al imprimir) -->
-        <header class="top-bar no-print">
-            <div class="top-bar-container">
-                <div class="top-bar-info">
-                    <i class="fa-solid fa-layer-group" style="color: var(--accent);"></i>
-                    <span>
-                        {{ vista === 'cv' ? 'Curriculum Vitae' : (vista === 'carta' ? 'Carta de Presentación' : (vista === 'perfil' ? 'Matriz de Perfil Técnico' : 'Portafolio de Proyectos')) }}
-                    </span>
-                </div>
+  <main v-scope="MiniCVComponent()" class="cv-card">
+    
+    <header class="card-header">
+      <div class="profile-box">
+        <img v-if="url_img_perfil" :src="url_img_perfil" :alt="nombre" class="profile-img">
+        <div v-else class="avatar-icon">🚀</div>
+      </div>
+      <h1 class="card-title">{{ nombre }}</h1>
+      <p class="card-subtitle">{{ titulo_profesional }}</p>
+    </header>
 
-                <div class="top-bar-actions">
-                    <!-- Selector de vistas segmentado -->
-                    <nav class="nav-segmented">
-                        <button 
-                            @click="cambiarVista('cv')" 
-                            :class="['btn-segment', vista === 'cv' ? 'active' : '']"
-                        >
-                            <i class="fa-solid fa-file-lines"></i>
-                            <span>CV</span>
-                        </button>
+    <section>
+      <h3 class="card-section-title">Core Tech Stack</h3>
+      <div class="skills-tag-container">
+        <span 
+          v-for="(skill, index) in tech_skills" 
+          :key="skill" 
+          :class="['skill-tag', index < 4 ? 'highlight' : '']">
+          {{ skill }}
+        </span>
+      </div>
+    </section>
 
-                        <button 
-                            @click="cambiarVista('carta')" 
-                            :class="['btn-segment', vista === 'carta' ? 'active' : '']"
-                        >
-                            <i class="fa-solid fa-envelope-open-text"></i>
-                            <span>Carta</span>
-                        </button>
-
-                        <button 
-                            @click="cambiarVista('perfil')" 
-                            :class="['btn-segment', vista === 'perfil' ? 'active' : '']"
-                        >
-                            <i class="fa-solid fa-microchip"></i>
-                            <span>Perfil</span>
-                        </button>
-
-                        <button 
-                            @click="cambiarVista('proyectos')" 
-                            :class="['btn-segment', vista === 'proyectos' ? 'active' : '']"
-                        >
-                            <i class="fa-solid fa-diagram-project"></i>
-                            <span>Portafolio</span>
-                        </button>
-                    </nav>
-
-                    <!-- Acción independiente de impresión -->
-                    <button onclick="window.print()" class="btn-action">
-                        <i class="fa-solid fa-print"></i>
-                        <span>Imprimir / PDF</span>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <div class="cv-container">
-            <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
-            <aside class="sidebar">
-                <div class="profile-box">
-                    <a :href="url_img_perfil" target="_blank" rel="noopener noreferrer">
-                        <img 
-                            :src="optImagen(url_img_perfil)"
-                            :alt="nombre" 
-                            class="profile-img"
-                        >
-                    </a>
-                </div>
-
-                <div>
-                    <h3>Contacto</h3>
-                    <ul class="contact-list">
-                        <li><i class="fa-solid fa-location-dot"></i> {{ ubicacion}}</li>
-                        <li><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ email }}">{{ email }}</a></li>
-                        <li><i class="fa-solid fa-globe"></i> <a :href="url_site" target="_blank">Sitio Web</a></li>
-                        <li><i class="fa-brands fa-linkedin"></i> <a :href="url_linkedin" target="_blank">LinkedIn Profile</a></li>
-                        <li><i class="fa-brands fa-github"></i> <a :href="url_github" target="_blank">GitHub Profile</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3>Tech Skills</h3>
-                    <div class="skills-tag-container">
-                        <span v-for="skill in tech_skills" :key="skill" class="skill-tag">{{ skill }}</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3>Formación</h3>
-                    <div v-for="edu in formacion" :key="edu.titulo" style="font-size:0.73rem; color:#cbd5e1; margin-bottom: 6px;">
-                        <h4 style="color:#fff;">{{ edu.titulo }}</h4>
-                        <p style="font-size:0.7rem;">{{ edu.institucion }}</p>
-                        <ul>
-                            <li v-for="(item, idx) in edu.detalles" :key="idx" style="color:#94a3b8; font-size: 0.6rem; margin-left: 12px;">{{ item }}.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <h3>Idiomas</h3>
-                    <div v-for="lang in idiomas" :key="lang.nombre" class="lang-item">
-                        <span>{{ lang.nombre }}</span>
-                        <span class="lang-badge">{{ lang.nivel }}</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3>Aptitudes</h3>
-                    <div class="skills-tag-container">
-                        <span v-for="(aptitud, idx) in aptitudes" :key="idx" class="skill-tag">{{ aptitud }}</span>
-                    </div>
-                </div>
-            </aside>            
-                      
-            
-            <!-- COLUMNA DERECHA (CONTENIDO PRINCIPAL) -->
-            <main class="main-content">
-                <!-- ==================== VISTA 1: CURRICULUM VITAE ==================== -->
-                <div v-if="vista === 'cv'">
-                    <header class="header-main">
-                        <h1>{{ nombre }}</h1>
-                        <h2>{{ titulo_profesional }}</h2>
-                    </header>
-
-                    <!-- SOBRE MÍ -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-user"></i> Perfil Profesional</h3>
-                        <p class="summary-text">{{ perfil_profesional }}</p>
-                    </section>
-
-                    <!-- EXPERIENCIA PROFESIONAL CRONOLÓGICA -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiencia Profesional</h3>
-                        <div v-for="exp in experiencia_profesional" :key="exp.titulo" class="experience-item">
-                            <div class="exp-header">
-                                <span class="exp-role">{{ exp.rol}}</span>
-                                <span class="exp-date">{{ exp.periodo }}</span>
-                            </div>
-                            <div class="exp-company">{{ exp.empresa }}</div>
-                            <ul class="exp-bullets">
-                                <li v-for="(funcion, idx) in exp.funciones" :key="idx" style="color:#64748b; font-size: 0.67rem;">{{ funcion }}.</li>
-                            </ul>
-                            <div v-if="exp.stack" class="tech-stack-used">
-                                <strong>Stack:</strong> {{ exp.stack }}
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- METODOLOGÍA Y ENTORNOS -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-code"></i> Principios y Entorno</h3>
-                        <ul class="exp-bullets">
-                            <li v-for="principio in principios" :key="principio.titulo"><strong>{{ principio.titulo }}:</strong> {{ principio.descripcion }}</li>
-                        </ul>
-                    </section>
-                </div>
-
-                <!-- ==================== VISTA 2: CARTA DE PRESENTACIÓN ==================== -->
-                <div v-if="vista === 'carta'">
-                    <header class="header-main">
-                        <h1>Carta de Presentación</h1>
-                        <h2>{{ titulo_profesional }}</h2>
-                    </header>
-
-                    <section class="section" style="font-size: 0.8rem; color: var(--text-main); line-height: 1.6;">
-                        <p style="margin-bottom: 12px; color: var(--text-muted); font-size: 0.75rem;">
-                            <strong>Fecha:</strong> {{ new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) }}<br>
-                            <strong>Atención:</strong> {{ atencion_carte_presentacion }}
-                        </p>
-
-                        <p style="margin-bottom: 12px;">{{ saludo_carte_presentacion }}</p>
-
-                        <p v-for="paragraph in cuerpo_carte_presentacion" :key="paragraph" v-html="paragraph" style="margin-bottom: 12px; text-align: justify;">{{ paragraph }}</p>
-
-                        <div style="margin-top: 24px;">
-                            <p style="margin-bottom: 4px;">Atentamente,</p>
-                            <p style="font-weight: 700; color: var(--primary);">{{ nombre }}</p>
-                            <p style="font-size: 0.75rem; color: var(--accent);">{{ titulo_profesional }}</p>
-                        </div>
-                    </section>
-                </div>
-                
-                <!-- ==================== VISTA 3: PERFIL TÉCNICO Y CAPACIDADES ==================== -->
-                <div v-if="vista === 'perfil'">
-                    <header class="header-main">
-                        <h1>Matriz de Perfil Técnico</h1>
-                        <h2>Capacidades, Stack Real y Límites de Ingeniería</h2>
-                    </header>
-
-                    <!-- RESUMEN EJECUTIVO -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-sliders"></i> Resumen Ejecutivo</h3>
-                        <div style="background: #f8fafc; border-left: 3px solid var(--accent); padding: 10px 12px; font-size: 0.76rem; border-radius: 0 4px 4px 0;">                            
-                            <p v-for="resumen in resumen_ejecutivo" :key="resumen.nombre">
-                                <strong>• {{ resumen.nombre }}:</strong> {{ resumen.descripcion }}.
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- CORE STACK -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-circle-check"></i> Core Stack (Fortalezas Principales)</h3>
-                        <ul class="exp-bullets" style="font-size: 0.75rem;">                            
-                            <li v-for="stack in core_stack" :key="stack.nombre" style="margin-bottom: 6px;">
-                                <strong>{{ stack.nombre }}:</strong> <span class="badge-level badge-core">Nivel {{ stack.nivel }}</span><br>
-                                {{ stack.descripcion }}.
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- TECNOLOGÍAS SECUNDARIAS / ADAPTABLES -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-arrows-rotate"></i> Tecnologías Secundarias y Adaptables</h3>
-                        <div style="font-size: 0.74rem; background: #fffbe0; border: 1px solid #fef08a; padding: 8px 10px; border-radius: 4px; margin-bottom: 8px;">
-                            <em>{{ stack_secundario_comentario }}.</em>
-                        </div>
-                        <ul class="exp-bullets" style="font-size: 0.75rem;">
-                            <li v-for="stack2 in stack_secundario" :key="stack2.nombre">
-                                <strong>{{ stack2.nombre }}:</strong> 
-                                {{ stack2.descripcion }}. Nivel {{ stack2.nivel }}.
-                            </li>
-                        </ul>
-                    </section>
-
-                    <!-- LÍMITES TÉCNICOS Y FUERA DE STACK -->
-                    <section class="section">
-                        <h3 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Límites Técnicos (Honestidad Profesional)</h3>
-                        <div style="font-size: 0.74rem; background: #fef2f2; border: 1px solid #fecaca; padding: 8px 10px; border-radius: 4px;">
-                            <p style="margin-bottom: 4px; color: #991b1b;"><strong>Tecnologías fuera de mi foco habitual (requieren curva de aprendizaje):</strong></p>
-                            <p v-for="limite in limites_tecnicos" :key="limite.nombre">
-                                <strong>{{ limite.nombre }}:</strong> {{ limite.descripcion }}.
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- ARQUITECTURA E IDIOMAS -->
-                    <section class="section">
-                        <h3 class="section-title">
-                            <i class="fa-solid fa-compass-drafting"></i> Arquitectura e Idiomas
-                        </h3>
-                        <ul class="exp-bullets" style="font-size: 0.75rem;">                            
-                            <li v-for="item in arquitectura_idiomas" :key="item.nombre">
-                                <strong>{{ item.nombre }}:</strong> {{ item.descripcion }}.
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-                
-                <!-- ==================== VISTA 4: PORTAFOLIO DE PROYECTOS ==================== -->
-                <div v-if="vista === 'proyectos'">
-                    <header class="header-main">
-                        <h1>Proyectos y Automatizaciones</h1>
-                        <h2>Casos de Uso, Innovación con IA y Proyectos Destacados</h2>
-                    </header>
-
-                    <section class="section">
-                        <!-- Cuadrícula de 2 columnas -->
-                        <div class="projects-grid">
-                            <div v-for="proj in proyectos" :key="proj.titulo" class="project-card">
-                                <div>
-                                    <div class="project-header">
-                                        <div class="project-title">
-                                            <i :class="proj.icono || 'fa-solid fa-folder-gear'" style="color: var(--accent);"></i>
-                                            <span>{{ proj.titulo }}</span>
-                                        </div>
-                                        <span class="project-tag-category">{{ proj.categoria }}</span>
-                                    </div>
-
-                                    <p class="project-desc">{{ proj.descripcion }}</p>
-
-                                    <ul class="exp-bullets" style="margin-bottom: 4px;">
-                                        <li v-for="(logro, idx) in proj.logros" :key="idx" style="color:#475569; font-size: 0.64rem; line-height: 1.2;">
-                                            {{ logro }}
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <div class="tech-stack-used" style="font-size: 0.62rem; padding: 2px 5px; margin-top: 2px;">
-                                        <strong>Stack:</strong> {{ proj.stack }}
-                                    </div>
-
-                                    <div v-if="proj.links && proj.links.length" class="project-links">
-                                        <a v-for="link in proj.links" :key="link.url" :href="link.url" target="_blank" class="link-pill">
-                                            <i :class="link.icono || 'fa-solid fa-arrow-up-right-from-square'"></i> {{ link.texto }}
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>                
-            </main>
+    <section>
+      <h3 class="card-section-title">Especialidades & Impacto</h3>
+      <div class="impact-grid">
+        
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fa-solid fa-user-gear"></i></div>
+          <div class="impact-body">
+            <span class="impact-label">Rol & Especialidad</span>
+            <p class="impact-value">Desarrollador Web Full-Stack <strong>(Especializado en Backend)</strong></p>
+          </div>
         </div>
-    </div>
-    <script>
-        // Función auxiliar para validar y obtener la vista desde la URL (#)
-        function obtenerVistaDeUrl() {
-            const hash = window.location.hash.replace('#', '');
-            const vistasValidas = ['cv', 'carta', 'perfil', 'proyectos'];
-            return vistasValidas.includes(hash) ? hash : 'cv';
-        }
-        PetiteVue.createApp({
-            // Inicializa la vista según la URL actual al cargar o refrescar
-            vista: obtenerVistaDeUrl(),
-            // Método para cambiar la vista y actualizar el Hash en la barra de direcciones
-            cambiarVista(nuevaVista) {
-                this.vista = nuevaVista;
-                window.location.hash = nuevaVista;
-            },
 
-            nombre: 'Pedro Jesús Bazó Canelón',
-            titulo_profesional: 'Desarrollador Backend | Full-Stack Senior',
-            perfil_profesional: 'Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).',
-            ubicacion: 'Gijón, Asturias, España',
-            email: 'pedro.j.bazo.c@gmail.com',
-            url_site: 'https://petrix12.github.io/cvpetrix2022',
-            url_img_perfil: 'https://raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png',
-            url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',
-            url_github: 'https://github.com/petrix12',
-            tech_skills: [
-                'PHP 8.x', 
-                'Laravel', 
-                'Vue.js (Opt/Comp)', 
-                'APIs RESTful', 
-                'MySQL | MS SQL', 
-                'Docker | Compose', 
-                'AWS (S3, EC2, RDS, SES)', 
-                'Git | GitHub', 
-                'Postman', 
-                'Linux (WSL2 Ubuntu)', 
-                'Clean Code | SOLID', 
-                'JavaScript | jQuery'
-            ],
-            formacion: [
-                {
-                    titulo: 'Ingeniería Química',
-                    institucion: 'Univ. Central de Venezuela (UCV)',
-                    detalles: [
-                        'Preparador Docente de Programación (Pascal, C/C++)',
-                        'Tesis: Desarrollo de software de simulación computacional en Visual C++ y Fortran'
-                    ]
-                }
-            ],
-            aptitudes: [
-                'Metodología Scrum',
-                'Análisis Lógico',
-                'Código Legado',
-                'Resolución de Problemas',
-                'Trabajo en Equipo',
-            ],
-            idiomas: [
-                { nombre: 'Español', nivel: 'Nativo' },
-                { nombre: 'Inglés', nivel: 'B1' }
-            ],
-            experiencia_profesional: [
-                {
-                    empresa: 'Klinikare (Remoto)',
-                    rol: 'Desarrollador Full-Stack',
-                    periodo: 'Sep 2024 – Abr 2026',
-                    funciones: [
-                        'Mantenimiento avanzado, diagnóstico de incidencias complejas y refactorización de código en plataformas en producción',
-                        'Optimización de consultas relacionales y depuración de lógica de negocio en MySQL y MS SQL Server mediante Eloquent ORM',
-                        'Contenerización de entornos locales con Docker / Compose e integración de servicios AWS (EC2, S3, RDS, SES, ECR, ECS)',
-                        'Mantenimiento de interfaces con JavaScript/jQuery y análisis puntual de arquitectura sobre Symfony'
-                    ],
-                    stack: 'PHP, Laravel, Symfony, MySQL, MS SQL, Docker, AWS, jQuery, Git, Jira.'
-                },
-                {
-                    empresa: 'Commutatio (Presencial)',
-                    rol: 'Desarrollador Full-Stack',
-                    periodo: 'Mar 2023 – Sep 2024',
-                    funciones: [
-                        'Desarrollo backend en Laravel participando en proyectos bajo arquitecturas monolíticas y microservicios',
-                        'Implementación de interfaces frontend modernas utilizando Vue.js (Options API & Composition API)',
-                        'Construcción de consultas SQL complejas, optimización de base de datos y gestión de almacenamiento en AWS S3'
-                    ],
-                    stack: 'Laravel, Vue.js, MySQL, Docker, AWS (S3|EC2), Git, Trello.'
-                },
-                {
-                    empresa: 'Sefar Universal (Remoto)',
-                    rol: 'Lead Backend Developer | Full-Stack',
-                    periodo: 'Ago 2019 – Mar 2023',
-                    funciones: [
-                        'Diseño y desarrollo desde cero de la plataforma core del negocio sobre Laravel y Vue.js, liderando un equipo de 2 devs junior',
-                        'Construcción y consumo de APIs RESTful, integración con bases de datos MySQL y despliegue en nube (AWS, GCP, DigitalOcean)',
-                        'Modernización de procesos operativos sustituyendo herramientas heredadas por arquitecturas web escalables'
-                    ],
-                    stack: 'Laravel, Vue.js, PHP, MySQL, JavaScript, AWS (S3, SES), GCP, Git, Trello.'
-                },
-                {
-                    empresa: 'PDVSA & Universidad Gran Mariscal de Ayacucho (UGMA)',
-                    rol: 'Analista de Sistemas & Automatización / Docente',
-                    periodo: '2006 – 2021',
-                    funciones: [
-                        'Desarrollo de herramientas de software interno para gestión presupuestaria utilizando VB6, VBA, Delphi, MySQL y SQL Server',
-                        'Profesor universitario de Lógica de Programación, Estructuras de Datos y Programación Orientada a Objetos'
-                    ]
-                }                
-            ],
-            principios: [
-                {
-                    titulo: 'Buenas Prácticas',
-                    descripcion: 'Aplicación de principios SOLID, patrón MVC, código limpio y validación de APIs con Postman.'
-                },
-                {
-                    titulo: 'Entorno Local',
-                    descripcion: 'Configuración ágil de entornos de desarrollo basados en Windows 11 con WSL2 (Ubuntu), VS Code y Docker.'
-                }
-            ],
-            atencion_carte_presentacion: 'Equipo de Selección / Dirección Técnica',
-            saludo_carte_presentacion: 'Estimado/a responsable de selección y equipo técnico,',
-            cuerpo_carte_presentacion: [
-                'Me pongo en contacto con ustedes para presentar mi candidatura con una propuesta clara: aportar solidez inmediata en las tecnologías que domino y una capacidad de adaptación acelerada ante cualquier reto técnico que el equipo requiera.',
-                'Como desarrollador Senior con un perfil fuertemente orientado al backend y la arquitectura web, mi núcleo de mayor soltura se encuentra en el ecosistema <strong>PHP / Laravel</strong> (con más de 7 proyectos comerciales, varios desarrollados desde cero), <strong>Vue.js</strong> (Options y Composition API) y la gestión de bases de datos relacionales complejas (<strong>MySQL y SQL Server</strong>). Adicionalmente, cuento con experiencia práctica en la contenerización de entornos locales con <strong>Docker (WSL2)</strong> y la integración de servicios cloud en <strong>AWS</strong> (EC2, S3, RDS, SES).',
-                'Más allá de mi stack principal, mi verdadera fortaleza radica en una <strong>sólida base lógica y analítica</strong> acumulada a lo largo de mi trayectoria. Entiendo el desarrollo no como el dominio rígido de una herramienta concreta, sino como la resolución eficiente de problemas mediante patrones limpios (SOLID, MVC), refactorización de código legado y buenas prácticas de ingeniería.',
-                'En mi día a día, integro modelos de <strong>Inteligencia Artificial (Claude, ChatGPT, Gemini, DeepSeek)</strong> mediante <em>prompt engineering</em> estructurado. Esto me permite utilizar la IA como un multiplicador de productividad: acelerando el diagnóstico de bugs, la optimización de consultas complejas y, sobre todo, permitiéndome <strong>reducir a días la curva de aprendizaje</strong> de tecnologías adyacentes como Node.js, React o bases de datos NoSQL, por las cuales siento un genuino interés técnico.',
-                'Busco incorporarme a un equipo donde la calidad del software, el trabajo colaborativo (Scrum) y la mentalidad resolutiva sean la prioridad. Agradezco sinceramente el tiempo dedicado a evaluar mi candidatura y quedo a su entera disposición para mantener una conversación técnica.'
-            ],
-            resumen_ejecutivo: [
-                {
-                    nombre: 'Rol Principal',
-                    descripcion: 'Desarrollador Web Full-Stack (Especializado en Backend)'
-                },
-                {
-                    nombre: 'Core Stack',
-                    descripcion: 'PHP 8.x (Laravel) + JavaScript (Vue.js) + MySQL/MariaDB + AWS + Docker'
-                },
-                {
-                    nombre: 'Entorno de Trabajo',
-                    descripcion: 'Windows 11 WSL2 (Ubuntu 24.04), VS Code, Git/GitHub, Docker Desktop'
-                },
-                {
-                    nombre: 'Flujo con IA',
-                    descripcion: 'Prompt Engineering avanzado, uso diario de LLMs (Claude, ChatGPT, Gemini, DeepSeek) para refactorización, scripts DevOps y optimización de consultas SQL'
-                },
-            ],
-            core_stack: [
-                {
-                    nombre: 'Laravel (PHP)',
-                    nivel: 'Alto',
-                    descripcion: '5+ años de experiencia (2020-actualidad). +7 proyectos profesionales (+2 desde cero). Dominio de arquitecturas MVC monolíticas y APIs RESTful'
-                },
-                {
-                    nombre: 'Vue.js (JavaScript)',
-                    nivel: 'Alto',
-                    descripcion: 'Options API & Composition API. Framework preferido para SPAs dinámicas e integración backend'
-                },
-                {
-                    nombre: 'Bases de Datos Relacionales',
-                    nivel: 'Alto',
-                    descripcion: 'MySQL / MariaDB (diseño relacional, consultas complejas, índices). MS SQL Server (optimización de queries)'
-                },
-                {
-                    nombre: 'DevOps & Cloud',
-                    nivel: 'Intermedio-Alto',
-                    descripcion: 'AWS (EC2, S3, RDS, SES, ECR, ECS, IAM). Docker / Docker Compose local diario sobre WSL2. Git & GitHub'
-                }
-            ],
-            stack_secundario_comentario: 'Tecnologías conocidas o trabajadas previamente. Capacidad de despliegue productivo en pocos días gracias a bases lógicas e IA.',
-            stack_secundario: [
-                {
-                    nombre: 'Symfony',
-                    nivel: 'Básico-Intermedio',
-                    descripcion: 'Mantenimiento de proyectos existentes, diagnóstico de incidencias y refactorización puntual'
-                },
-                {
-                    nombre: 'Node.js / Express.js',
-                    nivel: 'Básico-Intermedio',
-                    descripcion: 'Proyectos personales y cursos. Sin despliegue productivo a gran escala'
-                },
-                {
-                    nombre: 'Frontend Adicional',
-                    nivel: 'Básico-Intermedio',
-                    descripcion: 'TypeScript (nivel intermedio sintáctico), React.js (proyectos sencillos y revisión de código), Tailwind CSS, Bootstrap'
-                },
-                {
-                    nombre: 'NoSQL & Cache',
-                    nivel: 'Básico',
-                    descripcion: 'MongoDB (conceptos base/documentos), Redis (comandos de consola para caché en RAM)'
-                }
-            ],
-            limites_tecnicos: [
-                {
-                    nombre: 'Backend',
-                    descripcion: 'Nest.js, FastAPI, Spring Boot (test puntual 2022), .NET/C# (sin dev directo), Go, Ruby'
-                },
-                {
-                    nombre: 'Frontend / Frameworks',
-                    descripcion: 'Angular (principiante), Svelte/SvelteKit, Next.js / Nuxt.js (estudio previo sin práctica reciente)'
-                },
-                {
-                    nombre: 'Bases de Datos & Móvil',
-                    descripcion: 'PostgreSQL (domino SQL estándar, sin administración directa DB), Mobile Nativo (React Native, Swift, Kotlin)'
-                }
-            ],
-            arquitectura_idiomas: [
-                {
-                    nombre: 'Arquitecturas',
-                    descripcion: 'Dominio completo de MVC y APIs RESTful. Comprensión teórica sólida de DDD y Arquitectura Hexagonal'
-                },
-                {
-                    nombre: 'Idiomas',
-                    descripcion: 'Español (Nativo) | Inglés (B1 Técnico: lectura fluida de documentación técnica, código y commits)'
-                },
-            ],
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="impact-body">
+            <span class="impact-label">Entorno de Trabajo</span>
+            <p class="impact-value">Windows 11 WSL2 (Ubuntu 24.04) • VS Code • Docker Desktop</p>
+          </div>
+        </div>
 
-            // COLECCIÓN SINTETIZADA PARA ENTRAR PERFECTAMENTE EN A4
-            proyectos: [
-                {
-                    titulo: 'Soporte Mautic CLI & IA (EC2)',
-                    categoria: 'DevOps & IA',
-                    icono: 'fa-solid fa-robot',
-                    descripcion: 'Herramienta CLI de mtto. e infraestructura en AWS EC2 integrada con Inteligencia Artificial.',
-                    logros: [
-                        'Exec de comandos remotos y captura de diagnósticos en consola',
-                        'Integración con LLM (Grok/OpenAI) para interpretación en lenguaje natural',
-                        'Arquitectura multi-proveedor de IA alternable en ejecución'
-                    ],
-                    stack: 'Lazarus, AWS EC2, Mautic, Bash, LLMs, Git.',
-                    links: [
-                        { texto: 'Ver Repositorio', url: 'https://github.com/petrix12/soporte_klinikare_2026', icono: 'fa-brands fa-github' }
-                    ]
-                },
-                {
-                    titulo: 'Klinikare (Mtto. Backend)',
-                    categoria: 'Comercial',
-                    icono: 'fa-solid fa-notes-medical',
-                    descripcion: 'Mtto. preventivo, optimización de rendimiento y resolución de incidencias en software médico.',
-                    logros: [
-                        'Optimización de consultas SQL complejas en MySQL y MS SQL Server',
-                        'Refactorización en Laravel manteniendo compatibilidad legacy (jQuery)'
-                    ],
-                    stack: 'PHP, Laravel, MySQL, MS SQL, AWS, Docker, jQuery.',
-                    links: [
-                        { texto: 'Web Oficial', url: 'https://klinikare.com', icono: 'fa-solid fa-globe' }
-                    ]
-                },
-                {
-                    titulo: 'InterGijón (Web Greenfield)',
-                    categoria: 'Greenfield',
-                    icono: 'fa-solid fa-layer-group',
-                    descripcion: 'Arquitectura y dev integral de plataforma web desde fase conceptual a producción.',
-                    logros: [
-                        'Desarrollo frontend reactivo con Vue 3 Composition API',
-                        'Despliegue contenerizado en AWS con Docker / Docker Compose'
-                    ],
-                    stack: 'Laravel, Vue.js 3 (Composition API), MySQL, Docker, AWS.',
-                    links: [
-                        { texto: 'Ver Plataforma', url: 'https://intergijon.com', icono: 'fa-solid fa-globe' }
-                    ]
-                },
-                {
-                    titulo: 'Ecosistema Commutatio',
-                    categoria: 'Comercial',
-                    icono: 'fa-solid fa-building-columns',
-                    descripcion: 'Refactorización de portales públicos, área privada de clientes y panel de gestión.',
-                    logros: [
-                        'Arquitectura basada en APIs RESTful sobre código heredado',
-                        'Paneles de administración dinámicos con Blade y Livewire'
-                    ],
-                    stack: 'Laravel, Vue.js, Livewire, MySQL, AWS S3, REST APIs.',
-                    links: [
-                        { texto: 'Portal Público', url: 'https://commutatio.es', icono: 'fa-solid fa-globe' },
-                        { texto: 'Área Privada', url: 'https://privado.commutatio.es', icono: 'fa-solid fa-lock' }
-                    ]
-                },
-                {
-                    titulo: 'Plataforma Core Sefar',
-                    categoria: 'Comercial',
-                    icono: 'fa-solid fa-passport',
-                    descripcion: 'Sistema principal para gestión integral de trámites y procesos corporativos.',
-                    logros: [
-                        'Dev 100% individual del backend Laravel y esquema relacional MySQL',
-                        'Modernización e integración de flujos operativos en nube (AWS / GCP)'
-                    ],
-                    stack: 'Laravel, Vue.js, PHP, MySQL, AWS (S3, SES), GCP.',
-                    links: [
-                        { texto: 'Ver Sitio', url: 'https://sefaruniversal.com', icono: 'fa-solid fa-globe' }
-                    ]
-                },
-                {
-                    titulo: 'Auto. Reportes VBA & SQL',
-                    categoria: 'Herramientas',
-                    icono: 'fa-solid fa-file-excel',
-                    descripcion: 'Automatización administrativa para generación instantánea de informes gerenciales.',
-                    logros: [
-                        'UI con cinta personalizada XML integrada en MS Excel',
-                        'Tablas relacionales con consultas SQL dinámicas vía VBA'
-                    ],
-                    stack: 'VBA, Excel XML Ribbon, SQL, MS Office.',
-                    links: [
-                        { texto: 'Ver Repositorio', url: 'https://github.com/petrix12/automatizacion_vba_2017', icono: 'fa-brands fa-github' }
-                    ]
-                },
-                {
-                    titulo: 'Plantilla CV Petite-Vue (2026)',
-                    categoria: 'Open Source',
-                    icono: 'fa-solid fa-file-code',
-                    descripcion: 'CV web reactivo en Single-File Component con Petite-Vue (~6KB) y diseño A4.',
-                    logros: [
-                        'Navegación multivista (CV, Carta, Perfil, Proyectos) por URL Hash',
-                        'Impresión/PDF A4 con CSS paged media dinámico'
-                    ],
-                    stack: 'HTML5, Petite-Vue, CSS3 Grid, FontAwesome.',
-                    links: [
-                        { texto: 'Demo Online', url: 'https://petrix12.github.io/cvpetrix2022/cv', icono: 'fa-solid fa-globe' },
-                        { texto: 'Código Fuente', url: 'https://github.com/petrix12/cvpetrix2022', icono: 'fa-brands fa-github' }
-                    ]
-                },
-                {
-                    titulo: 'Simulación Matemático / Tesis',
-                    categoria: 'Académico',
-                    icono: 'fa-solid fa-graduation-cap',
-                    descripcion: 'Tesis Ing. Química UCV: software modular para ajuste de datos con modelos no lineales.',
-                    logros: [
-                        'Optimización numérica de parámetros para modelos matemáticos',
-                        'Integración de cálculo en Fortran con entorno gráfico en C++'
-                    ],
-                    stack: 'Visual C++ 6.0, Digital Visual Fortran 6.0.',
-                    links: [
-                        { texto: 'saberUCV', url: 'https://saber.ucv.ve/jspui/handle/10872/71', icono: 'fa-solid fa-book' }
-                    ]
-                },
-                {
-                    titulo: 'Libro: "La furia de San Julián"',
-                    categoria: 'Publicación',
-                    icono: 'fa-solid fa-book-open',
-                    descripcion: 'Libro de no ficción sobre la tragedia natural de Vargas (1999). Edición independiente.',
-                    logros: [
-                        'Edición, maquetación digital y publicación internacional KDP'
-                    ],
-                    stack: 'Amazon KDP, Redacción Narrativa.',
-                    links: [
-                        { texto: 'Ver en Amazon.es', url: 'https://www.amazon.es/furia-San-Juli%C3%A1n-esperanza-tragedia/dp/B0H12TPX5P/ref=sr_1_1', icono: 'fa-brands fa-amazon' }
-                    ]
-                }
-            ],
+        <div class="impact-card">
+          <div class="impact-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div class="impact-body">
+            <span class="impact-label">Flujo de Trabajo con IA</span>
+            <p class="impact-value">Prompt Engineering avanzado con LLMs (Claude, ChatGPT, Gemini, DeepSeek) para refactorización, scripts DevOps y optimización SQL.</p>
+          </div>
+        </div>
 
-            // Función que envuelve y optimiza cualquier imagen:
-            optImagen(url, w = 300, h = 300) {
-                if (!url) return '';
-                return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&h=${h}&fit=cover&output=jpg&q=80`;
-            }
-        }).mount('#app');
+      </div>
+    </section>
 
-        // Escuchar eventos de cambio en la URL (flechas Atrás/Adelante del navegador)
-        window.addEventListener('hashchange', () => {
-            estadoApp.vista = obtenerVistaDeUrl();
-        });        
-    </script>
+    <footer class="card-footer">
+      <a :href="'mailto:' + email" class="btn-action btn-full">
+        <i class="fa-solid fa-paper-plane"></i> Contactar / Enviar Email
+      </a>
+      
+      <div class="social-links">
+        <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a v-if="url_github" :href="url_github" target="_blank" rel="noopener" class="social-btn" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a v-if="url_site" :href="url_site" target="_blank" rel="noopener" class="social-btn" title="Web Portfolio">
+          <i class="fa-solid fa-globe"></i>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.MiniCVComponent = function() {
+        const data = window.cvData || {};
+        return {
+          nombre: data.nombre || 'Pedro Bazó',
+          titulo_profesional: data.titulo_profesional || 'Backend Engineer',
+          email: data.email || 'tu-email@ejemplo.com',
+          url_img_perfil: data.url_img_perfil || '',
+          url_linkedin: data.url_linkedin || '',
+          url_github: data.url_github || '',
+          url_site: data.url_site || '',
+          tech_skills: data.tech_skills || ['PHP 8+', 'Laravel', 'DDD / Hexagonal', 'Vue.js', 'AWS', 'Docker'],
+          resumen_ejecutivo: data.resumen_ejecutivo || [
+            { nombre: 'Arquitectura', descripcion: 'Diseño de sistemas desacoplados y escalables (DDD / Hexagonal).' },
+            { nombre: 'APIs & BD', descripcion: 'Desarrollo de REST APIs robustas y optimización de consultas SQL.' },
+            { nombre: 'Calidad & CI/CD', descripcion: 'Pruebas unitarias con PHPUnit y automatizaciones.' }
+          ]
+        };
+      };
+
+      PetiteVue.createApp().mount();
+    });
+  </script>
+
 </body>
-
 </html>
