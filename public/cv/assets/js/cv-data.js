@@ -1,6 +1,6 @@
 window.cvData = {
     nombre: 'Pedro Jesús Bazó Canelón',
-    titulo_profesional: 'Desarrollador Backend | Full-Stack Senior',
+    titulo_profesional: 'Desarrollador Backend | Full-Stack',
     perfil_profesional: 'Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).',
     ubicacion: 'Gijón, Asturias, España',
     email: 'pedro.j.bazo.c@gmail.com',

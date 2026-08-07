@@ -1,132 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedro Bazó | Backend Engineer</title>
-  
-  <!-- Favicon / Consola -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%232563eb' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pedro Bazó | Backend Engineer</title>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Pedro Bazó | Senior Backend Developer">
-  <meta property="og:description" content="PHP • Laravel • DDD & Arquitectura Hexagonal • AWS • Vue.js. Revisa mi resumen técnico en 30 segundos.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg">
+    <!-- Favicon / Consola -->
+    <link rel="icon" type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%232563eb' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>" />
 
-  <!-- Fuentes e Iconos de FontAwesome -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Previsualización enriquecida (Open Graph) -->
+    <meta property="og:title" content="Pedro Bazó | Full-Stack Developer" />
+    <meta property="og:description" content="PHP • Laravel • AWS • Vue.js • Docker" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://petrix12.github.io/cvpetrix2022/cv/" />
+    <meta property="og:image" content="https://petrix12.github.io/cvpetrix2022/assets/img/og-preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-  <!-- Estilos Unificados de la Aplicación -->
-  <link rel="stylesheet" href="./assets/css/cv.css">
+    <!-- Fuentes e Iconos de FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Scripts -->
-  <script src="./assets/js/cv-data.js" defer></script>
-  <script src="https://unpkg.com/petite-vue" defer></script>
+    <!-- Estilos Unificados de la Aplicación -->
+    <link rel="stylesheet" href="./assets/css/cv.css" />
+
+    <!-- Scripts -->
+    <script src="./assets/js/cv-data.js" defer></script>
+    <script src="https://unpkg.com/petite-vue" defer></script>
 </head>
+
 <body class="mini-cv-page">
-
-  <main v-scope="MiniCVComponent()" class="cv-card">
-    
-    <header class="card-header">
-      <div class="profile-box">
-        <img v-if="url_img_perfil" :src="url_img_perfil" :alt="nombre" class="profile-img">
-        <div v-else class="avatar-icon">🚀</div>
-      </div>
-      <h1 class="card-title">{{ nombre }}</h1>
-      <p class="card-subtitle">{{ titulo_profesional }}</p>
-    </header>
-
-    <section>
-      <h3 class="card-section-title">Core Tech Stack</h3>
-      <div class="skills-tag-container">
-        <span 
-          v-for="(skill, index) in tech_skills" 
-          :key="skill" 
-          :class="['skill-tag', index < 4 ? 'highlight' : '']">
-          {{ skill }}
-        </span>
-      </div>
-    </section>
-
-    <section>
-      <h3 class="card-section-title">Especialidades & Impacto</h3>
-      <div class="impact-grid">
-        
-        <div class="impact-card">
-          <div class="impact-icon"><i class="fa-solid fa-user-gear"></i></div>
-          <div class="impact-body">
-            <span class="impact-label">Rol & Especialidad</span>
-            <p class="impact-value">Desarrollador Web Full-Stack <strong>(Especializado en Backend)</strong></p>
-          </div>
+    <main v-scope="MiniCVComponent()" class="cv-card">
+        <header class="card-header">
+        <div class="profile-box">
+            <img v-if="url_img_perfil" :src="url_img_perfil" :alt="nombre" class="profile-img" />
+            <div v-else class="avatar-icon">🚀</div>
         </div>
+        <h1 class="card-title">{{ nombre }}</h1>
+        <p class="card-subtitle">{{ titulo_profesional }}</p>
+        </header>
 
-        <div class="impact-card">
-          <div class="impact-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <div class="impact-body">
-            <span class="impact-label">Entorno de Trabajo</span>
-            <p class="impact-value">Windows 11 WSL2 (Ubuntu 24.04) • VS Code • Docker Desktop</p>
-          </div>
+        <section>
+        <h3 class="card-section-title">Core Tech Stack</h3>
+        <div class="skills-tag-container">
+            <span v-for="(skill, index) in tech_skills" :key="skill" :class="['skill-tag', index < 4 ? 'highlight' : '']">
+            {{ skill }}
+            </span>
         </div>
+        </section>
 
-        <div class="impact-card">
-          <div class="impact-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-          <div class="impact-body">
-            <span class="impact-label">Flujo de Trabajo con IA</span>
-            <p class="impact-value">Prompt Engineering avanzado con LLMs (Claude, ChatGPT, Gemini, DeepSeek) para refactorización, scripts DevOps y optimización SQL.</p>
-          </div>
+        <section>
+        <h3 class="card-section-title">Especialidades & Impacto</h3>
+        <div class="impact-grid">
+            <div class="impact-card">
+            <div class="impact-icon"><i class="fa-solid fa-user-gear"></i></div>
+            <div class="impact-body">
+                <span class="impact-label">Rol & Especialidad</span>
+                <p class="impact-value">
+                Desarrollador Web Full-Stack
+                <strong>(Especializado en Backend)</strong>
+                </p>
+            </div>
+            </div>
+
+            <div class="impact-card">
+            <div class="impact-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="impact-body">
+                <span class="impact-label">Entorno de Trabajo</span>
+                <p class="impact-value">
+                Windows 11 WSL2 (Ubuntu 24.04) • VS Code • Docker Desktop
+                </p>
+            </div>
+            </div>
+
+            <div class="impact-card">
+            <div class="impact-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="impact-body">
+                <span class="impact-label">Flujo de Trabajo con IA</span>
+                <p class="impact-value">
+                Prompt Engineering avanzado con LLMs (Claude, ChatGPT, Gemini,
+                DeepSeek) para refactorización, scripts DevOps y optimización
+                SQL.
+                </p>
+            </div>
+            </div>
         </div>
+        </section>
 
-      </div>
-    </section>
-
-    <footer class="card-footer">
-      <a :href="'mailto:' + email" class="btn-action btn-full">
-        <i class="fa-solid fa-paper-plane"></i> Contactar / Enviar Email
-      </a>
-      
-      <div class="social-links">
-        <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
+        <footer class="card-footer">
+        <a :href="'mailto:' + email" class="btn-action btn-full">
+            <i class="fa-solid fa-paper-plane"></i> Contactar / Enviar Email
         </a>
-        <a v-if="url_github" :href="url_github" target="_blank" rel="noopener" class="social-btn" title="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a v-if="url_site" :href="url_site" target="_blank" rel="noopener" class="social-btn" title="Web Portfolio">
-          <i class="fa-solid fa-globe"></i>
-        </a>
-      </div>
-    </footer>
 
-  </main>
+        <div class="social-links">
+            <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a v-if="url_github" :href="url_github" target="_blank" rel="noopener" class="social-btn" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+            </a>
+            <a v-if="url_site" :href="url_site" target="_blank" rel="noopener" class="social-btn" title="Web Portfolio">
+            <i class="fa-solid fa-globe"></i>
+            </a>
+        </div>
+        </footer>
+    </main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      window.MiniCVComponent = function() {
-        const data = window.cvData || {};
-        return {
-          nombre: data.nombre || 'Pedro Bazó',
-          titulo_profesional: data.titulo_profesional || 'Backend Engineer',
-          email: data.email || 'tu-email@ejemplo.com',
-          url_img_perfil: data.url_img_perfil || '',
-          url_linkedin: data.url_linkedin || '',
-          url_github: data.url_github || '',
-          url_site: data.url_site || '',
-          tech_skills: data.tech_skills || ['PHP 8+', 'Laravel', 'DDD / Hexagonal', 'Vue.js', 'AWS', 'Docker'],
-          resumen_ejecutivo: data.resumen_ejecutivo || [
-            { nombre: 'Arquitectura', descripcion: 'Diseño de sistemas desacoplados y escalables (DDD / Hexagonal).' },
-            { nombre: 'APIs & BD', descripcion: 'Desarrollo de REST APIs robustas y optimización de consultas SQL.' },
-            { nombre: 'Calidad & CI/CD', descripcion: 'Pruebas unitarias con PHPUnit y automatizaciones.' }
-          ]
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        window.MiniCVComponent = function () {
+            const data = window.cvData || {};
+            return {
+            nombre: data.nombre || "Pedro Bazó",
+            titulo_profesional: data.titulo_profesional || "Backend Engineer",
+            email: data.email || "tu-email@ejemplo.com",
+            url_img_perfil: data.url_img_perfil || "",
+            url_linkedin: data.url_linkedin || "",
+            url_github: data.url_github || "",
+            url_site: data.url_site || "",
+            tech_skills: data.tech_skills || [
+                "PHP 8+",
+                "Laravel",
+                "DDD / Hexagonal",
+                "Vue.js",
+                "AWS",
+                "Docker",
+            ],
+            resumen_ejecutivo: data.resumen_ejecutivo || [
+                {
+                nombre: "Arquitectura",
+                descripcion:
+                    "Diseño de sistemas desacoplados y escalables (DDD / Hexagonal).",
+                },
+                {
+                nombre: "APIs & BD",
+                descripcion:
+                    "Desarrollo de REST APIs robustas y optimización de consultas SQL.",
+                },
+                {
+                nombre: "Calidad & CI/CD",
+                descripcion:
+                    "Pruebas unitarias con PHPUnit y automatizaciones.",
+                },
+            ],
+            };
         };
-      };
 
-      PetiteVue.createApp().mount();
-    });
-  </script>
-
+        PetiteVue.createApp().mount();
+        });
+    </script>
 </body>
+
 </html>
