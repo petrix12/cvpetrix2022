@@ -2,8 +2,26 @@ window.cvData = {
     nombre: 'Pedro Jesús Bazó Canelón',
     titulo_profesional: 'Desarrollador Backend | Full-Stack',
     perfil_profesional: 'Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).',
+    especialidades_impacto: [
+        {
+            nombre: "Rol & Especialidad",
+            descripcion: "Desarrollador Web Full-Stack <strong>(Especializado en Backend)</strong>",
+            icono: "fa-solid fa-user-gear"
+        },
+        {
+            nombre: "Entorno de Trabajo",
+            descripcion: "Windows 11 WSL2 (Ubuntu 24.04) • VS Code • Docker Desktop",
+            icono: "fa-solid fa-laptop-code"
+        },
+        {
+            nombre: "Flujo de Trabajo con IA",
+            descripcion: "Prompt Engineering avanzado con LLMs (Claude, ChatGPT, Gemini, DeepSeek) para refactorización, scripts DevOps y optimización SQL.",
+            icono: "fa-solid fa-wand-magic-sparkles"
+        }
+    ],
     ubicacion: 'Gijón, Asturias, España',
     email: 'pedro.j.bazo.c@gmail.com',
+    movil: "34613980099",
     url_site: 'https://petrix12.github.io/cvpetrix2022',
     url_img_perfil: 'https://raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png',
     url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',

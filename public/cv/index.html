@@ -7,8 +7,7 @@
     <title>Pedro Bazó | Backend Engineer</title>
 
     <!-- Favicon / Consola -->
-    <link rel="icon" type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%232563eb' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%232563eb' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>" />
 
     <!-- Previsualización enriquecida (Open Graph) -->
     <meta property="og:title" content="Pedro Bazó | Full-Stack Developer" />
@@ -29,134 +28,97 @@
     <!-- Estilos Unificados de la Aplicación -->
     <link rel="stylesheet" href="./assets/css/cv.css" />
 
-    <!-- Scripts -->
-    <script src="./assets/js/cv-data.js" defer></script>
-    <script src="https://unpkg.com/petite-vue" defer></script>
+    <!-- CDN de Petite-Vue (ocupa solo ~6 KB) -->
+    <script src="https://unpkg.com/petite-vue"></script>
+    <!-- Datos del CV en formato JSON -->
+    <script src="./assets/js/cv-data.js"></script>    
 </head>
 
 <body class="mini-cv-page">
-    <main v-scope="MiniCVComponent()" class="cv-card">
+    <main         
+        id="app" 
+        v-scope="window.cvData"
+        class="cv-card"
+    >
         <header class="card-header">
-        <div class="profile-box">
-            <img v-if="url_img_perfil" :src="url_img_perfil" :alt="nombre" class="profile-img" />
-            <div v-else class="avatar-icon">🚀</div>
-        </div>
-        <h1 class="card-title">{{ nombre }}</h1>
-        <p class="card-subtitle">{{ titulo_profesional }}</p>
+            <div class="profile-box">
+                <a :href="url_img_perfil" target="_blank" rel="noopener noreferrer">
+                    <img v-if="url_img_perfil" :src="url_img_perfil" :alt="nombre" class="profile-img" />
+                    <div v-else class="avatar-icon">🚀</div>
+                </a>                
+            </div>
+            <a href="./cv.html" target="_blank" rel="noopener noreferrer">
+                <h1 class="card-title">{{ nombre }}</h1>
+            </a>
+            <p class="card-subtitle">{{ titulo_profesional }}</p>
         </header>
 
         <section>
-        <h3 class="card-section-title">Core Tech Stack</h3>
-        <div class="skills-tag-container">
-            <span v-for="(skill, index) in tech_skills" :key="skill" :class="['skill-tag', index < 4 ? 'highlight' : '']">
-            {{ skill }}
-            </span>
-        </div>
+            <h3 class="card-section-title">Tech Skills</h3>
+            <div class="skills-tag-container">
+                <span 
+                    v-for="(skill, index) in tech_skills" 
+                    :key="skill" 
+                    :class="['skill-tag', index < 4 ? 'highlight' : '']"
+                >
+                    {{ skill }}
+                </span>
+            </div>
         </section>
 
         <section>
         <h3 class="card-section-title">Especialidades & Impacto</h3>
-        <div class="impact-grid">
-            <div class="impact-card">
-            <div class="impact-icon"><i class="fa-solid fa-user-gear"></i></div>
-            <div class="impact-body">
-                <span class="impact-label">Rol & Especialidad</span>
-                <p class="impact-value">
-                Desarrollador Web Full-Stack
-                <strong>(Especializado en Backend)</strong>
-                </p>
+            <div class="impact-grid">
+                <div 
+                    v-for="item in especialidades_impacto" 
+                    :key="item.nombre" 
+                    class="impact-card"
+                >
+                    <div class="impact-icon">
+                        <i :class="item.icono"></i>
+                    </div>
+                    <div class="impact-body">
+                        <span class="impact-label">{{ item.nombre }}</span>
+                        <p class="impact-value" v-html="item.descripcion"></p>
+                    </div>
+                </div>
             </div>
-            </div>
-
-            <div class="impact-card">
-            <div class="impact-icon">
-                <i class="fa-solid fa-laptop-code"></i>
-            </div>
-            <div class="impact-body">
-                <span class="impact-label">Entorno de Trabajo</span>
-                <p class="impact-value">
-                Windows 11 WSL2 (Ubuntu 24.04) • VS Code • Docker Desktop
-                </p>
-            </div>
-            </div>
-
-            <div class="impact-card">
-            <div class="impact-icon">
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-            </div>
-            <div class="impact-body">
-                <span class="impact-label">Flujo de Trabajo con IA</span>
-                <p class="impact-value">
-                Prompt Engineering avanzado con LLMs (Claude, ChatGPT, Gemini,
-                DeepSeek) para refactorización, scripts DevOps y optimización
-                SQL.
-                </p>
-            </div>
-            </div>
-        </div>
         </section>
 
         <footer class="card-footer">
-        <a :href="'mailto:' + email" class="btn-action btn-full">
-            <i class="fa-solid fa-paper-plane"></i> Contactar / Enviar Email
-        </a>
+            <a :href="'mailto:' + email" class="btn-action btn-full">
+                <i class="fa-solid fa-paper-plane"></i> Contactar / Enviar Email
+            </a>
 
-        <div class="social-links">
-            <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">
-            <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a v-if="url_github" :href="url_github" target="_blank" rel="noopener" class="social-btn" title="GitHub">
-            <i class="fa-brands fa-github"></i>
-            </a>
-            <a v-if="url_site" :href="url_site" target="_blank" rel="noopener" class="social-btn" title="Web Portfolio">
-            <i class="fa-solid fa-globe"></i>
-            </a>
-        </div>
+            <div class="social-links">
+                <a v-if="movil" :href="'https://wa.me/' + movil" target="_blank" rel="noopener" class="social-btn" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener" class="social-btn" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a v-if="url_github" :href="url_github" target="_blank" rel="noopener" class="social-btn" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a v-if="url_site" :href="url_site" target="_blank" rel="noopener" class="social-btn" title="Web Portfolio">
+                    <i class="fa-solid fa-globe"></i>
+                </a>
+                <a href="./cv.html" target="_blank" rel="noopener" class="social-btn" title="Ver CV Completo">
+                    <i class="fa-solid fa-file-lines"></i>
+                </a>
+            </div>
         </footer>
     </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-        window.MiniCVComponent = function () {
-            const data = window.cvData || {};
-            return {
-            nombre: data.nombre || "Pedro Bazó",
-            titulo_profesional: data.titulo_profesional || "Backend Engineer",
-            email: data.email || "tu-email@ejemplo.com",
-            url_img_perfil: data.url_img_perfil || "",
-            url_linkedin: data.url_linkedin || "",
-            url_github: data.url_github || "",
-            url_site: data.url_site || "",
-            tech_skills: data.tech_skills || [
-                "PHP 8+",
-                "Laravel",
-                "DDD / Hexagonal",
-                "Vue.js",
-                "AWS",
-                "Docker",
-            ],
-            resumen_ejecutivo: data.resumen_ejecutivo || [
-                {
-                nombre: "Arquitectura",
-                descripcion:
-                    "Diseño de sistemas desacoplados y escalables (DDD / Hexagonal).",
-                },
-                {
-                nombre: "APIs & BD",
-                descripcion:
-                    "Desarrollo de REST APIs robustas y optimización de consultas SQL.",
-                },
-                {
-                nombre: "Calidad & CI/CD",
-                descripcion:
-                    "Pruebas unitarias con PHPUnit y automatizaciones.",
-                },
-            ],
-            };
-        };
-
-        PetiteVue.createApp().mount();
+        // Objeto reactivo de la aplicación
+        const appState = PetiteVue.reactive({
+            // Inyección limpia de datos puros desde cv-data.js
+            ...window.cvData
         });
+
+        // Montar la aplicación
+        PetiteVue.createApp(appState).mount('#app');        
     </script>
 </body>
 
