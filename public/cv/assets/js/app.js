@@ -23,6 +23,18 @@ const appState = PetiteVue.reactive({
     optImagen(url, w = 300, h = 300) {
         if (!url) return '';
         return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&h=${h}&fit=cover&output=jpg&q=80`;
+    },
+    
+    // Extrae el slug/usuario final de URLs como GitHub o LinkedIn
+    extraerUsuario(url) {
+        if (!url) return '';
+        return url.trim().replace(/\/$/, '').split('/').pop();
+    },
+
+    // Limpia la URL del sitio web quitando 'https://' para mostrar una ruta limpia
+    extraerDominioWeb(url) {
+        if (!url) return 'Sitio Web';
+        return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
     }
 });
 

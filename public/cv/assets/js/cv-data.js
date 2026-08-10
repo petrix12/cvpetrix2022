@@ -227,7 +227,7 @@ window.cvData = {
             ],
             stack: 'Lazarus, AWS EC2, Mautic, Bash, LLMs, Git.',
             links: [
-                { texto: 'Ver Repositorio', url: 'https://github.com/petrix12/soporte_klinikare_2026', icono: 'fa-brands fa-github' }
+                //{ texto: 'Ver Repositorio', url: 'https://github.com/petrix12/soporte_klinikare_2026', icono: 'fa-brands fa-github' }
             ]
         },
         {
@@ -313,7 +313,7 @@ window.cvData = {
             stack: 'HTML5, Petite-Vue, CSS3 Grid, FontAwesome.',
             links: [
                 { texto: 'Demo Online', url: 'https://petrix12.github.io/cvpetrix2022/cv', icono: 'fa-solid fa-globe' },
-                { texto: 'Código Fuente', url: 'https://github.com/petrix12/cvpetrix2022', icono: 'fa-brands fa-github' }
+                { texto: 'Código Fuente', url: 'https://github.com/petrix12/cvpetrix2022/tree/main/public/cv', icono: 'fa-brands fa-github' }
             ]
         },
         {
