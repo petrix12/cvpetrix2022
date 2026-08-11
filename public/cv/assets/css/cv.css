@@ -750,7 +750,7 @@ body.mini-cv-page {
 }
 
 .card-name {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #ffffff;
   line-height: 1.1;
@@ -758,7 +758,7 @@ body.mini-cv-page {
 }
 
 .card-role {
-  font-size: 0.48rem;
+  font-size: 0.5rem;
   color: #38bdf8;
   font-weight: 600;
   margin-bottom: 2.5mm;
@@ -768,7 +768,7 @@ body.mini-cv-page {
 
 .card-links {
   list-style: none;
-  font-size: 0.45rem;
+  font-size: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.2mm;

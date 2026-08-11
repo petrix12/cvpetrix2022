@@ -360,15 +360,31 @@
                         <h2 class="card-role">{{ titulo_profesional }}</h2>
                         
                         <ul class="card-links">
-                            <li><a href="#cv" @click="cambiarVista('cv')"><i class="fa-solid fa-file-lines"></i> Curriculum Vitae</a></li>
-                            <li><a href="#carta" @click="cambiarVista('carta')"><i class="fa-solid fa-envelope-open-text"></i> Carta de Presentación</a></li>
-                            <li><a href="#perfil" @click="cambiarVista('perfil')"><i class="fa-solid fa-microchip"></i> Matriz de Perfil Técnico</a></li>
-                            <li><a href="#proyectos" @click="cambiarVista('proyectos')"><i class="fa-solid fa-diagram-project"></i> Portafolio de Proyectos</a></li>
+                            <li>
+                                <a :href="url_base + '/cv.html'" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-file-lines"></i> Curriculum Vitae
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="url_base + '/cv.html#carta'" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-envelope-open-text"></i> Carta de Presentación
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="url_base + '/cv.html#perfil'" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-microchip"></i> Matriz de Perfil Técnico
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="url_base + '/cv.html#proyectos'" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-solid fa-diagram-project"></i> Portafolio de Proyectos
+                                </a>
+                            </li>
                         </ul>
                     </div>
 
                     <div class="card-qr-box">
-                        <a href="./cv.html" target="_blank" rel="noopener noreferrer">
+                        <a :href="url_base" target="_blank" rel="noopener noreferrer" class="card-qr-link">
                             <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://petrix12.github.io/cvpetrix2022/cv" alt="QR CV" class="card-qr-img">
                             <span class="card-qr-label">Escanear CV</span>
                         </a>
@@ -376,6 +392,7 @@
                 </div>
             </div>
         </div>        
+
     </div>
 
     <script src="./assets/js/app.js"></script>
