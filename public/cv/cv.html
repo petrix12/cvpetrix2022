@@ -46,8 +46,8 @@
 <body>
     <div 
         id="app" 
-        v-scope="window.cvData"
-        v-effect="document.title = (vista === 'cv' ? 'CV | ' : (vista === 'carta' ? 'Carta | ' : (vista === 'perfil' ? 'Perfil | ' : 'Portafolio | '))) + nombre"
+        v-scope="window.cvData"        
+        v-effect="document.title = (vista === 'cv' ? 'CV | ' : (vista === 'carta' ? 'Carta | ' : (vista === 'perfil' ? 'Perfil | ' : (vista === 'proyectos' ? 'Portafolio | ' : 'Tarjeta | ')))) + nombre"
     >
         <!-- Panel superior de acciones (Se oculta automáticamente al imprimir) -->
         <header class="top-bar no-print">
@@ -55,7 +55,7 @@
                 <div class="top-bar-info">
                     <i class="fa-solid fa-layer-group" style="color: var(--accent);"></i>
                     <span>
-                        {{ vista === 'cv' ? 'Curriculum Vitae' : (vista === 'carta' ? 'Carta de Presentación' : (vista === 'perfil' ? 'Matriz de Perfil Técnico' : 'Portafolio de Proyectos')) }}
+                        {{ vista === 'cv' ? 'Curriculum Vitae' : (vista === 'carta' ? 'Carta de Presentación' : (vista === 'perfil' ? 'Matriz de Perfil Técnico' : (vista === 'proyectos' ? 'Portafolio de Proyectos' : 'Tarjeta de Presentación'))) }}
                     </span>
                 </div>
 
@@ -93,6 +93,14 @@
                             <i class="fa-solid fa-diagram-project"></i>
                             <span>Portafolio</span>
                         </button>
+
+                        <button 
+                            @click="cambiarVista('tarjeta')" 
+                            :class="['btn-segment', vista === 'tarjeta' ? 'active' : '']"
+                        >
+                            <i class="fa-solid fa-address-card"></i>
+                            <span>Tarjeta</span>
+                        </button>                        
                     </nav>
 
                     <!-- Acción independiente de impresión -->
@@ -104,7 +112,7 @@
             </div>
         </header>
 
-        <div class="cv-container">
+        <div class="cv-container" v-if="vista !== 'tarjeta'">
             <!-- COLUMNA IZQUIERDA (SIDEBAR) -->
             <aside class="sidebar">
                 <div class="profile-box">
@@ -339,9 +347,35 @@
                             </div>
                         </div>
                     </section>
-                </div>                
+                </div>       
             </main>
         </div>
+
+        <!-- VISTA 5: TARJETA DE PRESENTACIÓN (Aislada e independiente del contenedor A4) -->
+        <div v-if="vista === 'tarjeta'" class="card-standalone-wrapper">
+            <div class="business-card">
+                <div class="card-content">
+                    <div class="card-info">
+                        <h1 class="card-name">{{ nombre }}</h1>
+                        <h2 class="card-role">{{ titulo_profesional }}</h2>
+                        
+                        <ul class="card-links">
+                            <li><a href="#cv" @click="cambiarVista('cv')"><i class="fa-solid fa-file-lines"></i> Curriculum Vitae</a></li>
+                            <li><a href="#carta" @click="cambiarVista('carta')"><i class="fa-solid fa-envelope-open-text"></i> Carta de Presentación</a></li>
+                            <li><a href="#perfil" @click="cambiarVista('perfil')"><i class="fa-solid fa-microchip"></i> Matriz de Perfil Técnico</a></li>
+                            <li><a href="#proyectos" @click="cambiarVista('proyectos')"><i class="fa-solid fa-diagram-project"></i> Portafolio de Proyectos</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card-qr-box">
+                        <a href="./cv.html" target="_blank" rel="noopener noreferrer">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://petrix12.github.io/cvpetrix2022/cv" alt="QR CV" class="card-qr-img">
+                            <span class="card-qr-label">Escanear CV</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>        
     </div>
 
     <script src="./assets/js/app.js"></script>

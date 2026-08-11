@@ -1,7 +1,7 @@
 // Función auxiliar para obtener la vista actual del hash
 function obtenerVistaDeUrl() {
     const hash = window.location.hash.replace('#', '');
-    const vistasValidas = ['cv', 'carta', 'perfil', 'proyectos'];
+    const vistasValidas = ['cv', 'carta', 'perfil', 'proyectos', 'tarjeta'];
     return vistasValidas.includes(hash) ? hash : 'cv';
 }
 
