@@ -771,7 +771,12 @@ body.mini-cv-page {
   font-size: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2mm;
+  gap: 1.5mm;
+}
+
+.card-links li {
+  display: block;
+  line-height: 1;
 }
 
 .card-links li a {
@@ -781,6 +786,7 @@ body.mini-cv-page {
   align-items: center;
   gap: 1.8mm;
   font-weight: 500;
+  padding: 0.8px 0;
 }
 
 .card-links i {
