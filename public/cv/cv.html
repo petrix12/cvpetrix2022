@@ -352,7 +352,7 @@
         </div>
 
         <!-- VISTA 5: TARJETA DE PRESENTACIÓN (Aislada e independiente del contenedor A4) -->
-        <div v-if="vista === 'tarjeta'" class="card-standalone-wrapper">
+        <!-- <div v-if="vista === 'tarjeta'" class="card-standalone-wrapper">
             <div class="business-card">
                 <div class="card-content">
                     <div class="card-info">
@@ -391,7 +391,81 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+        <!-- ==================== VISTA 5: TARJETA DE PRESENTACIÓN REDISEÑADA ==================== -->
+        <div v-if="vista === 'tarjeta'" class="card-standalone-wrapper">
+            <div class="business-card">
+                <div class="card-content">
+                    
+                    <!-- Columna Izquierda: Identidad, Contacto, Navegación y Redes -->
+                    <div class="card-info">
+                        
+                        <!-- 1. Encabezado de Identidad -->
+                        <div class="card-header-block">
+                            <h1 class="card-name">{{ nombre }}</h1>
+                            <h2 class="card-role">{{ titulo_profesional }}</h2>
+                        </div>
+
+                        <!-- 2. Contacto Directo (Email y Teléfono) -->
+                        <div class="card-contact-direct">
+                            <a :href="'mailto:' + email" class="contact-item" title="Enviar Email">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>{{ email }}</span>
+                            </a>
+                            <a v-if="movil" :href="'https://wa.me/' + movil" target="_blank" rel="noopener noreferrer" class="contact-item" title="WhatsApp / Móvil">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <span>{{ movil }}</span>
+                            </a>
+                        </div>
+
+                        <!-- 3. Navegación en Formato "Pills" / Etiquetas Compactas -->
+                        <nav class="card-section-nav">
+                            <a :href="`${url_base}/cv.html`" rel="noopener noreferrer" class="card-nav-pill">
+                                <i class="fa-solid fa-file-lines"></i> CV
+                            </a>
+                            <a :href="`${url_base}/cv.html#carta`" rel="noopener noreferrer" class="card-nav-pill">
+                                <i class="fa-solid fa-envelope-open-text"></i> Carta
+                            </a>
+                            <a :href="`${url_base}/cv.html#perfil`" rel="noopener noreferrer" class="card-nav-pill">
+                                <i class="fa-solid fa-microchip"></i> Perfil
+                            </a>
+                            <a :href="`${url_base}/cv.html#proyectos`" rel="noopener noreferrer" class="card-nav-pill">
+                                <i class="fa-solid fa-diagram-project"></i> Proyectos
+                            </a>
+                        </nav>
+
+                        <!-- 4. Barra Inferior de Iconos Sociales -->
+                        <div class="card-social-row">
+                            <a v-if="movil" :href="'https://wa.me/' + movil + '?text=Hola%20Pedro,%20vi%20tu%20CV%20y%20me%20gustar%C3%ADa%20contactarte'" target="_blank" rel="noopener noreferrer" class="card-social-btn" title="WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                            <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener noreferrer" class="card-social-btn" title="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a v-if="url_github" :href="url_github" target="_blank" rel="noopener noreferrer" class="card-social-btn" title="GitHub">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a v-if="url_site" :href="url_site" target="_blank" rel="noopener noreferrer" class="card-social-btn" title="Web Portfolio">
+                                <i class="fa-solid fa-globe"></i>
+                            </a>
+                            <a :href="`${url_base}/index.html`" rel="noopener noreferrer" class="card-social-btn" title="Tarjeta Digital">
+                                <i class="fa-solid fa-id-card"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Código QR Accesible -->
+                    <div class="card-qr-box">
+                        <a :href="`${url_base}/cv.html`" target="_blank" rel="noopener noreferrer" class="card-qr-link">
+                            <img :src="`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(url_base + '/cv.html')}`" alt="QR CV" class="card-qr-img">
+                            <span class="card-qr-label">Escanear CV</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>        
     </div>
 
     <script src="./assets/js/app.js"></script>

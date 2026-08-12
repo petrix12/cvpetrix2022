@@ -703,10 +703,10 @@ body.mini-cv-page {
 }
 
 /* ==========================================
-   VISTA 5: TARJETA DE PRESENTACIÓN (85mm x 55mm)
+   VISTA 5: TARJETA DE PRESENTACIÓN REDISEÑADA (85mm x 55mm)
    ========================================== */
 .card-standalone-wrapper {
-  page: tarjetaPage; /* Asigna el tamaño 85x55mm para el diálogo de impresión */
+  page: tarjetaPage;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -719,14 +719,11 @@ body.mini-cv-page {
   height: 55mm;
   background: var(--bg-sidebar);
   border-radius: 6px;
-  padding: 5mm;
+  padding: 4mm 5mm;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-sidebar);
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: relative;
   overflow: hidden;
 }
@@ -736,21 +733,30 @@ body.mini-cv-page {
   position: absolute;
   top: 0;
   left: 0;
-  width: 3mm;
+  width: 2.5mm;
   height: 100%;
   background: var(--accent);
 }
 
 .card-content {
   display: grid;
-  grid-template-columns: 1fr 22mm;
+  grid-template-columns: 1fr 20mm;
   gap: 3mm;
+  height: 100%;
   align-items: center;
-  padding-left: 2mm;
+  padding-left: 1.5mm;
 }
 
+.card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Encabezado */
 .card-name {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: #ffffff;
   line-height: 1.1;
@@ -761,63 +767,114 @@ body.mini-cv-page {
   font-size: 0.5rem;
   color: #38bdf8;
   font-weight: 600;
-  margin-bottom: 2.5mm;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
-.card-links {
-  list-style: none;
-  font-size: 0.5rem;
+/* Contacto Directo */
+.card-contact-direct {
   display: flex;
   flex-direction: column;
-  gap: 1.5mm;
+  gap: 0.8mm;
 }
 
-.card-links li {
-  display: block;
-  line-height: 1;
-}
-
-.card-links li a {
-  color: #cbd5e1;
+.contact-item {
+  color: #e2e8f0;
   text-decoration: none;
+  font-size: 0.6rem;
   display: inline-flex;
   align-items: center;
-  gap: 1.8mm;
+  gap: 1.5mm;
   font-weight: 500;
-  padding: 0.8px 0;
 }
 
-.card-links i {
+.contact-item i {
   color: var(--accent);
   width: 2.5mm;
   text-align: center;
 }
 
+/* Navegación en Pills (Cuadrícula 2x2) */
+.card-section-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1mm 1.5mm;
+}
+
+.card-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 1mm;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1px 3px;
+  border-radius: 3px;
+  color: #cbd5e1;
+  font-size: 0.45rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.card-nav-pill i {
+  color: var(--accent);
+  font-size: 0.36rem;
+}
+
+/* Filas de Redes Sociales */
+.card-social-row {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+}
+
+.card-social-btn {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-social-btn:hover {
+  color: #38bdf8;
+}
+
+/* QR y Columna Derecha */
 .card-qr-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.card-qr-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1mm;
+  text-decoration: none;
 }
 
 .card-qr-img {
-  width: 20mm;
-  height: 20mm;
+  width: 19mm;
+  height: 19mm;
   background: #ffffff;
   padding: 1mm;
   border-radius: 3px;
 }
 
 .card-qr-label {
-  font-size: 0.38rem;
+  font-size: 0.36rem;
   color: #94a3b8;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   font-weight: 600;
 }
 
+/* Adaptación estricta a impresión */
 @media print {
   .card-standalone-wrapper {
     min-height: 100vh !important;
