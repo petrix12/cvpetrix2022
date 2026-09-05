@@ -1,0 +1,64 @@
+PEDRO JESÚS BAZÓ CANELÓN
+Desarrollador Backend | Full-Stack
+
+CONTACTO
+Ubicación: Gijón, Asturias, España
+Email: pedro.j.bazo.c@gmail.com
+Web / Portafolio: https://petrix12.github.io/cvpetrix2022
+LinkedIn: https://www.linkedin.com/in/pedro-bazo
+GitHub: https://github.com/petrix12
+
+PERFIL PROFESIONAL
+Ingeniero y Desarrollador de Software enfocado en el backend con sólida trayectoria en el ecosistema PHP / Laravel y desarrollo web full-stack. Especializado en el diseño de APIs RESTful, optimización de bases de datos relacionales complejas y mantenimiento de código en entornos de producción. Destaco por una sólida capacidad analítica y lógica de programación estructurada, con experiencia práctica en entornos contenerizados con Docker, despliegues en la nube con AWS y metodologías ágiles (Scrum).
+
+TECH SKILLS
+- Lenguajes y Frameworks: PHP 8.x, Laravel, Symfony, Vue.js (Options & Composition API), JavaScript, jQuery, HTML5, CSS3
+- APIs y Arquitectura: APIs RESTful, Clean Code, Principios SOLID, Patrón MVC, Microservicios
+- Bases de Datos: MySQL, MS SQL Server, PostgreSQL, Eloquent ORM
+- Infraestructura y DevOps: Docker, Docker Compose, AWS (S3, EC2, RDS, SES, ECR, ECS), GCP, DigitalOcean, Linux (WSL2 Ubuntu)
+- Herramientas de Desarrollo: Git, GitHub, Postman, VS Code, Jira, Trello
+
+EXPERIENCIA PROFESIONAL
+
+Desarrollador Full-Stack | Klinikare (Remoto)
+Septiembre 2024 - Abril 2026
+- Mantenimiento avanzado, diagnóstico de incidencias complejas y refactorización de código en plataformas en producción.
+- Optimización de consultas relacionales y depuración de lógica de negocio en MySQL y MS SQL Server mediante Eloquent ORM.
+- Contenerización de entornos locales con Docker / Compose e integración de servicios AWS (EC2, S3, RDS, SES, ECR, ECS).
+- Mantenimiento de interfaces con JavaScript/jQuery y análisis puntual de arquitectura sobre Symfony.
+Stack: PHP, Laravel, Symfony, MySQL, MS SQL, Docker, AWS, jQuery, Git, Jira.
+
+Desarrollador Full-Stack | Commutatio (Presencial)
+Marzo 2023 - Septiembre 2024
+- Desarrollo backend en Laravel participando en proyectos bajo arquitecturas monolíticas y microservicios.
+- Implementación de interfaces frontend modernas utilizando Vue.js (Options API & Composition API).
+- Construcción de consultas SQL complejas, optimización de base de datos y gestión de almacenamiento en AWS S3.
+Stack: Laravel, Vue.js, MySQL, Docker, AWS (S3, EC2), Git, Trello.
+
+Lead Backend Developer | Full-Stack | Sefar Universal (Remoto)
+Agosto 2019 - Marzo 2023
+- Diseño y desarrollo desde cero de la plataforma core del negocio sobre Laravel y Vue.js, liderando un equipo de 2 devs junior.
+- Construcción y consumo de APIs RESTful, integración con bases de datos MySQL y despliegue en nube (AWS, GCP, DigitalOcean).
+- Modernización de procesos operativos sustituyendo herramientas heredadas por arquitecturas web escalables.
+Stack: Laravel, Vue.js, PHP, MySQL, JavaScript, AWS (S3, SES), GCP, Git, Trello.
+
+Analista de Sistemas & Automatización / Docente | PDVSA & Universidad Gran Mariscal de Ayacucho (UGMA)
+2006 - 2021
+- Desarrollo de herramientas de software interno para gestión presupuestaria utilizando VB6, VBA, Delphi, MySQL y SQL Server.
+- Profesor universitario de Lógica de Programación, Estructuras de Datos y Programación Orientada a Objetos.
+
+FORMACIÓN ACADÉMICA
+Ingeniería Química | Universidad Central de Venezuela (UCV)
+- Preparador Docente de Programación (Pascal, C/C++).
+- Tesis: Desarrollo de software de simulación computacional en Visual C++ y Fortran.
+
+PRINCIPIOS Y ENTORNO
+- Buenas Prácticas: Aplicación de principios SOLID, patrón MVC, código limpio y validación de APIs con Postman.
+- Entorno Local: Configuración ágil de entornos de desarrollo basados en Windows 11 con WSL2 (Ubuntu), VS Code y Docker.
+
+IDIOMAS
+- Español: Nativo
+- Inglés: B1
+
+APTITUDES
+Metodología Scrum, Análisis Lógico, Código Legado, Resolución de Problemas, Trabajo en Equipo.

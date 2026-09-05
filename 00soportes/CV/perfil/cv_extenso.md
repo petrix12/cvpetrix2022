@@ -88,7 +88,6 @@ Mi labor como preparador en el DIOC fue un hito clave: allí afiancé el pensami
 Aunque las tecnologías específicas de esa época han evolucionado o quedado obsoletas, esta etapa me dejó el activo más valioso de mi carrera: sólidos fundamentos lógicos, capacidad de abstracción matemática y un enfoque analítico estructurado para abordar cualquier desafío técnico.
 
 
-
 ## Primeros años como ingeniero
 Al poco tiempo de graduarme de ingeniero, migré a España y trabajé como supervisor de infraestructura en una empresa llamada "Valle de Aramín S.L.U.", en Oviedo, entre marzo y septiembre de 2003. Mi función principal consistió básicamente en velar por el perfecto estado de ciertas edificaciones. Este trabajo realmente no me exigía como ingeniero; lo más complicado que se me presentó fue estimar el tiempo de llenado de una piscina en función del caudal de descarga de camiones cisterna, su capacidad, etc.
 
@@ -119,9 +118,6 @@ Nuestra estrategia consistió en construir primero la columna vertebral del proy
 Lo más enriquecedor de este proceso fue el trabajo de campo: recorrí prácticamente todo el yacimiento (estaciones de descarga y flujo, plantas compresoras, plantas de inyección de agua y diversas localizaciones). Inspeccioné las tuberías anotando fluidos, presiones y temperaturas, además de documentar cada bomba, separador, tanque y proceso de separación o disposición de agua.
 
 En el apartado técnico, esto me exigió llevar Microsoft Word a su máxima capacidad y trabajar intensamente con AutoCAD para actualizar e incluso diseñar desde cero planos que no existían, desempeñando el rol de un verdadero proyectista. Aunque desarrollé una gran destreza en AutoCAD en su momento, es una herramienta que no he vuelto a ejercitar desde 2006.
-
-
-
 
 ## PDVSA
 Desde abril de 2006 hasta julio de 2021 trabajé en PDVSA, y aquí pasé por muchos cargos:
@@ -205,6 +201,22 @@ Luego de que me decidí a dedicarme exclusivamente de lo que me gusta, he trabaj
 
     Por último, impulsado por la búsqueda de eficiencia, desarrollé de forma autónoma una herramienta en Lazarus (Pascal) para automatizar la ejecución de scripts, la gestión de comandos repetitivos y el montaje de bases de datos en entornos locales, optimizando sensiblemente la productividad. Además, amplié mi visión del ecosistema PHP analizando la estructura y patrones de Symfony.
 
+## Pregunta para IA
+Según toda mi trayectoria profesional que te he contado, para las siguientes postulaciones de empleo que te voy a mostrar a continuación, analizalas a fondo, y entregama un informe con el siguiente formato:
++ Apto: [Sí, No, Puede ser]
++ % de encaje: [Que tan apto soy]
++ Idiomas: [Idiomas exigidos con su respectivo nivel]
++ Ubicación: [Si es presencial, remoto, híbrido (veces a la semana) y lugar]
++ Máximo expectativa salarial: [máximo que puedo aspirar sin correr el riesgo de ser descartado]
++ Tecnologías: [Stack tecnológico]
++ Puntos a considerar: [Cualquier aspecto relevante a tener en cuenta según tu perfil]
++ Breve resumen del puesto: [Descripción concisa del rol y sus responsabilidades clave]
+
+
+
+
+
+## --------------------------------
 ## RESUMEN GENERAL
 A continuación intentaré reflejar mis conocimientos reales hasta la fecha de hoy, así que no itentes adecuarlo para que se vea bonito hacia los demás, necesito reflejar mis fortalezas y debilidades:
 
