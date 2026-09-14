@@ -38,3 +38,19 @@ Transformo la manera en que las empresas operan, ayudándolas a ahorrar tiempo, 
 - Adaptación total: El software se diseña en función de cómo trabaja tu empresa, evitando que tengas que adaptar tu flujo de trabajo a un programa genérico.
 - Eficiencia operativa: Liberación de horas de trabajo diario que tu equipo podrá dedicar a lo que realmente aporta valor al negocio.
 - Un activo propio: La plataforma es completamente de tu propiedad, eliminando la dependencia de licencias de terceros o cuotas mensuales excesivas.
+
+
+## Plantilla de anuncio / publicación
+Busco Socio Comercial / Co-founder de Negocio (Software a medida B2B)
+Soy Desarrollador Senior especializado en crear herramientas internas, automatizaciones y plataformas web para pymes (gestión, cobros, agenda, procesos).
+Busco un Socio Comercial / Business Developer experto en venta consultiva B2B para lanzar y escalar esta línea de negocio.
+
+Tu rol:
++ Captación de clientes (identificación de necesidades en pymes, reuniones y cierres).
++ Relación con clientes y supervisión del aspecto legal/administrativo (vía gestoría).
+
+Mi rol:
++ Arquitectura, desarrollo tecnológico y entregas al 100%.
++ Modelo: Reparto de ingresos por proyecto / Equity (sin salario fijo inicial, proyecto desde cero a porcentaje competitivo por cliente cerrado).
+
+Si tienes experiencia vendiendo a empresas y quieres construir un activo propio, hablemos por privado.

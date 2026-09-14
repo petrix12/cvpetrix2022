@@ -217,6 +217,21 @@ window.cvData = {
     // COLECCIÓN SINTETIZADA PARA ENTRAR PERFECTAMENTE EN A4
     proyectos: [
         {
+            titulo: 'Boilerplate Node.js | Vue.js',
+            categoria: 'Open Source',
+            icono: 'fa-solid fa-server',
+            descripcion: 'Backend base escalable con arquitectura limpia, autenticación JWT y almacenamiento MinIO.',
+            logros: [
+                'Autenticación JWT, gestión de usuarios, roles y control de acceso basado en permisos',
+                'Carga y gestión de archivos/avatars integrada con MinIO (S3 Compatible)',
+                'Auditoría dinámica de logs y pipeline de validación centralizado'
+            ],
+            stack: 'Node.js, Express, PostgreSQL, Sequelize, MinIO, Docker, Jest.',
+            links: [
+                { texto: 'Ver Repositorio', url: 'https://github.com/petrix12/boilerplate-node-2026', icono: 'fa-brands fa-github' }
+            ]
+        },        
+        {
             titulo: 'Soporte Mautic CLI & IA (EC2)',
             categoria: 'DevOps & IA',
             icono: 'fa-solid fa-robot',
