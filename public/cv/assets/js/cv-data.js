@@ -24,7 +24,7 @@ window.cvData = {
     movil: "34613980099",
     url_base: 'https://petrix12.github.io/cvpetrix2022/cv',
     url_site: 'https://petrix12.github.io/cvpetrix2022',
-    url_img_perfil: 'https://raw.githubusercontent.com/petrix12/cvpetrix2022/refs/heads/main/00soportes/Marca%20personal/Autor/F2026-05-13PetrixIesus.png',
+    url_img_perfil: './assets/img/perfil.png',
     url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',
     url_github: 'https://github.com/petrix12',
     tech_skills: [

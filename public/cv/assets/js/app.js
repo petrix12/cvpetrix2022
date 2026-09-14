@@ -19,11 +19,18 @@ const appState = PetiteVue.reactive({
         window.location.hash = nuevaVista;
     },
 
-    // Función que envuelve y optimiza cualquier imagen:
+    // Función que envuelve y optimiza cualquier imagen
     optImagen(url, w = 300, h = 300) {
         if (!url) return '';
+        
+        // Si es una ruta local/relativa (no empieza con http:// ni https://), se devuelve directamente
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            return url;
+        }
+        
+        // Si es una URL externa válida (ej. Avatares de GitHub, LinkedIn, etc.), usa wsrv.nl
         return `https://wsrv.nl/?url=${encodeURIComponent(url)}&w=${w}&h=${h}&fit=cover&output=jpg&q=80`;
-    },
+    },  
     
     // Extrae el slug/usuario final de URLs como GitHub o LinkedIn
     extraerUsuario(url) {
