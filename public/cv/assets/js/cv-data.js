@@ -226,9 +226,9 @@ window.cvData = {
                 'Carga y gestión de archivos/avatars integrada con MinIO (S3 Compatible)',
                 'Auditoría dinámica de logs y pipeline de validación centralizado'
             ],
-            stack: 'Node.js, Express, PostgreSQL, Sequelize, MinIO, Docker, Jest.',
+            stack: 'Node.js, Express, PostgreSQL, Vue.js, MinIO, Docker.',
             links: [
-                { texto: 'Ver Repositorio', url: 'https://github.com/petrix12/boilerplate-node-2026', icono: 'fa-brands fa-github' }
+                { texto: 'Demo Online', url: 'https://boilerplate-node-2026.vercel.app', icono: 'fa-solid fa-globe' }
             ]
         },        
         {
