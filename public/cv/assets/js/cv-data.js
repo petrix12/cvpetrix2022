@@ -30,6 +30,7 @@ window.cvData = {
     tech_skills: [
         'PHP 8.x', 
         'Laravel', 
+        'Node.js',
         'Vue.js (Opt/Comp)', 
         'APIs RESTful', 
         'MySQL | MS SQL', 
