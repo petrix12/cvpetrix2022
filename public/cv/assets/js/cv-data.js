@@ -70,15 +70,16 @@ window.cvData = {
         }
     ],
     aptitudes: [
-        'Metodología Scrum',
-        'Análisis Lógico',
-        'Código Legado',
-        'Resolución de Problemas',
-        'Trabajo en Equipo',
-    ],
+        'Refactorización & Legado',  // [PRINCIPIO] Raro y súper valioso: demuestra capacidad de lidiar con código complejo.
+        'Análisis Lógico',           // Pensamiento analítico profundo (reemplaza abstracción/análisis).
+        'Resolución de Problemas',   // Traduce la "tolerancia a la frustración" en enfoque orientado a soluciones.
+        'Trabajo en Equipo',         // Colaboración y comunicación.
+        'Pensamiento Crítico',       // Capacidad de evaluar arquitecturas y tomar decisiones maduras.
+        'Resiliencia Técnica',       // [FINAL] El término profesional impecable para "tolerancia al fracaso/frustración".
+    ],   
     idiomas: [
         { nombre: 'Español', nivel: 'Nativo' },
-        { nombre: 'Inglés', nivel: 'B1' }
+        { nombre: 'Inglés', nivel: 'A2' }
     ],
     experiencia_profesional: [
         {
