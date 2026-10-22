@@ -125,16 +125,50 @@
                     </a>
                 </div>
 
+                <!-- BLOQUE 1: CONTACTO DIRECTO -->
                 <div>
                     <h3>Contacto</h3>
                     <ul class="contact-list">
-                        <li><i class="fa-solid fa-location-dot"></i> {{ ubicacion }}</li>
-                        <li><i class="fa-solid fa-envelope"></i> <a :href="'mailto:' + email">{{ email }}</a></li>
-                        <li><i class="fa-solid fa-globe"></i> <a :href="url_site" target="_blank">{{ extraerDominioWeb(url_site) }}</a></li>
-                        <li><i class="fa-brands fa-linkedin"></i> <a :href="url_linkedin" target="_blank">in/{{ extraerUsuario(url_linkedin) }}</a></li>
-                        <li><i class="fa-brands fa-github"></i> <a :href="url_github" target="_blank">@{{ extraerUsuario(url_github) }}</a></li>
+                        <li v-if="ubicacion">
+                            <i class="fa-solid fa-location-dot"></i> {{ ubicacion }}
+                        </li>
+                        <li v-if="email">
+                            <i class="fa-solid fa-envelope"></i> 
+                            <a :href="'mailto:' + email">{{ email }}</a>
+                        </li>
+                        <li v-if="movil">
+                            <i class="fa-solid fa-mobile-screen-button"></i> 
+                            <a :href="'https://wa.me/' + movil" target="_blank" rel="noopener noreferrer">{{ formatearMovil(movil) }}</a>
+                        </li>
+                        <li v-if="url_linkedin">
+                            <i class="fa-brands fa-linkedin"></i> 
+                            <a :href="url_linkedin" target="_blank">in/{{ extraerUsuario(url_linkedin) }}</a>
+                        </li>
                     </ul>                    
                 </div>
+
+                <!-- BLOQUE 2: PRESENCIA DIGITAL / PORTAFOLIO -->
+                <div>
+                    <h3>Presencia Digital</h3>
+                    <ul class="contact-list">
+                        <li v-if="url_site">
+                            <i class="fa-solid fa-globe"></i> 
+                            <a :href="url_site" target="_blank">{{ extraerDominioWeb(url_site) }}</a>
+                        </li>
+                        <li v-if="url_github">
+                            <i class="fa-brands fa-github"></i> 
+                            <a :href="url_github" target="_blank">@{{ extraerUsuario(url_github) }}</a>
+                        </li>
+                        <li v-if="url_portafolio">
+                            <i class="fa-solid fa-briefcase"></i> 
+                            <a :href="url_portafolio" target="_blank" rel="noopener noreferrer">Portafolio Web</a>
+                        </li>
+                        <li v-if="url_video_cv">
+                            <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> 
+                            <a :href="url_video_cv" target="_blank" rel="noopener noreferrer">Video Presentación</a>
+                        </li>
+                    </ul>                    
+                </div>                
 
                 <div>
                     <h3>Tech Skills</h3>
@@ -194,7 +228,12 @@
                                 <span class="exp-role">{{ exp.rol}}</span>
                                 <span class="exp-date">{{ exp.periodo }}</span>
                             </div>
-                            <div class="exp-company">{{ exp.empresa }}</div>
+                            <div class="exp-company" style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>{{ exp.empresa }}</span>
+                                <span v-if="exp.ubicacion_empresa" style="font-size: 0.68rem; color: #64748b; font-weight: 400;">
+                                    <i class="fa-solid fa-building-user" style="font-size: 0.65rem; margin-right: 3px;"></i> {{ exp.ubicacion_empresa }}
+                                </span>
+                            </div>                             
                             <ul class="exp-bullets">
                                 <li v-for="(funcion, idx) in exp.funciones" :key="idx" style="color:#64748b; font-size: 0.67rem;">{{ funcion }}.</li>
                             </ul>

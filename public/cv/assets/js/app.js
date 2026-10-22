@@ -42,7 +42,16 @@ const appState = PetiteVue.reactive({
     extraerDominioWeb(url) {
         if (!url) return 'Sitio Web';
         return url.replace(/^https?:\/\//, '').replace(/\/$/, '');
-    }
+    },
+
+    // Formatea un número de móvil al estilo internacional +34 XXX XX XX XX
+    formatearMovil(numero) {
+        if (!numero) return '';
+        // Quita todo lo que no sea un número por seguridad
+        const limpio = ('' + numero).replace(/\D/g, ''); 
+        // Aplica el formato +34 XXX XX XX XX
+        return limpio.replace(/^(\d{2})(\d{3})(\d{2})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
+    }    
 });
 
 // Montar la aplicación

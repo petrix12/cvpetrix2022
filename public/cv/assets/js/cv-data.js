@@ -1,3 +1,18 @@
+/*
+# TECH SKILLS
++ Pedro Jesús Bazó Canelón
++ Desarrollador Backend | Full-Stack
+
+
++ **Arquitectura, Calidad & Buenas Prácticas**: Clean Code | SOLID | Patrones de Diseño (Repository, Service Pattern).
++ **Backend & Lenguajes**: PHP 8.x | Laravel | Node.js | Express | JavaScript | TypeScript | Python.
++ **Arquitectura de APIs & Protocolos**: APIs RESTful | Endpoints seguros | Gestión de Autenticación (JWT/Tokens).
++ **Frontend**: Vue.js | React.js | jQuery | HTML5 | CSS3 (Responsive Design).
++ **Bases de Datos**: MySQL, PostgreSQL, SQL Server, MongoDB.
++ **Infraestructura & DevOps**: Docker | AWS (S3, EC2, RDS y SES) | Linux (WSL2 Ubuntu).
++ **Control de Versiones & Herramientas de Desarrollo**: Git | GitHub | Postman | Entornos de Pruebas.
++ **Ecosistema de Escritorio & Herramientas Legadas**: Lazarus - Delphi | VBA | Microsoft Excel (Automatización y lógica de negocio).
+*/
 window.cvData = {
     nombre: 'Pedro Jesús Bazó Canelón',
     titulo_profesional: 'Desarrollador Backend | Full-Stack',
@@ -19,14 +34,16 @@ window.cvData = {
             icono: "fa-solid fa-wand-magic-sparkles"
         }
     ],
-    ubicacion: 'Gijón, Asturias, España',
+    ubicacion: 'Asturias, España',
     email: 'pedro.j.bazo.c@gmail.com',
-    movil: "34613980099",
+    movil: "+34613980099",
     url_base: 'https://petrix12.github.io/cvpetrix2022/cv',
     url_site: 'https://petrix12.github.io/cvpetrix2022',
     url_img_perfil: './assets/img/perfil.png',
     url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',
     url_github: 'https://github.com/petrix12',
+    url_video_cv: 'https://www.youtube.com/watch?v=1zjclNAMbvA&t=42s',
+    url_portafolio: 'https://petrix12.github.io/cvpetrix2022/cv/cv.html#proyectos',
     tech_skills: [
         'PHP 8.x', 
         'Laravel', 
@@ -65,7 +82,8 @@ window.cvData = {
     ],
     experiencia_profesional: [
         {
-            empresa: 'Klinikare (Remoto)',
+            empresa: 'Klinikare',
+            ubicacion_empresa: 'Guadalajara, España · Remoto',
             rol: 'Desarrollador Full-Stack',
             periodo: 'Sep 2024 – Abr 2026',
             funciones: [
@@ -77,7 +95,8 @@ window.cvData = {
             stack: 'PHP, Laravel, Symfony, MySQL, MS SQL, Docker, AWS, jQuery, Git, Jira.'
         },
         {
-            empresa: 'Commutatio (Presencial)',
+            empresa: 'Commutatio',
+            ubicacion_empresa: 'Gijón, España · Presencial',
             rol: 'Desarrollador Full-Stack',
             periodo: 'Mar 2023 – Sep 2024',
             funciones: [
@@ -88,7 +107,8 @@ window.cvData = {
             stack: 'Laravel, Vue.js, MySQL, Docker, AWS (S3|EC2), Git, Trello.'
         },
         {
-            empresa: 'Sefar Universal (Remoto)',
+            empresa: 'Sefar Universal',
+            ubicacion_empresa: 'Barranquilla, Colombia · Remoto',
             rol: 'Lead Backend Developer | Full-Stack',
             periodo: 'Ago 2019 – Mar 2023',
             funciones: [
@@ -99,7 +119,8 @@ window.cvData = {
             stack: 'Laravel, Vue.js, PHP, MySQL, JavaScript, AWS (S3, SES), GCP, Git, Trello.'
         },
         {
-            empresa: 'PDVSA & Universidad Gran Mariscal de Ayacucho (UGMA)',
+            empresa: 'PDVSA & UGMA',
+            ubicacion_empresa: 'Anzoátegui / Caracas, Venezuela · Presencial',
             rol: 'Analista de Sistemas & Automatización / Docente',
             periodo: '2006 – 2021',
             funciones: [
