@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Bazó | Hub de Presencia Digital</title>
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50%' y='52%' dominant-baseline='central' text-anchor='middle' fill='%2338bdf8' font-family='monospace' font-weight='bold' font-size='50'>&gt;_</text></svg>">
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS del Hub -->
+    <link rel="stylesheet" href="./assets/css/hub.css">
+
+    <!-- Petite Vue + Datos -->
+    <script src="https://unpkg.com/petite-vue"></script>
+    <script src="./assets/js/cv-data.js"></script>
+</head>
+<body>
+
+    <main id="app" v-scope="window.cvData" class="hub-wrapper">
+        <div class="hub-container">
+            
+            <!-- HEADER DE PERFIL -->
+            <header class="profile-header">
+                <div class="avatar-ring">
+                    <a :href="url_img_perfil" target="_blank" rel="noopener noreferrer">
+                        <img 
+                            :src="url_img_perfil" 
+                            :alt="nombre" 
+                            class="avatar-img"
+                        >
+                    </a>
+                </div>
+                <h1 class="profile-name">{{ nombre }}</h1>
+                <p class="profile-title">{{ titulo_profesional }}</p>
+                <div class="profile-location">
+                    <i class="fa-solid fa-location-dot"></i> {{ ubicacion }}
+                </div>
+            </header>
+
+            <!-- LISTA DE ENLACES ESTRUCTURADOS -->
+            <section class="links-grid">
+                
+                <!-- 1. HERO CARD: VIDEO PRESENTACIÓN -->
+                <a v-if="url_video_cv" :href="url_video_cv" target="_blank" rel="noopener noreferrer" class="link-card hero-card youtube-card">
+                    <div class="card-badge"><i class="fa-solid fa-star"></i> Ver Primero</div>
+                    <div class="card-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="card-content">
+                        <h2>Video Presentación</h2>
+                        <p>Conóceme en 1 minuto: trayectoria, stack y perfil técnico</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-circle-play"></i></div>
+                </a>
+
+                <!-- 2. PORTAFOLIO WEB -->
+                <a v-if="url_portafolio" :href="url_portafolio" target="_blank" rel="noopener noreferrer" class="link-card portfolio-card">
+                    <div class="card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="card-content">
+                        <h2>Portafolio & Proyectos</h2>
+                        <p>Explora mis desarrollos, arquitectura e innovaciones con IA</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- 3. VER / DESCARGAR CV INTERACTIVO -->
+                <a href="./cv.html" class="link-card cv-card">
+                    <div class="card-icon"><i class="fa-solid fa-file-lines"></i></div>
+                    <div class="card-content">
+                        <h2>Curriculum Vitae Web / PDF</h2>
+                        <p>Matriz técnica completa, experiencia detallada e impresión</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                </a>
+
+                <!-- SECCIÓN DE CONTACTO RÁPIDO -->
+                <div class="section-divider">
+                    <span>Contacto Directo</span>
+                </div>
+
+                <!-- 4. WHATSAPP DIRECTO -->
+                <a v-if="movil" :href="'https://wa.me/' + movil + '?text=Hola%20Pedro,%20vi%20tu%20Presencia%20Digital%20y%20me%20gustar%C3%ADa%20contactarte'" target="_blank" rel="noopener noreferrer" class="link-card whatsapp-card">
+                    <div class="card-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <div class="card-content">
+                        <h2>Enviar mensaje de WhatsApp</h2>
+                        <p>{{ formatearMovil(movil) }} · Respuesta rápida</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-comment-dots"></i></div>
+                </a>
+
+                <!-- 5. EMAIL DIRECTO -->
+                <a v-if="email" :href="'mailto:' + email" class="link-card email-card">
+                    <div class="card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="card-content">
+                        <h2>Enviar un Correo Electrónico</h2>
+                        <p>{{ email }}</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-paper-plane"></i></div>
+                </a>
+
+                <!-- SECCIÓN DE CÓDIGO Y REDES -->
+                <div class="section-divider">
+                    <span>Redes & Repositorios</span>
+                </div>
+
+                <!-- 6. GITHUB -->
+                <a v-if="url_github" :href="url_github" target="_blank" rel="noopener noreferrer" class="link-card github-card">
+                    <div class="card-icon"><i class="fa-brands fa-github"></i></div>
+                    <div class="card-content">
+                        <h2>GitHub Profile</h2>
+                        <p>@{{ extraerUsuario(url_github) }} · Repositorios, código fuente y aportes</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+                <!-- 7. LINKEDIN -->
+                <a v-if="url_linkedin" :href="url_linkedin" target="_blank" rel="noopener noreferrer" class="link-card linkedin-card">
+                    <div class="card-icon"><i class="fa-brands fa-linkedin"></i></div>
+                    <div class="card-content">
+                        <h2>LinkedIn</h2>
+                        <p>in/{{ extraerUsuario(url_linkedin) }} · Red profesional y recomendaciones</p>
+                    </div>
+                    <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                </a>
+
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="hub-footer">
+                <p>&copy; {{ new Date().getFullYear() }} {{ nombre }} · Engineered with Petite-Vue & CSS Glassmorphism</p>
+            </footer>
+
+        </div>
+    </main>
+
+    <script>
+        PetiteVue.createApp().mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+:root {
+  --bg-dark: #090d16;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent-blue: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.1) 0%, transparent 40%);
+}
+
+.hub-wrapper {
+  width: 100%;
+  max-width: 480px;
+}
+
+/* HEADER */
+.profile-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.avatar-ring {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 12px auto;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.profile-title {
+  font-size: 0.85rem;
+  color: var(--accent-blue);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.profile-location {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+/* CARDS GRID */
+.links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  padding: 14px 16px;
+  border-radius: 16px;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.link-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  color: var(--accent-blue);
+  transition: transform 0.2s;
+}
+
+.link-card:hover .card-icon {
+  transform: scale(1.1);
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-content h2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.card-content p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.card-arrow {
+  color: #475569;
+  font-size: 0.85rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.link-card:hover .card-arrow {
+  color: var(--accent-blue);
+  transform: translateX(3px);
+}
+
+/* HERO CARD Y YOUTUBE */
+.youtube-card {
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(30, 41, 59, 0.6) 100%);
+}
+
+.youtube-card .card-icon {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.card-badge {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #ef4444;
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* WHATSAPP & EMAIL */
+.whatsapp-card .card-icon { color: #22c55e; background: rgba(34, 197, 94, 0.15); }
+.email-card .card-icon { color: #38bdf8; background: rgba(56, 189, 248, 0.15); }
+.github-card .card-icon { color: #f8fafc; background: rgba(255, 255, 255, 0.1); }
+.linkedin-card .card-icon { color: #60a5fa; background: rgba(96, 165, 250, 0.15); }
+
+/* DIVIDERS */
+.section-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 12px 0 4px 0;
+}
+
+.section-divider span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #475569;
+  width: 100%;
+}
+
+.hub-footer {
+  text-align: center;
+  font-size: 0.65rem;
+  color: #475569;
+  margin-top: 24px;
+}

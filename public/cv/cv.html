@@ -168,8 +168,19 @@
                         <li v-if="url_video_cv">
                             <i class="fa-brands fa-youtube" style="color: #ff0000;"></i> 
                             <a :href="url_video_cv" target="_blank" rel="noopener noreferrer">Video Presentación</a>
-                        </li>
-                    </ul>                    
+                        </li>                       
+                    </ul>
+                    
+                    <!-- CÓDIGO QR EXCLUSIVO Y CENTRADO DEBAJO DE VIDEO PRESENTACIÓN -->   
+                    <div v-if="url_video_cv" class="sidebar-qr-minimal">
+                        <a :href="obtenerUrlLinks()" target="_blank" rel="noopener noreferrer" title="Escanear Hub Digital">
+                            <img 
+                                :src="`https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${encodeURIComponent(obtenerUrlLinks())}`" 
+                                alt="QR Presencia Digital" 
+                                class="sidebar-qr-img"
+                            >
+                        </a>
+                    </div>                                   
                 </div>                
 
                 <div>
@@ -203,9 +214,8 @@
                     <div class="skills-tag-container">
                         <span v-for="(aptitud, idx) in aptitudes" :key="idx" class="skill-tag">{{ aptitud }}</span>
                     </div>
-                </div>
+                </div>                 
             </aside>            
-                      
             
             <!-- COLUMNA DERECHA (CONTENIDO PRINCIPAL) -->
             <main class="main-content">

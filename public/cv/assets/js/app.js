@@ -51,6 +51,24 @@ const appState = PetiteVue.reactive({
         const limpio = ('' + numero).replace(/\D/g, ''); 
         // Aplica el formato +34 XXX XX XX XX
         return limpio.replace(/^(\d{2})(\d{3})(\d{2})(\d{2})(\d{2})$/, '+$1 $2 $3 $4 $5');
+    },
+    
+    // Método para obtener la URL de los links adaptada a cualquier entorno local o producción
+    obtenerUrlLinks() {
+        const hostname = window.location.hostname;
+        const protocol = window.location.protocol;
+        
+        // Si estamos en local (Live Server, IP local o abriendo directamente el fichero .html con file:)
+        const esLocal = hostname === 'localhost' || hostname === '127.0.0.1' || protocol === 'file:';
+
+        if (esLocal) {
+            // En local usamos siempre la ruta relativa directa
+            return './links.html';
+        } else {
+            // En producción usamos la URL absoluta de tu GitHub Pages
+            const base = (typeof this.url_base !== 'undefined' && this.url_base) ? this.url_base : 'https://petrix12.github.io/cvpetrix2022';
+            return base + '/links.html';
+        }
     }    
 });
 
