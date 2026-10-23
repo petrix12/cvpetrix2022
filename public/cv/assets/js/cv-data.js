@@ -39,7 +39,7 @@ window.cvData = {
     movil: "+34613980099",
     url_base: 'https://petrix12.github.io/cvpetrix2022/cv',
     url_site: 'https://petrix12.github.io/cvpetrix2022',
-    url_img_perfil: './assets/img/perfil.png',
+    url_img_perfil: './assets/img/perfil.jpg',
     url_linkedin: 'https://www.linkedin.com/in/pedro-bazo',
     url_github: 'https://github.com/petrix12',
     url_video_cv: 'https://www.youtube.com/watch?v=1zjclNAMbvA&t=42s',
