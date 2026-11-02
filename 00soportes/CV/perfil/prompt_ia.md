@@ -156,6 +156,19 @@
 + Por último, impulsado por la búsqueda de eficiencia, desarrollé de forma autónoma una herramienta en Lazarus (Pascal) para automatizar la ejecución de scripts, la gestión de comandos repetitivos y el montaje de bases de datos en entornos locales, optimizando sensiblemente la productividad. Además, amplié mi visión del ecosistema PHP analizando la estructura y los patrones de Symfony.
 
 ---
+## ⚠️ REGLAS Y RESTRICCIONES EXCLUSIVAS (FILTROS ELIMINATORIOS)
+Tómate estas limitaciones como criterios estrictos de descarte al evaluar las ofertas:
+1. **Nivel de Inglés (A2 Básico / No Operativo en Reuniones):** 
+   - Mi nivel de inglés es A2 (básico). Puedo leer y redactar textos sencillos con ayuda de herramientas, pero NO hablo inglés con fluidez ni puedo mantener reuniones de trabajo en este idioma.
+   - **Descarte automático:** Marca inmediatamente como **Apto: No** cualquier oferta que requiera comunicación oral en inglés, trabajo en entornos 100% angloparlantes o niveles exigidos B1, B2, C1 o C2.
+2. **Uso de Python (Solo Scripting / NO Backend):** 
+   - Mi manejo de Python se limita estrictamente a la creación de scripts de automatización y herramientas locales.
+   - **Descarte automático:** NO soy desarrollador backend en Python. Descarta o califica como **Apto: No** cualquier puesto que exija Python como lenguaje backend principal o requiera frameworks como Django, FastAPI o Flask.
+3. **Stack Principal:**
+   - **Backend:** PHP (Laravel) y Node.js.
+   - **Frontend:** Vue.js (principal) y JavaScript/jQuery.
+
+---
 ## Pregunta para IA
 + Según toda mi trayectoria profesional que te he contado, para las siguientes postulaciones de empleo que te voy a mostrar a continuación, analizalas a fondo, y entregama un informe con el siguiente formato:
     + Apto: [Sí, No, Puede ser]
